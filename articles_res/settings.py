@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'art_overview',
+    'requests',
     'bootstrap5'
 ]
 

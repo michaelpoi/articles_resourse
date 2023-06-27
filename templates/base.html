@@ -1,0 +1,17 @@
+{% load static %}
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    {# Navbar #}
+    {% block content %}
+    {% endblock %}
+    {# Footer #}
+</body>
+</html>

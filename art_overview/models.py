@@ -13,4 +13,8 @@ class Article(models.Model):
 
     class Meta:
         db_table = 'articles'
+
+
+
+
 # Create your models here.
