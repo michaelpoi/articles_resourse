@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from requests.models import Request, Service
+from requests.models import Request
 
 
 class Admin(admin.ModelAdmin):
@@ -8,5 +8,5 @@ class Admin(admin.ModelAdmin):
 
 
 admin.site.register(Request, Admin)
-admin.site.register(Service, Admin)
+#admin.site.register(Service, Admin)
 # Register your models here.
