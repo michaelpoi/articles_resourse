@@ -7,6 +7,8 @@
     --swiper-pagination-bullet-inactive-color: rgba(255,255,255,0.3);
     --swiper-pagination-color: #ffffff;
     --swiper-navigation-color: #ffffff;
+    --color-stop: rgba(132, 6, 227, 1);
+    --color-bot: rgba(240, 123, 44, 1);
     font-family: 'Roboto', sans-serif;
 }
 .mainbrdr {
@@ -159,6 +161,7 @@ section {
 .under {
     font-size: 16px;
     color: rgba(255, 255, 255, 0.7);
+    margin-left: 5px;
 }
 .title { 
     display: flex;
@@ -217,7 +220,7 @@ section {
 }
 .blog {
     background: #1f1f1f;
-    padding: 100px 0px;
+    padding: 100px 0px 0px 0px;
 }
 .rightside {
     display: flex;
@@ -227,11 +230,18 @@ section {
 .rightside .navtext {
     font-size: 24px;
 }
+.rght {
+    position: relative;
+    background: transparent;
+}
 .rightside .rght {
     background: linear-gradient(#1f1f1f, #1f1f1f) padding-box,
-              linear-gradient(to right, rgba(132, 6, 227, 1), rgba(240, 123, 44, 1)) border-box;
+        linear-gradient(to right, rgba(240, 123, 44, 1), rgba(132, 6, 227, 1)) border-box;
   border-radius: 15px;
   border: 2px solid transparent;
+}
+.rght:hover {
+    background: linear-gradient(to right, rgba(240, 123, 44, 1), rgba(132, 6, 227, 1)) border-box;
 }
 .mainswiper {
     width: 100%;
@@ -290,6 +300,7 @@ section {
     justify-content: center;
     align-items: center;
     padding: 11px;
+    cursor: pointer;
 }
 .icon2 {
     margin-left: 15px;
@@ -318,4 +329,117 @@ section {
 }
 .eximg {
     overflow: hidden;
+}
+.brdrez {
+    transition: border 0.5s, background-color 0.5s;
+    border-width: 2px;
+    background-color: transparent;
+}
+.brdrez:hover {
+    border: 2px solid #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.icon1:hover .strokechange {
+    stroke: url(#gradient);
+}
+.active {
+    fill: url(#gradient);
+    stroke: url(#gradient);
+}
+.icon2:hover .strokechange {
+    stroke: #0075FF;
+}
+.title4 {
+    display: block;
+    width: 100%;
+}
+.mainopt {
+    width: 100%;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+}
+.fouropt {
+    display: flex;
+    width: auto;
+    gap: 35px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+.sizew {
+    width: 560px;
+    height: 280px;
+    border-width: 2px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: default;
+}
+/* .bg1 {
+    background-image: url('img/bg1.png');
+} */
+.bg3 {
+    background-image: url('img/bg3.png');
+}
+.bg2 {
+    background-image: url('img/bg2.png');
+}
+.bg4 {
+    background-image: url('img/bg4.png');
+}
+.insideof {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 2rem;
+    position: relative;
+    flex-direction: column;
+    overflow: hidden;
+}
+.opttxt {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 64px;
+    opacity: 1;
+}
+.opttxtsm {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 36px;
+    margin-top: auto;
+    transition: all 0.5s;
+}
+.absl {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.insideof:hover .absl{
+    opacity: 1;
+}
+.insideof:hover .opttxt {
+    opacity: 0;
+    display: none;
+}
+.intext {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
+    max-height: 0;
+    width: 350px;
+    opacity: 0;
+    transition: max-height 0.5s, opacity 0.5s;
+}
+.insideof:hover .intext {
+    max-height: 500px;
+    opacity: 1;
+}
+.insideof:hover .opttxtsm {
+    font-size: 48px;
 }
