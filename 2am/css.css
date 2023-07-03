@@ -378,11 +378,12 @@ section {
     background-size: cover;
     cursor: default;
 }
-/* .bg1 {
-    background-image: url('img/bg1.png');
-} */
+.bg1 {
+    background-image: url('img/bg1.jpg');
+}
 .bg3 {
     background-image: url('img/bg3.png');
+    position: relative;
 }
 .bg2 {
     background-image: url('img/bg2.png');
@@ -404,6 +405,7 @@ section {
     font-weight: bold;
     font-size: 64px;
     opacity: 1;
+    transition: opacity 0.5s;
 }
 .opttxtsm {
     color: #ffffff;
@@ -424,22 +426,52 @@ section {
 .insideof:hover .absl{
     opacity: 1;
 }
-.insideof:hover .opttxt {
-    opacity: 0;
-    display: none;
-}
 .intext {
     color: rgba(255, 255, 255, 0.7);
     font-size: 24px;
     max-height: 0;
     width: 350px;
     opacity: 0;
-    transition: max-height 0.5s, opacity 0.5s;
+    transition: all 0.5s;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 }
-.insideof:hover .intext {
-    max-height: 500px;
+/* .bg3:hover {
+    border-bottom: 2px solid transparent;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 10%, rgba(31,31,31,1)), url('img/bg3.png');
+} */
+/* .sizew:hover {
+    border-bottom: 2px solid transparent;
+} */
+.covering {
+    position: relative;
+    z-index: 3;
+}
+/* .covering:hover::after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 560px;
+    background-image:linear-gradient(to bottom, rgba(255,255,255,0), rgba(31,31,31,1));
+} */
+
+.covering::after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 560px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(31, 31, 31, 1));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.covering.show::after {
     opacity: 1;
-}
-.insideof:hover .opttxtsm {
-    font-size: 48px;
 }
