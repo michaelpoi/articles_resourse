@@ -18,13 +18,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from art_overview import urls
+
+from portfolio import urls as port_urls
+from art_overview import urls as blog_urls
 from articles_res import views
 
 urlpatterns = [
                   path("admin/", admin.site.urls),
                   path('', views.main_page, name='main'),
-                  path('blog/', include(urls))
+                  path('blog/', include(blog_urls),),
+                  path('portfolio/', include(port_urls))
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'articles_res.views.error_404'

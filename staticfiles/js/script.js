@@ -23,11 +23,11 @@ sctop.addEventListener('click', () => {
 
 // redirection to blog
 
-const openblog = document.getElementById('blog__see');
-
-openblog.addEventListener('click', () => {
-  window.location.href = './blog/blog.html'
-});
+// const openblog = document.getElementById('blog__see');
+//
+// openblog.addEventListener('click', () => {
+//   window.location.href = './blog/blog.html'
+// });
 
 
 // visible invisible navbar

@@ -21,12 +21,12 @@ sctop.addEventListener('click', () => {
   window.location.href = '#home__page';
 });
 
-// redirection to blog
+//redirection to blog
 
 const openblog = document.getElementById('blog__see');
 
 openblog.addEventListener('click', () => {
-  window.location.href = './blog/blog.html'
+  window.location.href = './blog'
 });
 
 
