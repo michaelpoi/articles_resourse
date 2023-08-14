@@ -31,6 +31,6 @@ class Article(models.Model):
 class Code(models.Model):
     code = models.CharField(max_length=6, primary_key=True)
     articles = models.ManyToManyField(Article)
+
     class Meta:
         db_table = 'codes'
-

@@ -448,7 +448,7 @@
 								<div class="infho">
 									<div class="padme onec">
 										<p class="bignumb">
-											78
+											{{ controller.order_number }}
 										</p>
 										<p class="smallop">
 											Реальних замовлень
@@ -458,7 +458,7 @@
 								<div class="infho">
 									<div class="padme twoc">
 										<p class="bignumb">
-											15 +
+											{{ controller.clients }}
 										</p>
 										<p class="smallop">
 											Постійних клієнтів
@@ -468,7 +468,7 @@
 								<div class="infho">
 									<div class="padme threec">
 										<p class="bignumb">
-											2 +
+											{{ controller.experience }}
 										</p>
 										<p class="smallop">
 											Роки на ринку
@@ -489,13 +489,11 @@
 									</div>
 									<div class="articlemid">
 										<p>
-											Лендінг під ключ від 700$
+											{{ controller.first_offer.title }}
 										</p>
 									</div>
 									<div class="smtext">
-										<p>
-											Лендінг - або головна сторінка, найкращий спосіб привернути увагу до свого продукту, за переважно маленьку вартість є основою просування в інтернеті
-										</p>
+										{{ controller.first_offer.intro | safe }}
 									</div>
 									<div class="boxhold">
 										<div class="infho">
@@ -507,7 +505,7 @@
 													</svg>
 												</div>
 												<p class="smsvgtext">
-													Розробка та презентація, структури лендінгу
+													{{ controller.first_offer.text_field_1 }}
 												</p>
 											</div>
 										</div>
@@ -520,7 +518,7 @@
 													</svg>
 												</div>
 												<p class="smsvgtext">
-													Робота над індивідуальним дизайном
+													{{ controller.first_offer.text_field_2 }}
 												</p>
 											</div>
 										</div>
@@ -533,15 +531,13 @@
 													</svg>
 												</div>
 												<p class="smsvgtext">
-													Повний контроль усього процесу розробки
+													{{ controller.first_offer.text_field_3 }}
 												</p>
 											</div>
 										</div>
 									</div>
 									<div class="bigtextbo">
-										<p>
-											Вашим сайтом буде займатись команда зі справжніх знавців своєї справи, і одні з найкращих фахівців на ринку.
-										</p>
+						                {{ controller.first_offer.footer | safe }}
 									</div>
 									<div class="request__button">
 										<div class="button__andall">
@@ -550,7 +546,7 @@
 													<path d="M5.54545 3.72727V6.45455H8.27273M6 11C8.76142 11 11 8.76142 11 6C11 3.23858 8.76142 1 6 1C3.23858 1 1 3.23858 1 6C1 8.76142 3.23858 11 6 11Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
 												</svg>
 												<p>
-													1 - 4 тижні
+													{{ controller.first_offer.duration }}
 												</p>
 											</div>
 											<div class="button__imo" id="fastordertop">
@@ -1391,13 +1387,13 @@
 							<div class="work__texting">
 								<div class="work__name">
 									<p>
-										Lorem ipsum dolor sit amet, adipiscing elit, et dolore magna aliqua...
+										{{ main_project.title }}
 									</p>
 								</div>
 								<div class="work__description">
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui...
-									</p>
+
+                                    {{ main_project.desc | safe}}
+
 								</div>
 								<div class="work__items">
 									<div class="tosize__items borderm icon__like" id="icon__like">
@@ -1425,6 +1421,7 @@
 						</div>
 					</div>
 					<div class="smallboxes">
+                        {% for project in secondary_projects %}
 						<div class="small__box borderm">
 							<div class="small__cont">
 								<div class="image__holder__sm borderm portbg">
@@ -1432,12 +1429,12 @@
 								<div class="small__text">
 									<div class="small__workname">
 										<p>
-											Lorem Ispum
+											{{ project.title }}
 										</p>
 									</div>
 									<div class="small__meintxt">
 										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim in veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea Ut commodo consequat
+                                            {{ project.title }}
 										</p>
 									</div>
 									<div class="work__items">
@@ -1465,46 +1462,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="small__box borderm">
-							<div class="small__cont" id="scrolltome">
-								<div class="image__holder__sm borderm portbg">
-								</div>
-								<div class="small__text">
-									<div class="small__workname">
-										<p>
-											Lorem Ispum
-										</p>
-									</div>
-									<div class="small__meintxt">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim in veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea Ut commodo consequat
-										</p>
-									</div>
-									<div class="work__items">
-										<div class="tosize__items borderm icon__like like" id="icon__like">
-											<svg class="heart" width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<defs>
-													<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-														<stop offset="0%" stop-color="var(--color-stop)" />
-														<stop offset="30%" stop-color="var(--color-stop)" />
-														<stop offset="100%" stop-color="var(--color-bot)" />
-													  </linearGradient>
-												</defs>
-												<path fill-rule="evenodd" clip-rule="evenodd"
-													d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
-													stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange forheart"/>
-											</svg>
-										</div>
-										<div class="tosize__items borderm icon__copy copy" id="icon__copy">
-											<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
-												<path d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
-											</svg>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+                        {% endfor %}
 					</div>
 				</div>
                 <a href="{% url 'portfolio' %}">

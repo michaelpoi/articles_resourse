@@ -2,11 +2,23 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from art_overview.models import Article
+from portfolio.models import ProjectPortfolio
+from webcontrol.models import WebManager
 
 
 def main_page(request):
+    context = {}
     articles = Article.objects.order_by('-likes')[:10]
-    return render(request, 'articles_res/landing.html', {"articles": articles})
+    context['articles'] = articles
+    projects = ProjectPortfolio.objects.order_by('-likes')[:3]
+    if len(projects) >= 0:
+        main_project = projects[0]
+        secondary_projects = projects[1:3]
+        context['main_project'] = main_project
+        context['secondary_projects'] = secondary_projects
+    controller = WebManager.objects.first()
+    context['controller'] = controller
+    return render(request, 'articles_res/landing.html', context=context)
 
 
 def error_404(request, exception):

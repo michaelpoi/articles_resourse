@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'art_overview',
     'requests',
     'bootstrap5',
-    'ckeditor'
+    'ckeditor',
+    'portfolio',
+    'offer',
+    'webcontrol'
 ]
 
 MIDDLEWARE = [
