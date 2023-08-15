@@ -456,27 +456,27 @@
 						<div class="typediva">
 							<div class="sztext helloas" id="navmenu__port">
 								<div class="newasa">
-									<a href="../landing.html#home__page">
+									<a href="{% url 'main' %}#home__page">
 										<p class="navtext">Головна</p>
 									</a>
 								</div>
 								<div class="newasa">
-									<a href="../landing.html#specialty">
+									<a href="{% url 'main' %}#specialty">
 										<p class="navtext">Послуги</p>
 									</a>
 								</div>
 								<div class="newasa our__qq">
-									<a href="../landing.html#scrollto__works">
+									<a href="{% url 'main' %}#scrollto__works">
 										<p class="navtext">Наші роботи</p>
 									</a>
 								</div>
 								<div class="newasa pop__qq">
-									<a href="../landing.html#scrollto__faq">
+									<a href="{% url 'main' %}#scrollto__faq">
 										<p class="navtext">Популярні запитання</p>
 									</a>
 								</div>
 								<div class="newasa wasaa">
-									<a href="../landing.html#scrollto__bloger">
+									<a href="{% url 'main' %}#scrollto__bloger">
 										<p class="navtext">IT блог</p>
 									</a>
 								</div>
@@ -506,12 +506,13 @@
 				<div class="mainswiper">
 					<div class="swiper blogger">
 						<div class="swiper-wrapper">
+                            {% for article in slider_articles %}
 						  <div class="swiper-slide slide__one">
 								<div class="containercont">
 									<div class="contentswiper mainbrdr">
 										<div class="slidecontent">
 											<div class="imagecont">
-											<div class="eximg sizeof mainbrdr">
+											<div class="eximg sizeof mainbrdr" style="background-image: url('{{ article.image_main.url }}')">
 											</div>
 										</div>
 										<div class="txtcont sizeof">
@@ -519,21 +520,18 @@
 												<div class="txt">
 													<div class="hashtag">
 														<div class="hash">
+                                                            {% for hash in article.hashtags.all %}
 															<p>
-																#Замовлення
+																{{ hash }}
 															</p>
-														</div>
-														<div class="hash">
-															<p>
-																#Новинка
-															</p>
+                                                            {% endfor %}
 														</div>
 													</div>
 													<h1 class="sheader">
-														Важливі кроки при створенні успішного лендінгу
+														{{ article.title }}
 													</h1>
 													<p class="textblog">
-														У сучасному цифровому світі лендінг-сторінки стали невід'ємною частиною бізнес-стратегій. Вони є потужним інструментом для залучення цільової аудиторії та стимулювання конверсій. Однак, створення успішного лендінгу - це процес, який вимагає уважної підготовки та керування. У цій статті ми розглянемо важливі кроки, які варто врахувати під час створення ефективного лендінгу.
+                                                        {{ article.text | safe }}
 													</p>
 													<!-- <p>
 														Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -572,7 +570,7 @@
 														<circle cx="14.5" cy="2.5" r="2.5" fill="white"/>
 													</svg>
 												</div>
-												<div class="seeblog1" id="blog1">
+												<div class="seeblog1" id="blog1" onclick="window.location.href='{% url 'article' article_id=article.article_id %}'">
 													<p>
 														Читати весь
 													</p>
@@ -583,158 +581,7 @@
 								</div>
 							</div>
 						  </div>
-						  <div class="swiper-slide slide__two">
-							<div class="containercont">
-								<div class="contentswiper mainbrdr">
-									<div class="slidecontent">
-										<div class="imagecont">
-											<div class="eximg sizeof mainbrdr">
-											</div>
-										</div>
-										<div class="txtcont sizeof">
-											<div class="textarea sizeof1">
-												<div class="txt">
-													<div class="hashtag">
-														<div class="hash">
-															<p>
-																#Дизайн
-															</p>
-														</div>
-														<div class="hash">
-															<p>
-																#Індивідуальність
-															</p>
-														</div>
-													</div>
-													<h1 class="sheader">
-														Lorem Ipsum
-													</h1>
-													<p class="textblog">
-														Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ipsam odit sed iure, doloremque in a, consequatur assumenda corporis facilis illo beatae ipsa alias cum sequi reprehenderit saepe maiores voluptatum.
-													</p>
-													<p class="textblog">
-													</p>
-												</div>
-											</div>
-											<div class="icons sizeof1">
-												<div class="icon1 mainbrdr range brdrez">
-													<svg class="heart" width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<defs>
-															<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-																<stop offset="0%" stop-color="var(--color-stop)" />
-																<stop offset="30%" stop-color="var(--color-stop)" />
-																<stop offset="100%" stop-color="var(--color-bot)" />
-															  </linearGradient>
-														</defs>
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
-															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange hertlike"/>
-													</svg>
-												</div>
-												<div class="icon2 mainbrdr range brdrez">
-													<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path
-															d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
-															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
-														<path
-															d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862"
-															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
-													</svg>
-												</div>
-												<div class="icon3 mainbrdr range brdrez" id="stats2">
-													<svg width="29" height="5" viewBox="0 0 29 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<circle cx="2.5" cy="2.5" r="2.5" fill="white"/>
-														<circle cx="26.5" cy="2.5" r="2.5" fill="white"/>
-														<circle cx="14.5" cy="2.5" r="2.5" fill="white"/>
-													</svg>
-												</div>
-												<div class="seeblog1" id="blog2">
-													<p>
-														Читати весь
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						  </div>
-						  <div class="swiper-slide slide__three">
-							<div class="containercont">
-								<div class="contentswiper mainbrdr">
-									<div class="slidecontent">
-										<div class="imagecont">
-											<div class="eximg sizeof mainbrdr">
-											</div>
-										</div>
-										<div class="txtcont sizeof">
-											<div class="textarea sizeof1">
-												<div class="txt">
-													<div class="hashtag">
-														<div class="hash">
-															<p>
-																#Дизайн
-															</p>
-														</div>
-														<div class="hash">
-															<p>
-																#Індивідуальність
-															</p>
-														</div>
-													</div>
-													<h1 class="sheader">
-														Lorem Ipsum
-													</h1>
-													<p class="textblog">
-														Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ipsam odit sed iure, doloremque in a, consequatur assumenda corporis facilis illo beatae ipsa alias cum sequi reprehenderit saepe maiores voluptatum.
-													</p>
-													<p class="textblog">
-													</p>
-												</div>
-											</div>
-											<div class="icons sizeof1">
-												<div class="icon1 mainbrdr range brdrez">
-													<svg class="heart" width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<defs>
-															<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-																<stop offset="0%" stop-color="var(--color-stop)" />
-																<stop offset="30%" stop-color="var(--color-stop)" />
-																<stop offset="100%" stop-color="var(--color-bot)" />
-															  </linearGradient>
-														</defs>
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
-															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange hertlike"/>
-													</svg>
-												</div>
-												<div class="icon2 mainbrdr range brdrez">
-													<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path
-															d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
-															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
-														<path
-															d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862"
-															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
-													</svg>
-												</div>
-												<div class="icon3 mainbrdr range brdrez" id="stats3">
-													<svg width="29" height="5" viewBox="0 0 29 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<circle cx="2.5" cy="2.5" r="2.5" fill="white"/>
-														<circle cx="26.5" cy="2.5" r="2.5" fill="white"/>
-														<circle cx="14.5" cy="2.5" r="2.5" fill="white"/>
-													</svg>
-												</div>
-												<div class="seeblog1" id="blog3">
-													<p>
-														Читати весь
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						  </div>
+                            {% endfor %}
 						  ...
 						</div>
 						<div class="swiper-pagination"></div>
@@ -839,19 +686,18 @@
                 </div>
                 <div class="check__all">
                     <div class="halfblog">
-                        <div class="bighz borderdef">
-                            <div class="forimg borderimg">
+
+                        <div class="bighz borderdef" onclick="window.location.href='{% url 'article' article_id=cards.0.article_id %}'">
+                            <div class="forimg borderimg" style="background-image: url('{{ cards.0.image_main.url }}')">
 
                             </div>
                             <div class="blogname blogdiv arrangetxt4">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, el dolor magna aliqua...
+                                   {{ cards.0.title }}
                                 </p>
                             </div>
                             <div class="blogdesc blogdiv arrangetxt">
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis esse quia perspiciatis, dolorum expedita accusamus magnam corrupti voluptate, ad tempore nulla iure atque quam minus. Natus molestias neque aliquam porro?
-                                </p>
+                                {{ cards.0.text | safe | slice:':500' }}
                             </div>
                             <div class="icons__blog">
                                 <div class="icon1 mainbrdr range brdrez icon__like" id="icon__like1">
@@ -881,20 +727,19 @@
                             </div>
                         </div>
 						<div class="smallhz hidemobile">
-							<div class="smallblog borderdef">
-								<div class="forsqimg borderimg">
+                            {% if cards.1 %}
+							<div class="smallblog borderdef" onclick="window.location.href='{% url 'article' article_id=cards.1.article_id %}'">
+								<div class="forsqimg borderimg" style="background-image: url('{{ cards.1.image_main.url }}')">
 
 								</div>
 								<div class="smdesc">
 									<div class="blogname blogdiv">
 										<p>
-											Lorem Ipsum
+											{{ cards.1.title }}
 										</p>
 									</div>
 									<div class="blogdesc blogdiv">
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ex inventore porro dolores consequuntur voluptatem laudantium culpa, impedit nostrum nam natus at quod omnis repellat iure temporibus eos, maxime voluptatum.
-										</p>
+										{{ cards.1.text | safe | slice:":300" }}
 									</div>
 									<div class="icons__blog">
 										<div class="icon1 mainbrdr range brdrez icon__like" id="icon__like3">
@@ -924,20 +769,20 @@
 									</div>
 								</div>
 							</div>
-							<div class="smallblog borderdef">
-								<div class="forsqimg borderimg">
+                            {% endif %}
+                            {% if cards.2 %}
+							<div class="smallblog borderdef" onclick="window.location.href='{% url 'article' article_id=cards.2.article_id %}'">
+								<div class="forsqimg borderimg" style="background-image: url('{{ cards.2.image_main.url }}')">
 
 								</div>
 								<div class="smdesc">
 									<div class="blogname blogdiv">
 										<p>
-											Lorem Ipsum
+											{{ cards.2.title }}
 										</p>
 									</div>
 									<div class="blogdesc blogdiv">
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ex inventore porro dolores consequuntur voluptatem laudantium culpa, impedit nostrum nam natus at quod omnis repellat iure temporibus eos, maxime voluptatum.
-										</p>
+										{{ cards.2.text | safe|slice:":300" }}
 									</div>
 									<div class="icons__blog">
 										<div class="icon1 mainbrdr range brdrez icon__like" id="icon__like4">
@@ -967,24 +812,24 @@
 									</div>
 								</div>
 							</div>
+                            {% endif %}
 						</div>
                     </div>
                     <div class="halfblog">
 						<div class="smallhz">
-							<div class="smallblog borderdef hidemobile">
-								<div class="forsqimg borderimg">
+                            {% if cards.4 %}
+							<div class="smallblog borderdef hidemobile" onclick="window.location.href='{% url 'article' article_id=cards.4.article_id %}'">
+								<div class="forsqimg borderimg" style="background-image: url('{{ cards.4.image_main.url }}')">
 
 								</div>
 								<div class="smdesc">
 									<div class="blogname blogdiv">
 										<p>
-											Lorem Ipsum
+											{{ cards.4.title }}
 										</p>
 									</div>
 									<div class="blogdesc blogdiv">
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ex inventore porro dolores consequuntur voluptatem laudantium culpa, impedit nostrum nam natus at quod omnis repellat iure temporibus eos, maxime voluptatum.
-										</p>
+										{{ cards.4.text | safe | slice:":300" }}
 									</div>
 									<div class="icons__blog">
 										<div class="icon1 mainbrdr range brdrez icon__like" id="icon__like5">
@@ -1014,20 +859,20 @@
 									</div>
 								</div>
 							</div>
-							<div class="smallblog borderdef">
-								<div class="forsqimg borderimg">
+                            {% endif %}
+                            {% if cards.3 %}
+							<div class="smallblog borderdef" onclick="window.location.href='{% url 'article' article_id=cards.3.article_id %}'">
+								<div class="forsqimg borderimg" style="background-image: url('{{ cards.3.image_main.url }}')">
 
 								</div>
 								<div class="smdesc">
 									<div class="blogname blogdiv">
 										<p>
-											Lorem Ipsum
+											{{ cards.3.title }}
 										</p>
 									</div>
 									<div class="blogdesc blogdiv arrangetxt1">
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ex inventore porro dolores consequuntur voluptatem laudantium culpa, impedit nostrum nam natus at quod omnis repellat iure temporibus eos, maxime voluptatum.
-										</p>
+										{{ cards.3.text | safe | slice:":300" }}
 									</div>
 									<div class="icons__blog">
 										<div class="icon1 mainbrdr range brdrez icon__like" id="icon__like6">
@@ -1057,18 +902,18 @@
 									</div>
 								</div>
 							</div>
+                            {% endif %}
 						</div>
-						<div class="bigvr borderdef">
+                        {% if cards.5 %}
+						<div class="bigvr borderdef" onclick="window.location.href='{% url 'article' article_id=cards.5.article_id %}'">
 							<div class="vrdesc">
 								<div class="blogname blogdiv arrangetxt5">
 									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, el dolor magna aliqua...
+										{{ cards.5.title }}
 									</p>
 								</div>
 								<div class="blogdesc blogdiv arrangetxt2">
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ea commodo consequat. Duis aute irure in reprehenderit in voluptate velit esse dolore eu fugiat nulla pariatur. Excepteur occaecat cupidatat non proident, sunt in qui officia deserunt mollit anim id est. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed et dolore magna. Ut enim ad minim veniam, quis nostrud...
-									</p>
+									{{ cards.5.text | safe | slice:':600' }}
 								</div>
 								<div class="icons__blog">
 									<div class="icon1 mainbrdr range brdrez icon__like" id="icon__like">
@@ -1097,42 +942,56 @@
 									</div>
 								</div>
 							</div>
-							<div class="forprimg borderimg">
+							<div class="forprimg borderimg" style="background-image: url('{{ cards.5.image_main.url }}')">
 
 							</div>
 						</div>
+                        {% endif %}
                     </div>
 					<div class="chpage">
 						<div class="chmenu">
-							<div class="forarrm arrleft">
-								<svg width="26" height="46" class="leftarr" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M3.01022 3L23 23.059L3 43" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</div>
+                            {% if cards.has_previous %}
+                                <a href="?page={{ cards.previous_page_number }}">
+                                    <div class="forarrm arrleft">
+								        <svg width="26" height="46" class="leftarr" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+									    <path d="M3.01022 3L23 23.059L3 43" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+								        </svg>
+							        </div>
+                                </a>
+                            {% endif %}
 							<div class="num__here">
 								<div class="pgnum">
 									<div class="chnum">
 										<p>
-											1
+											{{ cards.number }}
 										</p>
 									</div>
+                                {% if cards.has_next %}
 									<div class="chnum">
 										<p>
-											2
+											{{ cards.next_page_number }}
 										</p>
 									</div>
+                                {% endif %}
+                                {% if cards.has_next %}
 									<div class="chnum">
 										<p>
-											3
+											{{ cards.next_page_number| add:'1' }}
 										</p>
 									</div>
+                                {% endif %}
 								</div>
 							</div>
-							<div class="forarrm arrright">
-								<svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M3.01022 3L23 23.059L3 43" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</div>
+                            {% if cards.has_next %}
+                                <a href="?page={{ cards.next_page_number }}">
+                                    <div class="forarrm arrright">
+                                        <svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.01022 3L23 23.059L3 43" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </a>
+
+                            {% endif %}
 						</div>
 					</div>
                 </div>
@@ -1146,7 +1005,7 @@
 							<div class="leftftr">
 								<div class="forleft">
 									<div class="contact">
-										<a href="../../landing.html#home__page" class="tohome">
+										<a href="../{% url 'main' %}#home__page" class="tohome">
 											<div class="bottomlogo">
 												<?xml version="1.0" encoding="utf-8"?>
 												<svg width="2vw" height="2vw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1189,27 +1048,27 @@
 											</a>
 										</div>
 										<div class="gap__me">
-											<a href="../landing.html#home__page" class="linkt">
+											<a href="{% url 'main' %}#home__page" class="linkt">
 												<p>
 													Головна
 												</p>
 											</a>
-											<a href="../landing.html#specialty" class="linkt">
+											<a href="{% url 'main' %}#specialty" class="linkt">
 												<p>
 													Послуги
 												</p>
 											</a>
-											<a href="../landing.html#advantages" class="linkt">
+											<a href="{% url 'main' %}#advantages" class="linkt">
 												<p>
 													Переваги
 												</p>
 											</a>
-											<a href="../landing.html#faq__qq" class="linkt">
+											<a href="{% url 'main' %}#faq__qq" class="linkt">
 												<p>
 													Популярні запитання
 												</p>
 											</a>
-											<a href="../landing.html#blog__us" class="linkt">
+											<a href="{% url 'main' %}#blog__us" class="linkt">
 												<p>
 													IT блог
 												</p>

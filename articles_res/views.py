@@ -8,7 +8,7 @@ from webcontrol.models import WebManager
 
 def main_page(request):
     context = {}
-    articles = Article.objects.order_by('-likes')[:10]
+    articles = Article.objects.order_by('-likes')[:3]
     context['articles'] = articles
     projects = ProjectPortfolio.objects.order_by('-likes')[:3]
     if len(projects) >= 0:

@@ -1,9 +1,11 @@
 from django.contrib import admin
 
-from offer.models import Offer
+from offer.models import Offer,PhotoAlbum
 
-
+@admin.register(PhotoAlbum)
+class AlbumAdmin(admin.ModelAdmin):
+    pass
 @admin.register(Offer)
 class OfferAdmin(admin.ModelAdmin):
-    pass
+    filter_horizontal = ['images']
 # Register your models here.

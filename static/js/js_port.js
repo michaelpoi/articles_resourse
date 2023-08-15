@@ -160,11 +160,6 @@ navTexts.forEach((text) => {
   });
 });
 
-const toback = document.getElementById('to__back');
-
-toback.addEventListener('click', () => {
-    window.location.href = '../landing.html';
-});
 
 // span transform
 
@@ -628,9 +623,7 @@ getUpDiv.addEventListener('click', () => {
 
 const number1 = document.getElementById('num1');
 
-number1.addEventListener('click', () => {
-    window.location.href = './allportfolio/port__1.html';
-});
+
 
 // nav mobile version
 

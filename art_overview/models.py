@@ -5,16 +5,22 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.urls import reverse
 
+from portfolio.models import Hashtag
+
 
 class Article(models.Model):
     article_id = models.UUIDField(default=uuid.uuid4, editable=False, null=False, primary_key=True)
     title = models.CharField(max_length=255)
     text = RichTextField(blank=True, null=True)
+    footer_text = RichTextField(blank=True, default="This is a default footer")
     pub_date = models.DateTimeField(auto_now=True)
     likes = models.IntegerField(default=0)
+    views = models.PositiveIntegerField(default=0)
+    reposts = models.PositiveIntegerField(default=0)
     image_main = models.ImageField(upload_to='images/')
     is_published = models.BooleanField(null=False)
     image_secondary = models.ImageField(upload_to='images/')
+    hashtags = models.ManyToManyField(Hashtag, blank=True)
 
     def __str__(self):
         return self.title

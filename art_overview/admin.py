@@ -7,6 +7,7 @@ class Admin(admin.ModelAdmin):
    list_filter = ('is_published',)
    #ordering = ['-likes']
    list_display = ['title','pub_date','likes','is_published']
+   filter_horizontal = ['hashtags']
 
 
 admin.site.register(Article, Admin)
