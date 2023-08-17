@@ -17,6 +17,7 @@
 	  />
 
 	  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="{% static 'css/style.css'%}" rel="stylesheet">
     <title>CrownStudio</title>
@@ -1231,7 +1232,7 @@
 					</p>
 				</div>
 				<div class="works__see">
-					<div class="bigwork borderm">
+					<div class="bigwork borderm" onclick="window.location.href='{% url 'project' project_id=main_project.project_id %}'">
 						<div class="padder__work">
 							<div class="work__preview borderm portbg" style="background-image: url('{{ main_project.image.url }}')">
 							</div>
@@ -1247,8 +1248,8 @@
 
 								</div>
 								<div class="work__items">
-                                    <a href="{% url 'like_project' project_id=main_project.project_id %}">
-                                        <div class="tosize__items borderm icon__like" id="icon__like">
+
+                                        <div class="tosize__items borderm icon__like" id="icon__like" data-project-id="{{ main_project.project_id }}">
 										<svg class="heart" width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<defs>
 												<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -1257,12 +1258,19 @@
 													<stop offset="100%" stop-color="var(--color-bot)" />
 												  </linearGradient>
 											</defs>
-											<path fill-rule="evenodd" clip-rule="evenodd"
-												d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
-												stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange forheart"/>
+                                            {% with id=main_project.project_id|stringformat:"s"%}
+                                            {% if id in request.COOKIES %}
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
+                                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange forheart active"></path>
+                                            {% else %}
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
+                                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange forheart"></path>
+                                            {% endif %}
+                                        {% endwith %}
 										</svg>
 									</div>
-                                    </a>
 
 									<div class="tosize__items borderm icon__copy" id="icon__copy">
 										<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1276,7 +1284,7 @@
 					</div>
 					<div class="smallboxes">
                         {% for project in secondary_projects %}
-						<div class="small__box borderm">
+						<div class="small__box borderm" onclick="window.location.href='{% url 'project' project_id=project.project_id %}'">
 							<div class="small__cont">
 								<div class="image__holder__sm borderm portbg" style="background-image: url('{{ project.image.url }}')">
 								</div>
@@ -1292,7 +1300,7 @@
 										</p>
 									</div>
 									<div class="work__items">
-										<div class="tosize__items borderm icon__like like" id="icon__like">
+                                            <div class="tosize__items borderm icon__like like" id="icon__like" data-project-id="{{ project.project_id }}">
 											<svg class="heart" width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<defs>
 													<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -1301,11 +1309,20 @@
 														<stop offset="100%" stop-color="var(--color-bot)" />
 													  </linearGradient>
 												</defs>
-												<path fill-rule="evenodd" clip-rule="evenodd"
-													d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
-													stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange forheart"/>
+                                                {% with id=project.project_id|stringformat:"s" %}
+                                                    {% if id in request.COOKIES %}
+												        <path fill-rule="evenodd" clip-rule="evenodd"
+													        d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
+													        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange forheart active"></path>
+                                                    {% else %}
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+													        d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
+													        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange forheart"></path>
+                                                    {% endif %}
+                                                {% endwith %}
 											</svg>
 										</div>
+
 										<div class="tosize__items borderm icon__copy copy" id="icon__copy">
 											<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
@@ -1482,7 +1499,7 @@
 												</svg>
 											</div>
 											<p class="smsvgtext">
-												{{ controller.third_article.text_field_2 }}
+												{{ controller.third_offer.text_field_2 }}
 											</p>
 										</div>
 									</div>
@@ -1970,7 +1987,7 @@
 												</div>
 											</div>
 											<div class="icons sizeof1">
-												<div class="icon1 mainbrdr range brdrez">
+												<div class="icon1 mainbrdr range brdrez" data-article-id="{{ article.article_id }}">
 													<svg class="heart" width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<defs>
 															<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -1979,9 +1996,17 @@
 																<stop offset="100%" stop-color="var(--color-bot)" />
 															  </linearGradient>
 														</defs>
-														<path fill-rule="evenodd" clip-rule="evenodd"
+                                                        {% with id=article.article_id|stringformat:"s" %}
+                                                            {% if id in request.COOKIES %}
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
 															d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
-															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange hertlike"/>
+															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange hertlike active"></path>
+                                                            {% else %}
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+															d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
+															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange hertlike "/>
+                                                            {% endif %}
+                                                        {% endwith %}
 													</svg>
 												</div>
 												<div class="icon2 mainbrdr range brdrez">
@@ -2360,6 +2385,30 @@
 			</div>
 		</footer>
 	</div>
+    <script>
+        $(document).ready(function (){
+            $('.icon__like').click(function (event){
+                event.stopPropagation()
+                var project_id = $(this).data('project-id');
+                console.log(project_id)
+                $.ajax({
+                    type:'POST',
+                    url: '{% url 'project_like' %}',
+                    data: {'project_id':project_id}
+                })
+            })
+            $('.icon1').click(function (event){
+                event.stopPropagation()
+                var article_id = $(this).data('article-id')
+                console.log(article_id)
+                $.ajax({
+                    type:'POST',
+                    url:'{% url 'like_article' %}',
+                    data: {'article_id':article_id}
+                })
+            })
+        })
+    </script>
 	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

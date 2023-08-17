@@ -41,6 +41,10 @@ class ProjectPortfolio(models.Model):
     def unlike(self):
         self.likes -= 1
         self.save()
+
+    def watch(self):
+        self.views += 1
+        self.save()
     def __str__(self):
         return f"Portfolio -- {self.title}"
 

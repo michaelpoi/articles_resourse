@@ -5,5 +5,5 @@ from portfolio import views
 urlpatterns = [
     path('', views.portfolio, name='portfolio'),  # main portfolio page
     path('<uuid:project_id>/',views.project_page, name='project'),
-    path('<uuid:project_id>/like/', views.like_control, name='like_project')
+    path('like_project/', views.like_project, name='project_like')
 ]

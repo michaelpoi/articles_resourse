@@ -23,7 +23,7 @@
 }
 .blog__our {
     height: auto;
-    background-image: url(img/bgport1.png);
+    background-image: url('../media/img/bgport1.png');
     background-size: 110% 110%;
     background-repeat: no-repeat;
 }
@@ -36,7 +36,7 @@
 .others__port {
     padding-top: 0vw;
     padding-bottom: 10vw;
-    background-image: url('img/bgport2.png');
+    background-image: url('../media/img/bgport2.png');
     background-position: center;
     background-size: 100% 110%;
 }
@@ -79,7 +79,7 @@
     border: 0.05vw solid rgba(255,255,255,0.4);
     border-radius: 1.2vw;
     background-color: rgba(39,39,39,0.6);
-    background-image: url('../img/1.png');
+    background-image: url('../media/img/1.png');
     background-size: 100%;
     background-position: center;
 }
@@ -258,7 +258,7 @@ p {
 }
 .direct__sect {
     padding-top: 12vw;
-    background-image: url('../../img/bg__portnum.png');
+    background-image: url('../media/img/bg__portnum.png');
     background-position: center;
     background-size: 100%;
 }

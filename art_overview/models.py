@@ -22,6 +22,17 @@ class Article(models.Model):
     image_secondary = models.ImageField(upload_to='images/')
     hashtags = models.ManyToManyField(Hashtag, blank=True)
 
+    def like(self):
+        self.likes += 1
+        self.save()
+
+    def unlike(self):
+        self.likes -= 1
+        self.save()
+
+    def watch(self):
+        self.views += 1
+        self.save()
     def __str__(self):
         return self.title
 

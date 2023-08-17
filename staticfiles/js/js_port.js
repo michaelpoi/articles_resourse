@@ -160,11 +160,6 @@ navTexts.forEach((text) => {
   });
 });
 
-const toback = document.getElementById('to__back');
-
-toback.addEventListener('click', () => {
-    window.location.href = '../landing.html';
-});
 
 // span transform
 
