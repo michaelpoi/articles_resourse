@@ -33,6 +33,11 @@ class Article(models.Model):
     def watch(self):
         self.views += 1
         self.save()
+
+    def repost(self):
+        self.reposts += 1
+        self.save()
+
     def __str__(self):
         return self.title
 
@@ -41,6 +46,8 @@ class Article(models.Model):
 
     class Meta:
         db_table = 'articles'
+
+
 
 
 # Create your models here.

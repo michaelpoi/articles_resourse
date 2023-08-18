@@ -45,6 +45,10 @@ class ProjectPortfolio(models.Model):
     def watch(self):
         self.views += 1
         self.save()
+
+    def repost(self):
+        self.reposts += 1
+        self.save()
     def __str__(self):
         return f"Portfolio -- {self.title}"
 

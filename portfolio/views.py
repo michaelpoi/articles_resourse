@@ -28,7 +28,7 @@ def project_page(request, project_id):
 
 def is_liked(request, project_id):
     project_id = str(project_id)
-    if 'liked' == request.COOKIES.get(project_id):
+    if (project_id + "_l") in request.COOKIES:
         return True
     return False
 
@@ -43,13 +43,13 @@ def is_watched(request, project_id):
 def like_control(request, project_id):
     project_id = str(project_id)
     project = get_object_or_404(ProjectPortfolio, project_id=project_id)
-    response = JsonResponse({'likes':project.likes})
+    response = JsonResponse({'likes': project.likes})
     if is_liked(request, project_id):
         project.unlike()
-        response.delete_cookie(project_id)
+        response.delete_cookie(project_id + "_l")
     else:
         project.like()
-        response.set_cookie(project_id, "liked")
+        response.set_cookie(project_id + "_l", "liked")
     return response
 
 
@@ -57,5 +57,27 @@ def like_control(request, project_id):
 def like_project(request):
     if request.method == "POST":
         project_id = request.POST.get('project_id')
-        return like_control(request,project_id)
+        return like_control(request, project_id)
 
+
+def is_reposted(request, project_id):
+    project_id = str(project_id)
+    if (project_id+"_r") in request.COOKIES:
+        return True
+    return False
+
+
+def repost_control(request, project_id):
+    project_id = str(project_id)
+    project = get_object_or_404(ProjectPortfolio, project_id=project_id)
+    response = JsonResponse({'reposts':project.reposts})
+    if not is_reposted(request,project_id):
+        project.repost()
+        response.set_cookie(project_id+"_r", "reposted")
+    return response
+
+@csrf_exempt
+def repost_project(request):
+    if request.method == "POST":
+        project_id = request.POST.get('project_id')
+        return repost_control(request, project_id)

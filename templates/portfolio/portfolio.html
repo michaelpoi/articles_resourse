@@ -16,7 +16,7 @@
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
 	  />
-	  
+	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Portfolio</title>
@@ -401,7 +401,7 @@
 												</div>
 											</div>
 											<div class="icons sizeof1">
-												<div class="icon2 mainbrdr range brdrez">
+												<div class="icon2 mainbrdr range brdrez" data-project-id="{{ project.project_id }}">
 													<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path
 															d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
@@ -540,7 +540,7 @@
                                     <p>{{ project.title }}</p>
                                 </div>
                                 <div class="link__numb">
-                                    <div class="tosize__items borderm icon__copy" id="icon__copy">
+                                    <div class="tosize__items borderm icon__copy" id="icon__copy" data-project-id="{{ project.project_id }}">
 										<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
 											<path d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
@@ -827,6 +827,48 @@
 			</div>
 		</footer>
     </div>
+    <script>
+        $(document).ready(function(){
+                const repostButtons = document.querySelectorAll('.icon__copy')
+            repostButtons.forEach(button=>{
+                button.addEventListener('click',function(event){
+                    event.stopPropagation()
+                    const project_id = this.getAttribute('data-project-id')
+                    const project_url = window.location.origin + '/portfolio/' + project_id
+                    copyToClipboard(project_url)
+                    $.ajax({
+                        type:'POST',
+                        url:'{% url 'repost_project' %}',
+                        data: {'project_id':project_id}
+                    })
+                })
+            })
+        function copyToClipboard(text) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+}
+const repostArticlesButtons = document.querySelectorAll('.icon2')
+            repostArticlesButtons.forEach(button=>{
+                button.addEventListener('click',function (event){
+                    event.stopPropagation()
+                    const project_id = this.getAttribute('data-project-id')
+                    const project_url = window.location.origin + '/portfolio/' + project_id
+                    copyToClipboard(project_url)
+                    $.ajax({
+                        type:'POST',
+                        url:'{% url 'repost_project' %}',
+                        data:{'project_id':project_id}
+                    })
+                })
+            })
+            }
+        )
+
+    </script>
     <script type="text/javascript" src="{% static 'js/js_port.js' %}"></script>
 </body>
 </html>

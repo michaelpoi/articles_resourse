@@ -457,7 +457,7 @@
 										</p>
 									</div>
 									<div class="menume">
-										<div class="icon1 mainbrdr range brdrez" data-article-id="{{ article.article_id }}">
+										<div class="icon1 mainbrdr range brdrez icon__like" data-article-id="{{ article.article_id }}">
 											<svg class="heart" width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<defs>
 													<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -469,7 +469,7 @@
                                                 {% include 'base/like_button.html' with id=article.article_id|stringformat:"s" %}
 											</svg>
 										</div>
-										<div class="icon2 mainbrdr range brdrez">
+										<div class="icon2 mainbrdr range brdrez" data-article-id="{{ article.article_id }}">
 											<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path
 													d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
@@ -813,6 +813,28 @@
                     data: {'article_id':article_id}
                 })
             })
+                        const repostArticlesButtons = document.querySelectorAll('.icon2')
+            repostArticlesButtons.forEach(button=>{
+                button.addEventListener('click',function (event){
+                    event.stopPropagation()
+                    const article_id = this.getAttribute('data-article-id')
+                    const article_url = window.location.origin + '/blog/article/' + article_id
+                    copyToClipboard(article_url)
+                    $.ajax({
+                        type:'POST',
+                        url:'{% url 'repost_article' %}',
+                        data:{'article_id':article_id}
+                    })
+                })
+            })
+            function copyToClipboard(text) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+}
         })
     </script>
     <script type="text/javascript" src="{% static 'js/blogjs1.js' %}"></script>

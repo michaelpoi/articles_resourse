@@ -563,7 +563,7 @@
 
 													</svg>
 												</div>
-												<div class="icon2 mainbrdr range brdrez">
+												<div class="icon2 mainbrdr range brdrez" data-article-id="{{ article.article_id }}">
 													<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path
 															d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
@@ -722,7 +722,7 @@
                                         {% include 'base/like_button.html' with id=cards.0.article_id|stringformat:"s" %}
                                     </svg>
                                 </div>
-                                <div class="icon2 mainbrdr range brdrez">
+                                <div class="icon2 mainbrdr range brdrez" data-article-id="{{ cards.0.article_id }}">
                                     <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
@@ -762,7 +762,7 @@
 						                        {% include 'base/like_button.html' with id=cards.1.article_id|stringformat:"s" %}
 											</svg>
 										</div>
-										<div class="icon2 mainbrdr range brdrez">
+										<div class="icon2 mainbrdr range brdrez" data-article-id="{{ cards.1.article_id }}">
 											<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path
 													d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
@@ -803,7 +803,7 @@
                                                 {% include 'base/like_button.html' with id=cards.2.article_id|stringformat:"s" %}
 											</svg>
 										</div>
-										<div class="icon2 mainbrdr range brdrez">
+										<div class="icon2 mainbrdr range brdrez" data-article-id="{{ cards.2.article_id }}">
 											<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path
 													d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
@@ -848,7 +848,7 @@
                                                 {% include 'base/like_button.html' with id=cards.4.article_id|stringformat:"s" %}
 											</svg>
 										</div>
-										<div class="icon2 mainbrdr range brdrez">
+										<div class="icon2 mainbrdr range brdrez" data-article-id="{{ cards.4.article_id }}">
 											<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path
 													d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
@@ -889,7 +889,7 @@
                                                 {% include 'base/like_button.html' with id=cards.3.article_id|stringformat:"s" %}
 											</svg>
 										</div>
-										<div class="icon2 mainbrdr range brdrez">
+										<div class="icon2 mainbrdr range brdrez" data-article-id="{{ cards.3.article_id }}">
 											<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path
 													d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
@@ -928,7 +928,7 @@
                                             {% include 'base/like_button.html' with id=cards.5.article_id|stringformat:"s" %}
 										</svg>
 									</div>
-									<div class="icon2 mainbrdr range brdrez">
+									<div class="icon2 mainbrdr range brdrez" data-article-id="{{ cards.5.article_id }}">
 										<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path
 												d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
@@ -971,7 +971,7 @@
 										</p>
 									</div>
                                 {% endif %}
-                                {% if cards.has_next %}
+                                {% if cards.paginator.num_pages > cards.next_page_number|add:'1' %}
 									<div class="chnum">
 										<p>
 											{{ cards.next_page_number| add:'1' }}
@@ -1277,6 +1277,28 @@
                     data: {'article_id':article_id}
                 })
             })
+            const repostArticlesButtons = document.querySelectorAll('.icon2')
+            repostArticlesButtons.forEach(button=>{
+                button.addEventListener('click',function (event){
+                    event.stopPropagation()
+                    const article_id = this.getAttribute('data-article-id')
+                    const article_url = window.location.origin + '/blog/article/' + article_id
+                    copyToClipboard(article_url)
+                    $.ajax({
+                        type:'POST',
+                        url:'{% url 'repost_article' %}',
+                        data:{'article_id':article_id}
+                    })
+                })
+            })
+            function copyToClipboard(text) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+}
         })
     </script>
 	<script type="text/javascript" src="{% static 'js/blogjs.js' %}"></script>

@@ -1258,21 +1258,11 @@
 													<stop offset="100%" stop-color="var(--color-bot)" />
 												  </linearGradient>
 											</defs>
-                                            {% with id=main_project.project_id|stringformat:"s"%}
-                                            {% if id in request.COOKIES %}
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
-                                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange forheart active"></path>
-                                            {% else %}
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
-                                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange forheart"></path>
-                                            {% endif %}
-                                        {% endwith %}
+                                            {% include 'base/like_button.html' with id=main_project.project_id|stringformat:"s" %}
 										</svg>
 									</div>
 
-									<div class="tosize__items borderm icon__copy" id="icon__copy">
+									<div class="tosize__items borderm icon__copy" id="icon__copy" data-project-id="{{ main_project.project_id }}">
 										<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
 											<path d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
@@ -1309,21 +1299,11 @@
 														<stop offset="100%" stop-color="var(--color-bot)" />
 													  </linearGradient>
 												</defs>
-                                                {% with id=project.project_id|stringformat:"s" %}
-                                                    {% if id in request.COOKIES %}
-												        <path fill-rule="evenodd" clip-rule="evenodd"
-													        d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
-													        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange forheart active"></path>
-                                                    {% else %}
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-													        d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
-													        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange forheart"></path>
-                                                    {% endif %}
-                                                {% endwith %}
+                                                {% include 'base/like_button.html' with id=project.project_id|stringformat:"s" %}
 											</svg>
 										</div>
 
-										<div class="tosize__items borderm icon__copy copy" id="icon__copy">
+										<div class="tosize__items borderm icon__copy copy" id="icon__copy" data-project-id="{{ project.project_id }}">
 											<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
 												<path d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
@@ -2009,7 +1989,7 @@
                                                         {% endwith %}
 													</svg>
 												</div>
-												<div class="icon2 mainbrdr range brdrez">
+												<div class="icon2 mainbrdr range brdrez" data-article-id="{{ article.article_id }}">
 													<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path
 															d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
@@ -2407,6 +2387,42 @@
                     data: {'article_id':article_id}
                 })
             })
+            const repostButtons = document.querySelectorAll('.icon__copy')
+            repostButtons.forEach(button=>{
+                button.addEventListener('click',function(event){
+                    event.stopPropagation()
+                    const project_id = this.getAttribute('data-project-id')
+                    const project_url = window.location.origin + '/portfolio/' + project_id
+                    copyToClipboard(project_url)
+                    $.ajax({
+                        type:'POST',
+                        url:'{% url 'repost_project' %}',
+                        data: {'project_id':project_id}
+                    })
+                })
+            })
+            const repostArticlesButtons = document.querySelectorAll('.icon2')
+            repostArticlesButtons.forEach(button=>{
+                button.addEventListener('click',function (event){
+                    event.stopPropagation()
+                    const article_id = this.getAttribute('data-article-id')
+                    const article_url = window.location.origin + '/blog/article/' + article_id
+                    copyToClipboard(article_url)
+                    $.ajax({
+                        type:'POST',
+                        url:'{% url 'repost_article' %}',
+                        data:{'article_id':article_id}
+                    })
+                })
+            })
+            function copyToClipboard(text) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+}
         })
     </script>
 	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>

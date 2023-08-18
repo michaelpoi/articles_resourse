@@ -1,4 +1,4 @@
-{% if id in request.COOKIES %}
+{% if id|add:"_l" in request.COOKIES %}
     <path fill-rule="evenodd" clip-rule="evenodd"
           d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
           stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange forheart active"></path>
