@@ -21,7 +21,10 @@ def blog(request):
     return render(request, 'blog/blog.html', context=context)
 
 def get_translation(request, article):
-    lang_code = request.session['user_lang']
+    try:
+        lang_code = request.session['user_lang']
+    except KeyError:
+        lang_code = 'ua'
     article_id = article.article_id
     match lang_code:
         case 'en':

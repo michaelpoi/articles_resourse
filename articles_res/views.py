@@ -31,7 +31,10 @@ def main_page(request):
     return render(request, 'articles_res/landing.html', context=context)
 
 def get_translation_offer(request, offer):
-    lang_code = request.session['user_lang']
+    try:
+        lang_code = request.session['user_lang']
+    except KeyError:
+        lang_code = 'ua'
     offer_id = offer.offer_id
     match lang_code:
         case 'en':

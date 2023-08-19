@@ -88,7 +88,10 @@ def repost_project(request):
 
 
 def get_translation_project(request, project):
-    lang_code = request.session['user_lang']
+    try:
+        lang_code = request.session['user_lang']
+    except KeyError:
+        lang_code = 'ua'
     project_id = project.project_id
     match lang_code:
         case 'en':
