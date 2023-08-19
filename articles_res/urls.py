@@ -27,7 +27,8 @@ urlpatterns = [
                   path("admin/", admin.site.urls),
                   path('', views.main_page, name='main'),
                   path('blog/', include(blog_urls),),
-                  path('portfolio/', include(port_urls))
+                  path('portfolio/', include(port_urls),),
+                  path('set_lang/<str:lang_code>/', views.set_lang, name="set_lang")
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'articles_res.views.error_404'

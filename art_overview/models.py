@@ -48,6 +48,24 @@ class Article(models.Model):
         db_table = 'articles'
 
 
+class ArticleTransEn(models.Model):
+    article_id = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='translation_en',primary_key=True)
+    title = models.CharField(max_length=255)
+    text = RichTextField()
+    footer_text = RichTextField()
+
+    class Meta:
+        db_table = 'articles_en'
+
+
+class ArticleTransDe(models.Model):
+    article_id = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='translation_de',primary_key=True)
+    title = models.CharField(max_length=255)
+    text = RichTextField()
+    footer_text = RichTextField()
+
+    class Meta:
+        db_table = 'articles_de'
 
 
 # Create your models here.

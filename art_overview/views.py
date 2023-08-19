@@ -2,13 +2,15 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404
 from requests.forms import RequestForm
-from art_overview.models import Article
+from art_overview.models import Article, ArticleTransDe, ArticleTransEn
 from django.views.decorators.csrf import csrf_exempt
 
 
 def blog(request):
     context = {}
     articles = Article.objects.order_by('-likes').filter(is_published=True).all()
+    for article in articles:
+        article = get_translation(request,article)
     slider_articles = articles[:3]
     context['slider_articles'] = slider_articles
     cards_articles = articles[3:]
@@ -18,10 +20,31 @@ def blog(request):
     context['cards'] = cards
     return render(request, 'blog/blog.html', context=context)
 
+def get_translation(request, article):
+    lang_code = request.session['user_lang']
+    article_id = article.article_id
+    match lang_code:
+        case 'en':
+            try:
+                trans = ArticleTransEn.objects.get(article_id=article_id)
+            except:
+                return article
+        case 'de':
+            try:
+                trans = ArticleTransDe.objects.get(article_id=article_id)
+            except:
+                return article
+        case 'ua':
+            return Article.objects.get(article_id=article_id)
+    article.text = trans.text
+    article.title = trans.title
+    article.footer_text = trans.footer_text
+    return article
 
 # Create your views here.
 def article(request, article_id):
     art = get_object_or_404(Article, article_id=article_id)
+    art = get_translation(request,art)
     response = render(request, 'blog/blog1.html', {'article': art})
     if not is_watched(request, article_id):
         art.watch()

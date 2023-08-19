@@ -28,4 +28,30 @@ class Offer(models.Model):
 
     class Meta:
         db_table = 'offers'
+
+
+class OfferTransEn(models.Model):
+    offer_id = models.ForeignKey(Offer, on_delete=models.CASCADE, primary_key=True)
+    title = models.CharField(max_length=255)
+    intro = RichTextField()
+    text_field_1 = models.CharField(max_length=255)
+    text_field_2 = models.CharField(max_length=255)
+    text_field_3 = models.CharField(max_length=255)
+    footer = RichTextField()
+
+    class Meta:
+        db_table = 'offers_en'
+
+
+class OfferTransDe(models.Model):
+    offer_id = models.ForeignKey(Offer, on_delete=models.CASCADE, primary_key=True)
+    title = models.CharField(max_length=255)
+    intro = RichTextField()
+    text_field_1 = models.CharField(max_length=255)
+    text_field_2 = models.CharField(max_length=255)
+    text_field_3 = models.CharField(max_length=255)
+    footer = RichTextField()
+
+    class Meta:
+        db_table = 'offers_de'
 # Create your models here.

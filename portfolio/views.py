@@ -2,7 +2,7 @@ from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
-from portfolio.models import ProjectPortfolio
+from portfolio.models import ProjectPortfolio, ProjectTransEn, ProjectTransDe
 
 
 # Create your views here.
@@ -10,6 +10,8 @@ from portfolio.models import ProjectPortfolio
 # Portfolio homepage view
 def portfolio(request):
     projects = ProjectPortfolio.objects.order_by('-likes').all()
+    for project in projects:
+        project = get_translation_project(request,project)
     slider_projects = projects[:3]
     cards_projects = projects[3:]
 
@@ -19,6 +21,7 @@ def portfolio(request):
 
 def project_page(request, project_id):
     project = get_object_or_404(ProjectPortfolio, project_id=project_id)
+    project = get_translation_project(request,project)
     response = render(request, 'portfolio/port__1.html', {'project': project})
     if not is_watched(request, project_id):
         project.watch()
@@ -62,7 +65,7 @@ def like_project(request):
 
 def is_reposted(request, project_id):
     project_id = str(project_id)
-    if (project_id+"_r") in request.COOKIES:
+    if (project_id + "_r") in request.COOKIES:
         return True
     return False
 
@@ -70,14 +73,38 @@ def is_reposted(request, project_id):
 def repost_control(request, project_id):
     project_id = str(project_id)
     project = get_object_or_404(ProjectPortfolio, project_id=project_id)
-    response = JsonResponse({'reposts':project.reposts})
-    if not is_reposted(request,project_id):
+    response = JsonResponse({'reposts': project.reposts})
+    if not is_reposted(request, project_id):
         project.repost()
-        response.set_cookie(project_id+"_r", "reposted")
+        response.set_cookie(project_id + "_r", "reposted")
     return response
+
 
 @csrf_exempt
 def repost_project(request):
     if request.method == "POST":
         project_id = request.POST.get('project_id')
         return repost_control(request, project_id)
+
+
+def get_translation_project(request, project):
+    lang_code = request.session['user_lang']
+    project_id = project.project_id
+    match lang_code:
+        case 'en':
+            try:
+                trans = ProjectTransEn.objects.get(project_id=project_id)
+            except:
+                return project
+        case 'de':
+            try:
+                trans = ProjectTransDe.objects.get(project_id=project_id)
+            except:
+                return project
+        case 'ua':
+            return project
+    project.desc = trans.desc
+    project.title = trans.title
+    project.style = trans.style
+    project.type = trans.type
+    return project
