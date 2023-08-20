@@ -2411,8 +2411,8 @@ input[type="number"]::-webkit-outer-spin-button {
 .absas {
     cursor: pointer;
     position: absolute;
-    backdrop-filter: blur(200px);
-    -webkit-backdrop-filter: blur(200px);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     top: 0;
     height: 100%;
     width: 4.5vw;
@@ -4729,6 +4729,7 @@ input[type="number"]::-webkit-outer-spin-button {
         height: 100%;
         border-radius: 2vw;
         z-index: 3;
+        border-width: 0.4vw;
     }
     .langchs {
         height: 30vw;

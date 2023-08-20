@@ -183,7 +183,7 @@ leaveout.addEventListener('click', hideForm);
 // gradient border
 
 const svgInside = document.querySelector('.svg__inside');
-
+svgInside.querySelector('rect').style.stroke="rgba(255,255,255,0.3)";
 svgInside.addEventListener('mouseenter', function() {
   svgInside.querySelector('rect').style.strokeDasharray ='350%';
   svgInside.querySelector('rect').style.strokeDashoffset ='350%';
@@ -1481,7 +1481,7 @@ decline.addEventListener('click', () => {
   console.log('Cookies declined');
 });
 
-//forms contact 
+//forms contact
 
 //bot form
 const choose__bot = document.getElementById('choose__bot');
