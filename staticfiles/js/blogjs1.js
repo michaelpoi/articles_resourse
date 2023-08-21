@@ -160,11 +160,7 @@ navTexts.forEach((text) => {
   });
 });
 
-const toback = document.getElementById('to__back');
 
-toback.addEventListener('click', () => {
-    window.location.href = '../../../../CrownStudio/landing.html';
-});
 
 // span transform
 
