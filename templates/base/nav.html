@@ -3,16 +3,16 @@
 							<span></span>
 						</div>
 						<div class="absdiv" id="langhold">
-							<div class="absas openlg" id="lgcont">
+							<div class="absas" id="lgcont">
 								<div class="langchs">
 									<div class="langholder">
-										<a href="{% url 'set_lang' 'ua' %}"><p>UA</p></a>
+										<a href="{% url 'main' %}"><p>UA</p></a>
 									</div>
 									<div class="langholder">
-										<a href="{% url 'set_lang' 'en' %}"><p>UK</p></a>
+										<a href="{% url 'main_trans' lang_code='en' %}"><p>EN</p></a>
 									</div>
 									<div class="langholder">
-										<a href="{% url 'set_lang' 'de' %}"><p>DE</p></a>
+										<a href="{% url 'main_trans' lang_code='it' %}"><p>IT</p></a>
 									</div>
 								</div>
 							</div>

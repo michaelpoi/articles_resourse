@@ -2509,7 +2509,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .nameho p {
     color: rgba(255, 255, 255, 1);
-    font-size: 4.9vw;
+    font-size: 4.8vw;
     font-weight: 700;
     /* line-height: 11vh; */
 }
@@ -4793,7 +4793,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .nameho p {
         color: rgba(255, 255, 255, 1);
-        font-size: 13vw;
+        font-size: 12.8vw;
         font-weight: 700;
     }
     .logotext {

@@ -2,26 +2,34 @@ from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
-from portfolio.models import ProjectPortfolio, ProjectTransEn, ProjectTransDe
+from django.http import HttpResponseNotFound
+from articles_res.trans_utils import get_translation_project
+from portfolio.models import ProjectPortfolio, ProjectTransEn, ProjectTransIt
 
 
 # Create your views here.
 
 # Portfolio homepage view
-def portfolio(request):
+def get_portfolio_context(lang_code='ua'):
+    context = {}
     projects = ProjectPortfolio.objects.order_by('-likes').all()
-    for project in projects:
-        project = get_translation_project(request,project)
+    if lang_code != 'ua':
+        for project in projects:
+            project = get_translation_project(project, lang_code)
     slider_projects = projects[:3]
     cards_projects = projects[3:]
+    context['slider_projects'] = slider_projects
+    context['cards_projects'] = cards_projects
+    return context
 
-    return render(request, 'portfolio/portfolio.html', {'slider_projects': slider_projects,
-                                                        'cards_projects': cards_projects})
+
+def portfolio(request):
+    context = get_portfolio_context()
+    return render(request, 'portfolio/portfolio.html', context)
 
 
 def project_page(request, project_id):
     project = get_object_or_404(ProjectPortfolio, project_id=project_id)
-    project = get_translation_project(request,project)
     response = render(request, 'portfolio/port__1.html', {'project': project})
     if not is_watched(request, project_id):
         project.watch()
@@ -87,27 +95,26 @@ def repost_project(request):
         return repost_control(request, project_id)
 
 
-def get_translation_project(request, project):
-    try:
-        lang_code = request.session['user_lang']
-    except KeyError:
-        lang_code = 'ua'
-    project_id = project.project_id
-    match lang_code:
-        case 'en':
-            try:
-                trans = ProjectTransEn.objects.get(project_id=project_id)
-            except:
-                return project
-        case 'de':
-            try:
-                trans = ProjectTransDe.objects.get(project_id=project_id)
-            except:
-                return project
-        case 'ua':
-            return project
-    project.desc = trans.desc
-    project.title = trans.title
-    project.style = trans.style
-    project.type = trans.type
-    return project
+def portfolio_trans(request, lang_code):
+    response = None
+    context = get_portfolio_context(lang_code)
+    if lang_code == 'en':
+        response = render(request,'en/portfolio.html', context=context)
+        response.set_cookie('user_lang', 'en')
+    if lang_code == 'it':
+        response = render(request,'it/portfolio.html',context=context)
+        response.set_cookie('user_lang', 'it')
+    return response
+
+
+def project_trans(request,lang_code,project_id):
+    response = None
+    project = get_object_or_404(ProjectPortfolio,project_id=project_id)
+    project = get_translation_project(project,lang_code)
+    if lang_code == 'en':
+        response = render(request,'en/port__1.html',{'project':project})
+        response.set_cookie('user_lang','en')
+    if lang_code == 'it':
+        response = render(request,'it/port__1.html',{'project':project})
+        response.set_cookie('user_lang','it')
+    return response

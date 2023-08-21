@@ -43,7 +43,7 @@ class OfferTransEn(models.Model):
         db_table = 'offers_en'
 
 
-class OfferTransDe(models.Model):
+class OfferTransIt(models.Model):
     offer_id = models.ForeignKey(Offer, on_delete=models.CASCADE, primary_key=True)
     title = models.CharField(max_length=255)
     intro = RichTextField()
@@ -53,5 +53,5 @@ class OfferTransDe(models.Model):
     footer = RichTextField()
 
     class Meta:
-        db_table = 'offers_de'
+        db_table = 'offers_it'
 # Create your models here.

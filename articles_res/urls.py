@@ -22,13 +22,20 @@ from django.urls import path, include
 from portfolio import urls as port_urls
 from art_overview import urls as blog_urls
 from articles_res import views
+from art_overview import views as blog_views
+from portfolio import views as port_views
 
 urlpatterns = [
                   path("admin/", admin.site.urls),
                   path('', views.main_page, name='main'),
                   path('blog/', include(blog_urls),),
                   path('portfolio/', include(port_urls),),
-                  path('set_lang/<str:lang_code>/', views.set_lang, name="set_lang")
+                  path('set_lang/<str:lang_code>/', views.set_lang, name="set_lang"),
+                  path('<str:lang_code>/', views.main_page_trans, name='main_trans'),
+                  path('<str:lang_code>/blog/', blog_views.blog_trans, name='blog_trans'),
+                  path('<str:lang_code>/portfolio/',port_views.portfolio_trans, name='portfolio_trans'),
+                  path('<str:lang_code>/blog/article/<uuid:article_id>/', blog_views.article_trans,name='article_trans'),
+                  path('<str:lang_code>/portfolio/<uuid:project_id>/',port_views.project_trans,name='project_trans')
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'articles_res.views.error_404'

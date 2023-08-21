@@ -16,7 +16,7 @@
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
 	  />
-	  
+	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Portfolio</title>
@@ -225,7 +225,7 @@
 			</div>
 			<div class="sticka viewbr brdrex">
 				<div class="navimo">
-					<div class="loger" id="to__back" onclick="window.location.href='{% url 'main' %}'">
+					<div class="loger" id="to__back" onclick="window.location.href='{% url 'main_trans' lang_code='en' %}'">
 						<?xml version="1.0" encoding="utf-8"?>
 						<svg width="2vw" height="2vw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M4 19H20M11.2929 5.70711L8.70711 8.2929C8.31658 8.68342 7.68342 8.68342 7.29289 8.2929L5.70711 6.70711C5.07714 6.07714 4 6.52331 4 7.41422V15C4 15.5523 4.44772 16 5 16H19C19.5523 16 20 15.5523 20 15V7.41421C20 6.52331 18.9229 6.07714 18.2929 6.70711L16.7071 8.2929C16.3166 8.68342 15.6834 8.68342 15.2929 8.2929L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711Z" stroke="rgba(255,255,255,1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -244,13 +244,13 @@
 							<div class="absas" id="lgcont__port">
 								<div class="langchs">
 									<div class="langholder">
-										<a href="{% url 'project' project_id=project.project_id %}"><p>UA</p></a>
+                                        <a href="{% url 'portfolio_trans' lang_code='en' %}"><p>EN</p></a>
 									</div>
 									<div class="langholder">
-										<a href="{% url 'project_trans' lang_code='en' project_id=project.project_id %}"><p>EN</p></a>
+										<a href="{% url 'portfolio' %}"><p>UA</p></a>
 									</div>
 									<div class="langholder">
-										<a href="{% url 'project_trans' lang_code='it' project_id=project.project_id %}"><p>IT</p></a>
+										<a href="{% url 'portfolio_trans' lang_code='it' %}"><p>IT</p></a>
 									</div>
 								</div>
 							</div>
@@ -301,7 +301,7 @@
 								</div>
 							</div>
 							<div class="kakasa" id="kakasa__port">
-				
+
 							</div>
 						</div>
 
@@ -317,31 +317,31 @@
                             <rect x="1" y="1" width="96%" height="94%" rx="7%" fill="none" stroke-width="2%" />
 							<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="1.2vw" fill="rgba(255, 255, 255, 1)">Зв’язок</text>
 							</svg>
-						</div>							  
+						</div>
 						<div class="typediva">
 							<div class="sztext helloas" id="navmenu__port">
 								<div class="newasa">
-									<a href="{% url 'main' %}#home__page">
+									<a href="{% url 'main_trans' lang_code='en' %}#home__page">
 										<p class="navtext">Головна</p>
 									</a>
 								</div>
 								<div class="newasa">
-									<a href="{% url 'main' %}#specialty">
+									<a href="{% url 'main_trans' lang_code='en' %}#specialty">
 										<p class="navtext">Послуги</p>
 									</a>
 								</div>
 								<div class="newasa our__qq">
-									<a href="{% url 'main' %}#scrollto__works">
+									<a href="{% url 'main_trans' lang_code='en' %}#scrollto__works">
 										<p class="navtext">Наші роботи</p>
 									</a>
 								</div>
 								<div class="newasa pop__qq">
-									<a href="{% url 'main' %}#scrollto__faq">
+									<a href="{% url 'main_trans' lang_code='en' %}#scrollto__faq">
 										<p class="navtext">Популярні запитання</p>
 									</a>
 								</div>
 								<div class="newasa wasaa">
-									<a href="{% url 'main' %}#scrollto__bloger">
+									<a href="{% url 'main_trans' lang_code='en' %}#scrollto__bloger">
 										<p class="navtext">IT блог</p>
 									</a>
 								</div>
@@ -362,127 +362,200 @@
 					</div>
 				</div>
             </div>
-            <div class="direct__sect defsect">
-                <div class="checkhere">
-                    <div class="link__numb">
-                        <div class="hidden__nav" id="changeres">
-                            <div class="reschange" id="ipad__res">
-                                <svg width="26" height="37" viewBox="0 0 26 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 2.3C1 1.58203 1.58203 1 2.3 1H23.7C24.418 1 25 1.58203 25 2.3V34.9C25 35.618 24.418 36.2 23.7 36.2H2.3C1.58203 36.2 1 35.618 1 34.9V2.3Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0007 33.8C13.4425 33.8 13.8007 33.4418 13.8007 33C13.8007 32.5581 13.4425 32.2 13.0007 32.2C12.5589 32.2 12.2007 32.5581 12.2007 33C12.2007 33.4418 12.5589 33.8 13.0007 33.8Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>                                    
-                            </div>
-                            <div class="reschange" id="phone__res">
-                                <svg width="17" height="24" viewBox="0 0 17 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 2.3C1 1.58203 1.58203 1 2.3 1H14.7C15.418 1 16 1.58203 16 2.3V21.7C16 22.418 15.418 23 14.7 23H2.3C1.58203 23 1 22.418 1 21.7V2.3Z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50049 18.9998C8.77663 18.9998 9.00049 18.7759 9.00049 18.4998C9.00049 18.2236 8.77663 17.9998 8.50049 17.9998C8.22435 17.9998 8.00049 18.2236 8.00049 18.4998C8.00049 18.7759 8.22435 18.9998 8.50049 18.9998Z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>                                    
-                            </div>
-                            <div class="reschange" id="pc__res">
-                                <svg width="39" height="29" viewBox="0 0 39 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="2.6" y="0.6" width="34.8" height="24.8" rx="1.4" stroke="white" stroke-width="1.2"/>
-                                    <rect y="27" width="39" height="1.5" rx="0.75" fill="white"/>
-                                </svg>                                    
-                            </div>
-                        </div>
-                        <div class="numb__txt">
-                            <p>
-                                №12
-                            </p>
-                        </div>
-                        <div class="resolution">
-                            <div class="res__holder" id="showhide">
-                                <svg width="45" height="45" viewBox="0 0 45 45" class="showres" id="linklink" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M34.6478 9.91782L9.9176 34.648M34.6478 9.91782L14.8541 9.87593M34.6478 9.91782L34.653 29.6749" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-								<svg width="30" height="30" viewBox="0 0 30 30" fill="none" class="hideres" id="closeres" xmlns="http://www.w3.org/2000/svg">
-									<path d="M2 2L15 15M28 28L15 15M15 15L28 2M15 15L2 28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="simulation">
-                        <div class="siteholder" id="sitecont">
-                            <iframe src="{{ project.link }}" frameborder="0" id="overview"></iframe>
-                            <svg width="64" height="64" class="play" id="play" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M31.9995 62C48.5681 62 61.9995 48.5685 61.9995 32C61.9995 15.4315 48.5681 2 31.9995 2C15.431 2 1.99951 15.4315 1.99951 32C1.99951 48.5685 15.431 62 31.9995 62Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M26.5449 18.3638L42.9086 31.9976L26.5449 45.6315V18.3638Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="views">
-                        <div class="viewvers">
-                            <svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 9.25C1 9.25 5.5 1 12.25 1C19 1 23.5 9.25 23.5 9.25C23.5 9.25 19 17.5 12.25 17.5C5.5 17.5 1 9.25 1 9.25Z" stroke="white" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.25 13C14.3211 13 16 11.3211 16 9.25C16 7.17893 14.3211 5.5 12.25 5.5C10.1789 5.5 8.5 7.17893 8.5 9.25C8.5 11.3211 10.1789 13 12.25 13Z" stroke="white" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <p class="timeh">
-                                {{ project.views }}
-                            </p>
-                        </div>
-                        <div class="time">
-                            <p class="timeh">
-                                {{ project.pub_date|date:"d.m.Y" }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="work__desc">
-                        <div class="desc__txt">
-                            <div class="desc__padd">
-                                <div class="head__name">
-                                    <p>
-                                        {{ project.title }}
-                                    </p>
-                                </div>
-                                <div class="text__here">
-                                    <div class="text__inside def__txt">
-                                        {{ project.desc | safe }}
-                                    </div>
+            <section class="blog__our defsect" id="blog__us">
+				<div class="name__holder" id="scrollto__bloger">
+					<p>
+						Наші роботи
+					</p>
+				</div>
+				<div class="mainswiper">
+					<div class="swiper blogger">
+						<div class="swiper-wrapper">
+                            {% for project in slider_projects %}
+						  <div class="swiper-slide slide__one" onclick="window.location.href='{% url 'project_trans' lang_code='en' project_id=project.project_id %}'">
+								<div class="containercont">
+									<div class="contentswiper mainbrdr">
+										<div class="slidecontent">
+											<div class="imagecont">
+											<div class="eximg sizeof mainbrdr" style="background-image: url('{{ project.image.url }}')">
+											</div>
+										</div>
+										<div class="txtcont sizeof">
+											<div class="textarea sizeof1">
+												<div class="txt">
+													<div class="hashtag">
+                                                        {% for hash in project.hashtags.all %}
+														<div class="hash">
+															<p>
+                                                                {{hash}}
+															</p>
+														</div>
+                                                        {% endfor %}
+													</div>
+													<h1 class="sheader">
+														{{ project.title }}
+													</h1>
+													<p>
+														{{ project.desc |safe }}
+													</p>
+												</div>
+											</div>
+											<div class="icons sizeof1">
+												<div class="icon2 mainbrdr range brdrez" data-project-id="{{ project.project_id }}">
+													<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
+															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
+														<path
+															d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862"
+															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
+													</svg>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+                            {% endfor %}
+						  ...
+						</div>
+						<div class="swiper-pagination"></div>
+					  
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					</div>
+					<script>
+						const swiper = new Swiper('.blogger', {
+								on: {
+									init: function () {
+									console.log('swiper initialized');
+									updateButtonZIndex(false);
+									},
+									slideChange: function () {
+									updateButtonZIndex(false);
+									},
+									transitionStart: function () {
+									updateButtonZIndex(true);
+									},
+									transitionEnd: function () {
+									updateButtonZIndex(false);
+									}
+								},
+								speed: 500,
+								effect: 'slide',
+								mousewheel: false,
+								navigation: {
+									nextEl: '.swiper-button-next',
+									prevEl: '.swiper-button-prev',
+								},
+								pagination: {
+									el: '.swiper-pagination',
+									clickable: true,
+								},
+								keyboard: {
+										enabled: true,
+									},
+								});
 
-                                </div>
+								function initSlideListeners(slides) {
+									// slides.forEach(function (slide) {
+									// 	const heartIcon = slide.querySelector('.heart');
+									// 	const strokeChange = slide.querySelector('.strokechange');
+									// 	const iconContainer = slide.querySelector('.icon1');
+									// 	const iconContainer2 = slide.querySelector('.icon2');
+
+									// 	iconContainer.addEventListener('click', toggleLike);
+									// });
+									}
+
+									// function toggleLike() {
+									// const hertlike = this.querySelector('.hertlike');
+									// if (hertlike.classList.contains('active')) {
+									// 	hertlike.classList.remove('active');
+									// 	hertlike.classList.add('strokechange');
+									// } else {
+									// 	hertlike.classList.remove('strokechange');
+									// 	hertlike.classList.add('active');
+									// }
+									// }
+
+									// function resetSlideListeners(slides) {
+									// slides.forEach(function (slide) {
+									// 	const iconContainer = slide.querySelector('.icon1');
+									// 	iconContainer.removeEventListener('click', toggleLike);
+									// });
+									// }
+
+
+								function updateButtonZIndex(isMoving) {
+								const prevButton = document.querySelector('.swiper-button-prev');
+								const nextButton = document.querySelector('.swiper-button-next');
+
+								if (isMoving) {
+									prevButton.style.zIndex = '-1';
+									nextButton.style.zIndex = '-1';
+								} else {
+									prevButton.style.zIndex = '1';
+									nextButton.style.zIndex = '1';
+								}
+								}
+					</script>			  
+				</div>
+			</section>
+            <section class="others__port defsect" id="all__ports">
+                <div class="allholder">
+                    <div class="get__up borderm" id="get__up__port">
+                        <svg class="for__pc" width="32" height="39" viewBox="0 0 32 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.0259 2V36.9738M16.0259 2L2 15.9667M16.0259 2L30 15.9667" stroke="white" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg class="for__phone" width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.01481 1V20.985M9.01481 1L1 8.98096M9.01481 1L17 8.98096" stroke="white" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+					<div class="see__all" id="see__all">
+						<p>
+							Побачити більше
+						</p>
+						<svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M3.01022 3L23 23.059L3 43" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</div>
+					<div class="see__all" id="hide__four">
+						<p>
+							Cховати
+						</p>
+						<svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M3.01022 3L23 23.059L3 43" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</div>
+                    {% for project in cards_projects %}
+                        <div class="defport" onclick="window.location.href='{% url 'project_trans' lang_code='en' project_id=project.project_id %}'">
+                        <div class="pad__port">
+                            <div class="port__img" style="background-image: url('{{ project.image.url }}')">
+
                             </div>
-                        </div>
-                        <div class="desc__type">
-                            <div class="desc__padd">
-                                <div class="style__pod">
-                                    <div class="type">
-                                        <p>
-                                            style
-                                        </p>
-                                    </div>
-                                    <div class="type__name">
-                                        <p>
-                                            {{ project.style }}
-                                        </p>
-                                    </div>
+                            <div class="port__text">
+                                <div class="description">
+                                    <p>{{ project.title }}</p>
                                 </div>
-                                <div class="style__pod">
-                                    <div class="type">
-                                        <p>
-                                            type
-                                        </p>
-                                    </div>
-                                    <div class="type__name">
-                                        <p>
-                                            {{ project.type }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="style__pod">
-                                    <div class="type">
-                                        <p>
-                                            time
-                                        </p>
-                                    </div>
-                                    <div class="type__name">
-                                        <p>{{ project.duration }}</p>
+                                <div class="link__numb">
+                                    <div class="tosize__items borderm icon__copy" id="icon__copy" data-project-id="{{ project.project_id }}">
+										<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
+											<path d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
+										</svg>
+									</div>
+                                    <div class="txt__hold">
+                                        <p>№12</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
-            </div>
+            </section>
         </div>
         <footer class="footr" id="callback__check__port">
 			<div class="frcontent">
@@ -492,7 +565,7 @@
 							<div class="leftftr">
 								<div class="forleft">
 									<div class="contact">
-										<a href="{% url 'main' %}#home__page" class="tohome">
+										<a href="{% url 'main_trans' lang_code='en' %}#home__page" class="tohome">
 											<div class="bottomlogo">
 												<?xml version="1.0" encoding="utf-8"?>
 												<svg width="2vw" height="2vw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -535,27 +608,27 @@
 											</a>
 										</div>
 										<div class="gap__me">
-											<a href="{% url 'main' %}#home__page" class="linkt">
+											<a href="{% url 'main_trans' lang_code='en' %}#home__page" class="linkt">
 												<p>
 													Головна
 												</p>
 											</a>
-											<a href="{% url 'main' %}#specialty" class="linkt">
+											<a href="{% url 'main_trans' lang_code='en' %}#specialty" class="linkt">
 												<p>
 													Послуги
 												</p>
 											</a>
-											<a href="{% url 'main' %}#advantages" class="linkt">
+											<a href="{% url 'main_trans' lang_code='en' %}#advantages" class="linkt">
 												<p>
 													Переваги
 												</p>
 											</a>
-											<a href="{% url 'main' %}#faq__qq" class="linkt">
+											<a href="{% url 'main_trans' lang_code='en' %}#faq__qq" class="linkt">
 												<p>
 													Популярні запитання
 												</p>
 											</a>
-											<a href="{% url 'main' %}#blog__us" class="linkt">
+											<a href="{% url 'main_trans' lang_code='en' %}#blog__us" class="linkt">
 												<p>
 													IT блог
 												</p>
@@ -754,6 +827,48 @@
 			</div>
 		</footer>
     </div>
-    <script type="text/javascript" src="{% static 'js/port_1.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+                const repostButtons = document.querySelectorAll('.icon__copy')
+            repostButtons.forEach(button=>{
+                button.addEventListener('click',function(event){
+                    event.stopPropagation()
+                    const project_id = this.getAttribute('data-project-id')
+                    const project_url = window.location.origin + '/portfolio/' + project_id
+                    copyToClipboard(project_url)
+                    $.ajax({
+                        type:'POST',
+                        url:'{% url 'repost_project' %}',
+                        data: {'project_id':project_id}
+                    })
+                })
+            })
+        function copyToClipboard(text) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+}
+const repostArticlesButtons = document.querySelectorAll('.icon2')
+            repostArticlesButtons.forEach(button=>{
+                button.addEventListener('click',function (event){
+                    event.stopPropagation()
+                    const project_id = this.getAttribute('data-project-id')
+                    const project_url = window.location.origin + '/portfolio/' + project_id
+                    copyToClipboard(project_url)
+                    $.ajax({
+                        type:'POST',
+                        url:'{% url 'repost_project' %}',
+                        data:{'project_id':project_id}
+                    })
+                })
+            })
+            }
+        )
+
+    </script>
+    <script type="text/javascript" src="{% static 'js/js_port.js' %}"></script>
 </body>
 </html>

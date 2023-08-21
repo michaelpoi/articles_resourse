@@ -1,16 +1,24 @@
 from django.core.paginator import Paginator
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404
+
+from articles_res.trans_utils import get_translation_article
 from requests.forms import RequestForm
-from art_overview.models import Article, ArticleTransDe, ArticleTransEn
+from art_overview.models import Article, ArticleTransIt, ArticleTransEn
 from django.views.decorators.csrf import csrf_exempt
 
 
 def blog(request):
+    context = get_blog_context(request)
+    return render(request, 'blog/blog.html', context=context)
+
+
+def get_blog_context(request,lang_code='ua'):
     context = {}
     articles = Article.objects.order_by('-likes').filter(is_published=True).all()
-    for article in articles:
-        article = get_translation(request,article)
+    if lang_code != 'ua':
+        for art in articles:
+            art = get_translation_article(art,lang_code)
     slider_articles = articles[:3]
     context['slider_articles'] = slider_articles
     cards_articles = articles[3:]
@@ -18,36 +26,12 @@ def blog(request):
     page = request.GET.get('page')
     cards = p.get_page(page)
     context['cards'] = cards
-    return render(request, 'blog/blog.html', context=context)
+    return context
 
-def get_translation(request, article):
-    try:
-        lang_code = request.session['user_lang']
-    except KeyError:
-        lang_code = 'ua'
-    article_id = article.article_id
-    match lang_code:
-        case 'en':
-            try:
-                trans = ArticleTransEn.objects.get(article_id=article_id)
-            except:
-                return article
-        case 'de':
-            try:
-                trans = ArticleTransDe.objects.get(article_id=article_id)
-            except:
-                return article
-        case 'ua':
-            return Article.objects.get(article_id=article_id)
-    article.text = trans.text
-    article.title = trans.title
-    article.footer_text = trans.footer_text
-    return article
 
 # Create your views here.
 def article(request, article_id):
     art = get_object_or_404(Article, article_id=article_id)
-    art = get_translation(request,art)
     response = render(request, 'blog/blog1.html', {'article': art})
     if not is_watched(request, article_id):
         art.watch()
@@ -111,3 +95,28 @@ def repost_article(request):
     if request.method == "POST":
         article_id = request.POST.get('article_id')
         return repost_control(request, article_id)
+
+
+def blog_trans(request,lang_code):
+    response = None
+    context = get_blog_context(request,lang_code)
+    if lang_code == 'en':
+        response = render(request,'en/blog.html', context=context)
+        response.set_cookie('user_lang','en')
+    if lang_code == 'it':
+        response = render(request, 'it/blog.html',context=context)
+        response.set_cookie('user_lang', 'it')
+    return response
+
+
+def article_trans(request,lang_code,article_id):
+    art = get_object_or_404(Article,article_id=article_id)
+    art = get_translation_article(art,lang_code)
+    response = None
+    if lang_code == 'en':
+        response = render(request,'en/blog1.html',{'article':art})
+        response.set_cookie('user_lang','en')
+    if lang_code == 'it':
+        response = render(request,'it/blog1.html',{'article':art})
+        response.set_cookie('user_lang','it')
+    return response

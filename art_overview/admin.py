@@ -1,5 +1,5 @@
 from django.contrib import admin
-from art_overview.models import Article, Code, ArticleTransEn, ArticleTransDe
+from art_overview.models import Article, Code, ArticleTransEn, ArticleTransIt
 
 
 class Admin(admin.ModelAdmin):
@@ -18,7 +18,7 @@ class TransEnAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(ArticleTransDe)
+@admin.register(ArticleTransIt)
 class TransDeAdmin(admin.ModelAdmin):
     pass
 

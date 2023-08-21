@@ -1,5 +1,5 @@
 from django.contrib import admin
-from portfolio.models import ProjectPortfolio, Hashtag, ProjectTransEn, ProjectTransDe
+from portfolio.models import ProjectPortfolio, Hashtag, ProjectTransEn, ProjectTransIt
 
 
 @admin.register(Hashtag)
@@ -15,7 +15,7 @@ class AdminPortfolio(admin.ModelAdmin):
 class AdminEn(admin.ModelAdmin):
     pass
 
-@admin.register(ProjectTransDe)
+@admin.register(ProjectTransIt)
 class AdminDe(admin.ModelAdmin):
     pass
 

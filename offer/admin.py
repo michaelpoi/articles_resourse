@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from offer.models import Offer,PhotoAlbum, OfferTransEn,OfferTransDe
+from offer.models import Offer,PhotoAlbum, OfferTransEn,OfferTransIt
 
 @admin.register(PhotoAlbum)
 class AlbumAdmin(admin.ModelAdmin):
@@ -13,7 +13,7 @@ class OfferAdmin(admin.ModelAdmin):
 class AdminEn(admin.ModelAdmin):
     pass
 
-@admin.register(OfferTransDe)
+@admin.register(OfferTransIt)
 class AdminDe(admin.ModelAdmin):
     pass
 # Register your models here.

@@ -68,7 +68,7 @@ class ProjectTransEn(models.Model):
         db_table = 'portfolio_en'
 
 
-class ProjectTransDe(models.Model):
+class ProjectTransIt(models.Model):
     project_id = models.ForeignKey(ProjectPortfolio, on_delete=models.CASCADE, primary_key=True)
     title = models.CharField(max_length=255)
     desc = RichTextField()
@@ -76,7 +76,7 @@ class ProjectTransDe(models.Model):
     type = models.CharField(max_length=255)
 
     class Meta:
-        db_table = 'portfolio_de'
+        db_table = 'portfolio_it'
 
 
 
