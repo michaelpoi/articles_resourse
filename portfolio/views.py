@@ -99,22 +99,25 @@ def portfolio_trans(request, lang_code):
     response = None
     context = get_portfolio_context(lang_code)
     if lang_code == 'en':
-        response = render(request,'en/portfolio.html', context=context)
+        response = render(request, 'en/portfolio.html', context=context)
         response.set_cookie('user_lang', 'en')
     if lang_code == 'it':
-        response = render(request,'it/portfolio.html',context=context)
+        response = render(request, 'it/portfolio.html', context=context)
         response.set_cookie('user_lang', 'it')
     return response
 
 
-def project_trans(request,lang_code,project_id):
+def project_trans(request, lang_code, project_id):
     response = None
-    project = get_object_or_404(ProjectPortfolio,project_id=project_id)
-    project = get_translation_project(project,lang_code)
+    project = get_object_or_404(ProjectPortfolio, project_id=project_id)
+    project = get_translation_project(project, lang_code)
     if lang_code == 'en':
-        response = render(request,'en/port__1.html',{'project':project})
-        response.set_cookie('user_lang','en')
+        response = render(request, 'en/port__1.html', {'project': project})
+        response.set_cookie('user_lang', 'en')
     if lang_code == 'it':
-        response = render(request,'it/port__1.html',{'project':project})
-        response.set_cookie('user_lang','it')
+        response = render(request, 'it/port__1.html', {'project': project})
+        response.set_cookie('user_lang', 'it')
+    if not is_watched(request, project_id):
+        project.watch()
+        response.set_cookie(str(project_id), "watched")
     return response

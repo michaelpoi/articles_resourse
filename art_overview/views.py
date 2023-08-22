@@ -119,4 +119,7 @@ def article_trans(request,lang_code,article_id):
     if lang_code == 'it':
         response = render(request,'it/blog1.html',{'article':art})
         response.set_cookie('user_lang','it')
+    if not is_watched(request,article_id):
+        art.watch()
+        response.set_cookie(str(article_id), "watched")
     return response
