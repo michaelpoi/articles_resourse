@@ -30,12 +30,14 @@ urlpatterns = [
                   path('', views.main_page, name='main'),
                   path('blog/', include(blog_urls),),
                   path('portfolio/', include(port_urls),),
+                  path('cookie/', views.cookie_page, name='cookie'),
                   path('set_lang/<str:lang_code>/', views.set_lang, name="set_lang"),
                   path('<str:lang_code>/', views.main_page_trans, name='main_trans'),
                   path('<str:lang_code>/blog/', blog_views.blog_trans, name='blog_trans'),
                   path('<str:lang_code>/portfolio/',port_views.portfolio_trans, name='portfolio_trans'),
                   path('<str:lang_code>/blog/article/<uuid:article_id>/', blog_views.article_trans,name='article_trans'),
-                  path('<str:lang_code>/portfolio/<uuid:project_id>/',port_views.project_trans,name='project_trans')
+                  path('<str:lang_code>/portfolio/<uuid:project_id>/',port_views.project_trans,name='project_trans'),
+                  path('<str:lang_code>/cookie/', views.cookie_trans, name='cookie_trans')
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'articles_res.views.error_404'

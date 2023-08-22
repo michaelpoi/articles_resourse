@@ -18,12 +18,15 @@ def get_translation_offer(offer,lang_code):
                 return offer
         case 'ua':
             return Offer.objects.get(offer_id=offer_id)
-    offer.title = trans.title
-    offer.intro = trans.intro
-    offer.text_field_1 = trans.text_field_1
-    offer.text_field_2 = trans.text_field_2
-    offer.text_field_3 = trans.text_field_3
-    offer.footer = trans.footer
+    try:
+        offer.title = trans.title
+        offer.intro = trans.intro
+        offer.text_field_1 = trans.text_field_1
+        offer.text_field_2 = trans.text_field_2
+        offer.text_field_3 = trans.text_field_3
+        offer.footer = trans.footer
+    except:
+        return offer
     return offer
 
 
@@ -42,9 +45,12 @@ def get_translation_article(article, lang_code):
                 return article
         case 'ua':
             return Article.objects.get(article_id=article_id)
-    article.text = trans.text
-    article.title = trans.title
-    article.footer_text = trans.footer_text
+    try:
+        article.text = trans.text
+        article.title = trans.title
+        article.footer_text = trans.footer_text
+    except:
+        return article
     return article
 
 
@@ -63,8 +69,11 @@ def get_translation_project(project, lang_code):
                 return project
         case 'ua':
             return project
-    project.desc = trans.desc
-    project.title = trans.title
-    project.style = trans.style
-    project.type = trans.type
+    try:
+        project.desc = trans.desc
+        project.title = trans.title
+        project.style = trans.style
+        project.type = trans.type
+    except:
+        return project
     return project

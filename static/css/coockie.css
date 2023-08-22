@@ -1,0 +1,68 @@
+p {
+    margin-bottom: 0 !important;
+}
+.coockiepage {
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-image: url('../media/img/coockiebg.png');
+    background-position: center;
+    background-size: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+}
+.cp__main {
+    display: flex;
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: column;
+    gap: 2vw;
+    padding: 10vw 14vw;
+}
+.cp__main p {
+    color: rgba(255,255,255,1);
+    font-family: 'Roboto', sans-serif;
+}
+.cp__title {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+.cp__title p {
+    font-weight: bold;
+    font-size: 4vw;
+}
+.cp__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4vw;
+    width: 100%;
+    height: auto;
+}
+.cp__text p {
+    font-size: 1.2vw;
+    text-align: justify;
+}
+
+@media (max-width: 428px) {
+    .coockiepage {
+        background-size: 170% 170%;
+    }
+    .cp__main {
+        padding: 30vw 4vw;
+    }
+    .cp__title p {
+        font-weight: bold;
+        font-size: 10vw;
+    }
+    .cp__text {
+        gap: 4vw;
+    }
+    .cp__text p {
+        font-size: 4vw;
+        text-align: left;
+    }
+}

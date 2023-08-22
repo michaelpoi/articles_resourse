@@ -54,6 +54,9 @@ class ArticleTransEn(models.Model):
     text = RichTextField()
     footer_text = RichTextField()
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         db_table = 'articles_en'
 
@@ -64,6 +67,8 @@ class ArticleTransIt(models.Model):
     text = RichTextField()
     footer_text = RichTextField()
 
+    def __str__(self):
+        return self.title
     class Meta:
         db_table = 'articles_it'
 

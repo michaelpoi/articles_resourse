@@ -15,12 +15,13 @@ admin.site.register(Article, Admin)
 
 @admin.register(ArticleTransEn)
 class TransEnAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ['title']
+
 
 
 @admin.register(ArticleTransIt)
 class TransDeAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ['title']
 
 
 # Register your models here.

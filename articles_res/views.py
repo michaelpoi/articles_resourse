@@ -69,3 +69,14 @@ def main_page_trans(request, lang_code):
         response = render(request, 'it/landing.html',context=context)
         response.set_cookie('user_lang', 'it')
     return response
+
+
+def cookie_page(request):
+    return render(request,'articles_res/cookie.html')
+
+
+def cookie_trans(request,lang_code):
+    if lang_code == 'en':
+        return render(request,'en/coockie_en.html')
+    if lang_code == 'it':
+        return render(request, 'it/coockie_it.html')

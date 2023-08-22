@@ -50,7 +50,7 @@ class ProjectPortfolio(models.Model):
         self.reposts += 1
         self.save()
     def __str__(self):
-        return f"Portfolio -- {self.title}"
+        return self.title
 
     class Meta:
         db_table = 'portfolio'
@@ -64,6 +64,9 @@ class ProjectTransEn(models.Model):
     style = models.CharField(max_length=255)
     type = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         db_table = 'portfolio_en'
 
@@ -74,6 +77,9 @@ class ProjectTransIt(models.Model):
     desc = RichTextField()
     style = models.CharField(max_length=255)
     type = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         db_table = 'portfolio_it'
