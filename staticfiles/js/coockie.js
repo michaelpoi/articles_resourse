@@ -28,19 +28,7 @@ const absasElement = document.getElementById('lgcont');
 absasElement.addEventListener('click', function() {
   // Добавляем или удаляем класс "openlg" в зависимости от его наличия
   this.classList.toggle('openlg');
-  if (absasElement.classList.contains('openlg')) {
-    ualang.addEventListener('click', () => {
-      window.location.href = 'cookie.html';
-    });
-    
-    uklang.addEventListener('click', () => {
-      window.location.href = '../../../../CrownStudio/coockie/coockie_uk.html';
-    });
-    
-    delang.addEventListener('click', () => {
-      window.location.href = '../../../../CrownStudio/coockie/coockie_de.html';
-    });
-  }
+
 });
 
 // counter logo
@@ -181,11 +169,7 @@ navTexts.forEach((text) => {
   });
 });
 
-const toback = document.getElementById('to__back');
 
-toback.addEventListener('click', () => {
-    window.location.href = '../../../../CrownStudio/landing.html';
-});
 
 // span transform
 
