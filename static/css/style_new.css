@@ -278,8 +278,23 @@ section {
 .formop .wds {
     width: 45%;
 }
-.formop .formfill {
-    width: 100%;
+.formop .blurfoot {
+    left: unset;
+    right: -100%;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+.formop .ch__tel {
+    left: unset !important;
+    right: -17vw;
+    top: 4.4vw;
+}
+.leaveout {
+    height: 100%;
+    width: 6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .leaveout {
     height: 100%;
