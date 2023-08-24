@@ -8,6 +8,8 @@ from django.urls import reverse
 class Hashtag(models.Model):
     hashtag_id = models.AutoField(primary_key=True)
     value = models.CharField(max_length=20)
+    value_en = models.CharField(max_length=20, blank=True)
+    value_it = models.CharField(max_length=20, blank=True)
 
     def __str__(self):
         return f"#{self.value}"

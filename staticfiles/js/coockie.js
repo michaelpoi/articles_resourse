@@ -841,3 +841,58 @@ document.getElementById('openButtonMobile').addEventListener('click', () => {
       phone__change__top.removeAttribute('readonly');
     }
   });
+
+  // tel click
+
+const telus = document.getElementById('contact__us');
+const bgfoot = document.getElementById('blurfoot');
+const ch__tel = document.getElementById('ch__tel');
+const close__phone = document.getElementById('close__phone');
+
+if (screenMob > 428) {
+  telus.addEventListener('click', () => {
+    bgfoot.style.left = '0%';
+    bgfoot.style.opacity = '1';
+    ch__tel.style.left = '17vw';
+
+    if (bgfoot.style.left === '0%') {
+      bgfoot.addEventListener('click', () => {
+        bgfoot.style.opacity = '0';
+        setTimeout(function() {
+          bgfoot.style.left = '-100%';
+        }, 300);
+        ch__tel.style.left = '-17vw';
+      });
+      close__phone.addEventListener('click', () => {
+        bgfoot.style.opacity = '0';
+        setTimeout(function() {
+          bgfoot.style.left = '-100%';
+        }, 300);
+        ch__tel.style.left = '-17vw';
+      });
+    };
+  });
+} else {
+  telus.addEventListener('click', () => {
+    bgfoot.style.left = '0%';
+    bgfoot.style.opacity = '1';
+    ch__tel.style.left = '44vw';
+
+    if (bgfoot.style.left === '0%') {
+      bgfoot.addEventListener('click', () => {
+        bgfoot.style.opacity = '0';
+        setTimeout(function() {
+          bgfoot.style.left = '-100%';
+        }, 300);
+        ch__tel.style.left = '-44vw';
+      });
+      close__phone.addEventListener('click', () => {
+        bgfoot.style.opacity = '0';
+        setTimeout(function() {
+          bgfoot.style.left = '-100%';
+        }, 300);
+        ch__tel.style.left = '-44vw';
+      });
+    };
+  });
+}

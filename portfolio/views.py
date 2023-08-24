@@ -108,8 +108,9 @@ def portfolio_trans(request, lang_code):
 
 
 def project_trans(request, lang_code, project_id):
-    response = None
     project = get_object_or_404(ProjectPortfolio, project_id=project_id)
+    if not is_watched(request,project_id):
+        project.watch()
     project = get_translation_project(project, lang_code)
     if lang_code == 'en':
         response = render(request, 'en/port__1.html', {'project': project})
@@ -117,7 +118,6 @@ def project_trans(request, lang_code, project_id):
     if lang_code == 'it':
         response = render(request, 'it/port__1.html', {'project': project})
         response.set_cookie('user_lang', 'it')
-    if not is_watched(request, project_id):
-        project.watch()
-        response.set_cookie(str(project_id), "watched")
+    if not is_watched(request,project_id):
+        response.set_cookie(str(project_id),"watched")
     return response

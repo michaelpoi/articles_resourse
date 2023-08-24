@@ -111,15 +111,18 @@ def blog_trans(request,lang_code):
 
 def article_trans(request,lang_code,article_id):
     art = get_object_or_404(Article,article_id=article_id)
-    art = get_translation_article(art,lang_code)
-    response = None
-    if lang_code == 'en':
-        response = render(request,'en/blog1.html',{'article':art})
-        response.set_cookie('user_lang','en')
-    if lang_code == 'it':
-        response = render(request,'it/blog1.html',{'article':art})
-        response.set_cookie('user_lang','it')
     if not is_watched(request,article_id):
         art.watch()
+    trans_art = get_translation_article(art,lang_code)
+    print(art == trans_art)
+    response = None
+    if lang_code == 'en':
+        response = render(request,'en/blog1.html',{'article':trans_art})
+        response.set_cookie('user_lang','en')
+    if lang_code == 'it':
+        response = render(request,'it/blog1.html',{'article':trans_art})
+        response.set_cookie('user_lang','it')
+    if not is_watched(request,article_id):
         response.set_cookie(str(article_id), "watched")
+
     return response
