@@ -278,6 +278,10 @@ section {
 .formop .wds {
     width: 45%;
 }
+.formop .formfill {
+    width: 100%;
+    position: relative;
+}
 .formop .blurfoot {
     left: unset;
     right: -100%;
@@ -1303,9 +1307,10 @@ a {
     display: flex;
     position: relative;
 }
-#close__phone {
+#close__phone, #close__phone__top {
     cursor: pointer;
 }
+
 .blurfoot {
     display: flex;
     position: absolute;
@@ -1487,7 +1492,7 @@ a {
     width: 1.5vw;
 }
 .formfill {
-    width: 64%;
+
     border-radius: 0.7vw;
     background-color: #1f1f1f;
 }
