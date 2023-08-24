@@ -188,33 +188,7 @@
 			
 						</div>
 					</div>
-					<div class="link__holder">
-						<div class="clicker" id="main__home">
-							<p class="go__to">
-								Home
-							</p>
-						</div>
-						<div class="clicker" id="main__props">
-							<p class="go__to">
-								Services
-							</p>
-						</div>
-						<div class="clicker" id="main__adv">
-							<p class="go__to">
-								Our works
-							</p>
-						</div>
-						<div class="clicker" id="main__develop">
-							<p class="go__to">
-								FAQ
-							</p>
-						</div>
-						<div class="clicker" id="main__blog">
-							<p class="go__to">
-								Our blog
-							</p>
-						</div>
-					</div>		
+					{% include 'base/link__holder_int.html' with code='en' %}
 				</div>
 			</div>
             <div class="bgblured" id="bgBlured__port">
@@ -965,20 +939,24 @@
 											{{ cards.number }}
 										</p>
 									</div>
-                                {% if cards.has_next %}
+
 									<div class="chnum">
+                                        {% if cards.has_next %}
 										<p>
-											{{ cards.next_page_number }}
+											<a href="?page={{ cards.next_page_number }}">{{ cards.next_page_number }}</a>
 										</p>
+                                        {% endif %}
 									</div>
-                                {% endif %}
-                                {% if cards.paginator.num_pages > cards.next_page_number|add:'1' %}
+
+
 									<div class="chnum">
+                                        {% if cards.paginator.num_pages >= cards.next_page_number|add:'1' %}
 										<p>
-											{{ cards.next_page_number| add:'1' }}
+											<a href="?page={{ cards.next_page_number| add:'1' }}">{{ cards.next_page_number| add:'1' }}</a>
 										</p>
+                                        {% endif %}
 									</div>
-                                {% endif %}
+
 								</div>
 							</div>
                             {% if cards.has_next %}

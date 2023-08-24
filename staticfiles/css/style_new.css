@@ -583,7 +583,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     color: rgba(255, 255, 255, 0.7);
     margin-left: 5px;
 }
-.title {
+.title { 
     display: flex;
     flex-direction: column;
 }
@@ -884,7 +884,7 @@ h1 {
     cursor: default;
 }
 .bg1 {
-    background-image: url('../media/img/bg1.jpg');
+    background-image: url('../media/img/bg1.png');
 }
 .bg3 {
     background-image: url('../media/img/bg3.png');
@@ -1285,6 +1285,81 @@ a {
 }
 .footr {
     height: 30vw;
+    display: flex;
+    position: relative;
+}
+#close__phone {
+    cursor: pointer;
+}
+.blurfoot {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: #1f1f1f99;
+    transition: opacity 0.3s, transform 0.3s;
+    left: -100%;
+    opacity: 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.ch__tel {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2vw;
+    border: 0.1vw solid rgba(255, 255, 255, 0.7);
+    border-radius: 1vw;
+    position: absolute;
+    width: 14vw;
+    height: 16vw;
+    background-color: #1f1f1f99;
+    top: 9.4vw;
+    left: 17vw;
+    z-index: 4;
+    transition: opacity 0.3s, transform 0.3s, left 0.3s, right 0.3s;
+    left: -17vw;
+}
+.tel__all {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 1vw;
+}
+.numnum {
+    width: auto;
+    height: auto;
+    display: flex;
+    text-decoration: none;
+    outline: none;
+}
+.numnum p, .text__close p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6vw;
+    font-weight: 500;
+}
+.numnum span {
+    color: rgba(255, 255, 255, 0.7);
+}
+.text__close {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: auto;
+}
+.text__close p {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.3);
+}
+.text__close svg {
+    width: 1.8vw;
+    height: 1.8vw;
 }
 .frofoot {
     width: 100%;
@@ -1790,7 +1865,7 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-
+  
 .portfolio {
     display: flex;
     background-image: url('../media/img/portf.png');
@@ -2511,6 +2586,7 @@ input[type="number"]::-webkit-outer-spin-button {
     color: rgba(255, 255, 255, 1);
     font-size: 4.8vw;
     font-weight: 700;
+    font-family: 'Roboto', sans-serif;
     /* line-height: 11vh; */
 }
 .descrip {
@@ -2520,7 +2596,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-top: 3vh;
 }
 .descrip p {
-    font-size: 0.8vw;
+    font-size: 0.97vw;
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
 }
@@ -2633,7 +2709,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-top: 1.2vw;
 }
 .smtext p, .bigtextbo p {
-    font-size: 0.8vw;
+    font-size: 0.97vw;
     font-weight: 400;
     line-height: 1.4vw;
     color: rgba(255, 255, 255, 1);
@@ -2764,7 +2840,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .button__imo:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: #ffffff;
-
+    
 }
 .button__imo p {
     font-size: 1.3vw;
@@ -2821,7 +2897,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .oneofsix {
     display: flex;
     width: 49%;
-    height: 18vw;
+    height: 24vw;
 }
 .sixblocks .oneofsix:nth-child(n+3) {
     margin-top: 2%;
@@ -2908,8 +2984,8 @@ input[type="number"]::-webkit-outer-spin-button {
     width: auto;
 }
 .hash p {
-    padding: 0.6vw;
-    font-size: 1vw;
+    padding: 0.8vw;
+    font-size: 1.2vw;
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
 }
@@ -2945,15 +3021,20 @@ input[type="number"]::-webkit-outer-spin-button {
 } */
 .namese p {
     font-family: 'Inter', sans-serif;
-    font-size: 1.3vw;
+    font-size: 1.4vw;
     font-weight: 600;
     letter-spacing: 0em;
     text-align: left;
     color: rgba(255, 255, 255, 1);
 }
+.meintxt p {
+    font-size: 0.98vw;
+}
+.mein__txtreas p {
+    font-size: 1vw;
+}
 .meintxt p, .mein__txtreas p {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.67vw;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
@@ -2979,7 +3060,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .teamho {
     display: flex;
     width: 100%;
-    height: 40vw;
+    height: 50vw;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -3047,7 +3128,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .reason__name p {
     font-family: 'Inter', sans-serif;
-    font-size: 1vw;
+    font-size: 1.2vw;
     font-weight: 600;
     letter-spacing: 0em;
     text-align: left;
@@ -3096,23 +3177,23 @@ input[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
 .memb__name p {
-    font-size: 1vw;
+    font-size: 1.4vw;
     font-weight: 600;
-    line-height: 1.2vw;
+    line-height: 1.4vw;
     letter-spacing: 0em;
     text-align: left;
     color: rgba(255, 255, 255, 1);
 }
 .memb__role p {
-    font-size: 0.9vw;
+    font-size: 1.1vw;
     font-weight: 400;
-    line-height: 1.2vw;
+    line-height: 1.4vw;
     letter-spacing: 0em;
     text-align: left;
     color: rgba(255, 255, 255, 0.7);
 }
 .memb__citata p {
-    font-size: 0.8vw;
+    font-size: 1vw;
     font-style: italic;
     font-weight: 400;
     letter-spacing: 0em;
@@ -3256,11 +3337,11 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 0.15vw;
     border-radius: 0.5vw;
     background: linear-gradient(90deg, rgba(240, 123, 44, 1), rgba(132, 6, 227, 1));
-    -webkit-mask:
-       linear-gradient(#fff 0 0) content-box,
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
        linear-gradient(#fff 0 0);
-            mask:
-       linear-gradient(#fff 0 0) content-box,
+            mask: 
+       linear-gradient(#fff 0 0) content-box, 
        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
             mask-composite: exclude;
@@ -3275,6 +3356,9 @@ input[type="number"]::-webkit-outer-spin-button {
     background-color: rgba(38,38,38,0.4);
     border-radius: 2vw;
   }
+  .faq .developme {
+    height: 38vw;
+  }
   .gradient__prop:before {
     width: 100%;
     height: 35vw;
@@ -3286,11 +3370,11 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 0.15vw;
     border-radius: 2vw;
     background: linear-gradient(90deg, rgba(240, 123, 44, 1), rgba(132, 6, 227, 1));
-    -webkit-mask:
-       linear-gradient(#fff 0 0) content-box,
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
        linear-gradient(#fff 0 0);
-            mask:
-       linear-gradient(#fff 0 0) content-box,
+            mask: 
+       linear-gradient(#fff 0 0) content-box, 
        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
             mask-composite: exclude;
@@ -3427,7 +3511,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .bigwork {
     display: flex;
     width: 50%;
-    height: 38vw;
+    height: 46vw;
 }
 .padder__work {
     width: 100%;
@@ -3437,11 +3521,11 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-direction: column;
     background-color: rgba(38,38,38,0.4);
     border-radius: 1.8vw;
-    justify-content: space-between;
+    gap: 1.2vw;
 }
 .work__preview {
     width: 100%;
-    height: 70%;
+    height: 63%;
     display: flex;
     background-color: rgba(38,38,38,0.6);
     justify-content: center;
@@ -3455,10 +3539,10 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .work__texting {
     display: flex;
-    height: 28%;
     width: 100%;
     flex-direction: column;
     padding-left: 0.5vw;
+    flex: 1;
 }
 .work__name {
     display: flex;
@@ -3466,7 +3550,7 @@ input[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
 .work__name p {
-    font-size: 1.2vw;
+    font-size: 1.4vw;
     font-weight: 600;
     letter-spacing: 0em;
     text-align: left;
@@ -3475,10 +3559,9 @@ input[type="number"]::-webkit-outer-spin-button {
 .work__description {
     display: flex;
     width: 100%;
-    margin-top: 0.3vw;
 }
 .work__description p {
-    font-size: 0.7vw;
+    font-size: 0.94vw;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
@@ -3560,7 +3643,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .smallboxes {
     display: flex;
     width: 48%;
-    height: 38vw;
+    height: 46vw;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -3614,7 +3697,7 @@ input[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
 .small__workname p {
-    font-size: 1.2vw;
+    font-size: 1.6vw;
     font-weight: 600;
     letter-spacing: 0em;
     text-align: left;
@@ -3626,7 +3709,7 @@ input[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
 .small__meintxt p {
-    font-size: 0.7vw;
+    font-size: 1vw;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
@@ -3737,7 +3820,7 @@ input[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
 .faq__name p {
-    font-size: 1vw;
+    font-size: 1.4vw;
     font-weight: 600;
     letter-spacing: 0em;
     text-align: left;
@@ -3795,7 +3878,7 @@ input[type="number"]::-webkit-outer-spin-button {
     position: absolute;
 }
 .quest__qq:first-child {
-    top: 0;
+    top: 0%;
 }
 .quest__qq:nth-child(2) {
     top: 24%;
@@ -3891,7 +3974,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-top: 0.7vw;
 }
 .asnw__text p {
-    font-size: 0.9vw;
+    font-size: 1vw;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
@@ -3899,7 +3982,7 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 90%;
 }
 .ifoffed {
-    height: 3.5vw;
+    height: 4.2vw;
     overflow: hidden;
 }
 .ifoffed:hover {
@@ -3922,12 +4005,13 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .quest__padd .deftext_qq {
     width: 96%;
-    font-size: 0.85vw;
+    font-size: 0.86vw;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
     color: rgba(255, 255, 255, 0.7);
     transition: color 0.3s;
+    line-height: 1.9;
 }
 .blog__our {
     height: 65vw;
@@ -3973,7 +4057,7 @@ input[type="number"]::-webkit-outer-spin-button {
     z-index: -1;
 } */
 .clients__get .developme {
-    height: 45vw;
+    height: 50vw;
 }
 .clients__get p {
     margin-bottom: 0;
@@ -4033,7 +4117,7 @@ input[type="number"]::-webkit-outer-spin-button {
     align-items: center;;
 }
 .cltext__padd p {
-    font-size: 0.8vw;
+    font-size: 0.94vw;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
@@ -4091,7 +4175,7 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 100%;
 }
 .box__text p {
-    font-size: 0.78vw;
+    font-size: 0.84vw;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
@@ -4129,7 +4213,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-top: 0.4vw;
 }
 .small__box__text p {
-    font-size: 0.78vw;
+    font-size: 0.84vw;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
@@ -4152,7 +4236,7 @@ input[type="number"]::-webkit-outer-spin-button {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* background-image: url('../media/img/1.png'); */
+    background-image: url('../media/img/1.png');
 }
 .img__box svg {
     width: 1.5vw;
@@ -4189,7 +4273,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-right: 1.5vw;
 }
 .text__tobox p {
-    font-size: 0.7vw;
+    font-size: 0.9vw;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
@@ -4330,6 +4414,22 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 428px) {
+    .ch__tel {
+        width: 40vw;
+        height: 50vw;
+        padding: 3vw;
+        border-radius: 2vw;
+        border-width: 0.5vw;
+        top: 42vw;
+        left: -44vw;
+    }
+    .numnum p, .text__close p {
+        font-size: 5vw;
+    }
+    .text__close svg {
+        width: 5vw;
+        height: 5vw;
+    }
     .topform {
         margin-top: 0;
     }
@@ -4442,12 +4542,12 @@ input[type="number"]::-webkit-outer-spin-button {
             top: -100vh;
         }
         100% {
-            top: 70vh;
+            top: 60vh;
         }
     }
     @keyframes popDown {
         0% {
-            top: 70vh;
+            top: 60vh;
         }
         100% {
             top: -100vh;
@@ -4558,7 +4658,7 @@ input[type="number"]::-webkit-outer-spin-button {
         background-size: 100% 140%, 100% 130%;
     }
     .clients__get {
-        background-image: url('../media/../media/img/bg__phone4.png'), url('../media/img/bg__phone4.png');
+        background-image: url('../media/img/bg__phone4.png'), url('../media/img/bg__phone4.png');
         background-repeat: no-repeat;
         background-size: 100% 108%, 100% 105%;
         background-position: 0% 30%, left;
@@ -4792,8 +4892,9 @@ input[type="number"]::-webkit-outer-spin-button {
         padding-top: 34vw !important;
     }
     .nameho p {
+        font-family: 'Roboto', sans-serif;
         color: rgba(255, 255, 255, 1);
-        font-size: 12.8vw;
+        font-size: 12vw;
         font-weight: 700;
     }
     .logotext {
@@ -4996,7 +5097,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .oneofsix {
         width: 100%;
-        height: 50vw;
+        height: 72vw;
         border-radius: 3vw;
     }
     .paddy {
@@ -5026,18 +5127,18 @@ input[type="number"]::-webkit-outer-spin-button {
         gap: 1.8vw;
     }
     .hash {
-        height: 4vw;
+        height: 6vw;
         border-radius: 4vw;
     }
     .meinc .hashtag p {
-        font-size: 2.4vw;
+        font-size: 2.6vw;
     }
     .namese {
         margin-top: 2.2vw;
     }
     .namese p {
         font-family: 'Inter', sans-serif;
-        font-size: 2.8vw;
+        font-size: 3vw;
         font-weight: 600;
         letter-spacing: 0em;
         text-align: left;
@@ -5052,7 +5153,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .meintxt p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.2vw;
+        font-size: 2.76vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5071,11 +5172,12 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .undertext p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.2vw;
+        font-size: 2.76vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
         color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 0;
     }
     .teamho {
         margin-top: 6vw;
@@ -5086,7 +5188,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .bigboxho {
         width: 100%;
-        height: 180vw;
+        height: 270vw;
     }
     .teamho .bigboxho {
         border-radius: 3.2vw;
@@ -5123,7 +5225,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .mein__txtreas {
         margin-top: 1.2vw;
-        width: 80%;
+        width: 92%;
     }
     .reason {
         width: 100%;
@@ -5131,7 +5233,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .reason__name p {
         font-family: 'Inter', sans-serif;
-        font-size: 2.8vw;
+        font-size: 3.8vw;
         font-weight: 600;
         letter-spacing: 0em;
         text-align: left;
@@ -5139,7 +5241,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .mein__txtreas p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2vw;
+        font-size: 3.3vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5149,25 +5251,25 @@ input[type="number"]::-webkit-outer-spin-button {
         gap: 3vw;
     }
     .member__card {
-        border-radius: 18px;
-        height: 24vw;
+        border-radius: 3.2vw;
+        height: 28vw;
     }
     .padder__ceo {
         padding: 2.6vw;
     }
     .memb__name p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.8vw;
+        font-size: 4vw;
         font-weight: 600;
         letter-spacing: 0em;
         text-align: left;
-        line-height: 2.8vw;
+        line-height: 4vw;
     }
     .memb__role p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.6vw;
+        font-size: 3.2vw;
         font-weight: 400;
-        line-height: 2.6vw;
+        line-height: 3.2vw;
         letter-spacing: 0em;
         text-align: left;
     }
@@ -5176,7 +5278,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .memb__citata p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.2vw;
+        font-size: 3vw;
         font-style: italic;
         font-weight: 400;
         letter-spacing: 0em;
@@ -5186,7 +5288,7 @@ input[type="number"]::-webkit-outer-spin-button {
         margin-top: 1vw;
     }
     .memb__info {
-        width: 60%;
+        width: 64%;
         margin-left: 1.6vw;
     }
     .img__member {
@@ -5223,14 +5325,14 @@ input[type="number"]::-webkit-outer-spin-button {
         padding-left: 2vw;
     }
     .spanner {
-        left: 6.3vw;
+        left: 7.05vw;
         height: 90%;
         width: 0.5vw;
         top: 4.5vw;
     }
     .round__tick {
-        width: 9vw;
-        height: 9vw;
+        width: 10.6vw;
+        height: 10.6vw;
     }
     .round__tick svg {
         width: 4vw;
@@ -5240,7 +5342,7 @@ input[type="number"]::-webkit-outer-spin-button {
         margin-right: 0;
     }
     .cont__holder p {
-        font-size: 2.1vw;
+        font-size: 2.9vw;
     }
     .text__tobox p {
         font-family: 'Roboto', sans-serif;
@@ -5258,7 +5360,7 @@ input[type="number"]::-webkit-outer-spin-button {
         margin-left: 0;
     }
     .client__tick {
-        height: 91vw;
+        height: 120vw;
     }
     .clients .padd__deve > .client__row:first-child {
         gap: 2vw;
@@ -5284,17 +5386,19 @@ input[type="number"]::-webkit-outer-spin-button {
         top: 354px;
     }
     .client__text {
-        height: 16vw;
+        height: 24vw;
         width: 100%;
+        padding: 2.8vw 4.6vw;
     }
     .cltext__padd {
-        padding: 2.8vw 4.6vw;
-        width: auto;
-        height: auto;
+        /* padding: 2.8vw 4.6vw; */
+        padding: 0;
+        width: 100%;
+        height: 100%;
     }
     .cltext__padd p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2vw;
+        font-size: 2.6vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5305,7 +5409,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .boxtype {
         width: 49%;
-        height: 45vw;
+        height: 66vw;
         display: flex;
     }
     .box__padd {
@@ -5315,8 +5419,9 @@ input[type="number"]::-webkit-outer-spin-button {
         height: auto;
         display: flex;
         flex-direction: column;
-        justify-content: space-between !important;
+        /* justify-content: space-between !important; */
         align-items: unset;
+        gap: 1.4vw;
     }
     .num__hold p {
         font-family: 'Roboto', sans-serif;
@@ -5339,14 +5444,18 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .box__text p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.2vw;
+        font-size: 2.6vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
     }
+    .small__box__text {
+        margin-top: 0;
+        overflow: hidden;
+    }
     .small__box__text p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2vw;
+        font-size: 2.6vw;
         font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0em;
@@ -5354,9 +5463,9 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .big__box__text p {
         font-family: 'Inter', sans-serif;
-        font-size: 3.2vw;
+        font-size: 3.6vw;
         font-weight: 600;
-        line-height: 3.2vw;
+        line-height: 3.6vw;
         letter-spacing: 0em;
         text-align: left;
     }
@@ -5465,7 +5574,7 @@ input[type="number"]::-webkit-outer-spin-button {
         height: auto;
     }
     .our__works {
-
+        
     }
     .works__see {
         margin-top: 6vw;
@@ -5478,7 +5587,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .bigwork, .smallboxes {
         width: 100%;
-        height: 88vw;
+        height: 120vw;
         border-radius: 3.6vw;
         background-color: rgba(38,38,38,0.4);
     }
@@ -5502,14 +5611,14 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .work__name p, .small__workname p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.8vw;
+        font-size: 3.8vw;
         font-weight: 600;
         letter-spacing: 0em;
         text-align: left;
     }
     .work__description p, .small__meintxt p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2vw;
+        font-size: 2.8vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5633,7 +5742,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .smalltext p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.4vw;
+        font-size: 3.3vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: center;
@@ -5891,7 +6000,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .faq__name p {
         font-family: 'Roboto', sans-serif;
-        font-size: 3.6vw;
+        font-size: 4.2vw;
         font-weight: 600;
         letter-spacing: 0em;
         text-align: left;
@@ -5915,7 +6024,7 @@ input[type="number"]::-webkit-outer-spin-button {
         height: 3.5vw;
     }
     .hide__down {
-display: flex;
+        display: flex;
         position: absolute;
         right: 0;
         display: none;
@@ -5970,17 +6079,18 @@ display: flex;
     }
     .quest__padd .deftext_qq {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.6vw;
+        font-size: 2.8vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
+        line-height: 1.5;
     }
     .ifoffed {
         height: 12.8vw;
     }
     .quest__padd {
         padding: 0;
-        margin: 2.4vw 2.8vw;
+        margin: 1.9vw 2.8vw;
     }
     .quest__active .quest__padd {
         padding: 0;
@@ -6014,19 +6124,20 @@ display: flex;
     }
     .asnw__text p {
         font-family: 'Roboto', sans-serif;
-        font-size: 3vw;
+        font-size: 3.6vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
     }
     .asnw__text {
         margin-top: 1.4vw;
+        gap: 2vw;
     }
     .cross__leave {
         width: 6vw;
         height: 6vw;
         border-width: 0.6vw;
-        right: 0.4vw;
+        right: 0.7vw;
         border-radius: 1.4vw;
     }
     .cross__leave svg {
@@ -6109,8 +6220,9 @@ display: flex;
         font-weight: 500;
         letter-spacing: 0em;
         text-align: left;
-        padding-left: 2vw;
-        padding-right: 2vw;
+        /* padding-left: 2vw;
+        padding-right: 3.4vw; */
+        padding: 2vw;
     }
     .txt .hash {
         height: 8vw;

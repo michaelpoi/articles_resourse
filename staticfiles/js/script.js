@@ -1360,18 +1360,24 @@ if (screenMob > 428) {
     bgBlur.style.right = '0';
     bgBlur.style.opacity = '1';
     divorder.style.left = '38%';
+    bgBlur.style.zIndex = '4';
+    bgBlur.style.opacity = '1';
   });
 
   fastordertop.addEventListener('click', () => {
     bgBlur.style.right = '0';
     bgBlur.style.opacity = '1';
     divorder.style.left = '38%';
+    bgBlur.style.zIndex = '4';
+    bgBlur.style.opacity = '1';
   });
 
   fastorder.addEventListener('click', () => {
     bgBlur.style.right = '0';
     bgBlur.style.opacity = '1';
     divorder.style.left = '38%';
+    bgBlur.style.zIndex = '4';
+    bgBlur.style.opacity = '1';
   });
   
   ordernow.addEventListener('click', () => {
@@ -1394,18 +1400,24 @@ if (screenMob > 428) {
     bgBlur.style.right = '0';
     bgBlur.style.opacity = '1';
     divorder.style.left = '5vw';
+    bgBlur.style.zIndex = '4';
+    bgBlur.style.opacity = '1';
   });
 
   fastordertop.addEventListener('click', () => {
     bgBlur.style.right = '0';
     bgBlur.style.opacity = '1';
     divorder.style.left = '5vw';
+    bgBlur.style.zIndex = '4';
+    bgBlur.style.opacity = '1';
   });
 
   fastorder.addEventListener('click', () => {
     bgBlur.style.right = '0';
     bgBlur.style.opacity = '1';
     divorder.style.left = '5vw';
+    bgBlur.style.zIndex = '4';
+    bgBlur.style.opacity = '1';
   });
   
   ordernow.addEventListener('click', () => {
@@ -1446,7 +1458,8 @@ const userId = encodeURIComponent(navigator.userAgent);
 const previousAllowCookiesValue = getCookie(`allowCookies_${userId}`);
 if (previousAllowCookiesValue === 'true') {
   coockie.style.display = 'none';
-  bgBlur.style.display = 'none';
+    bgBlur.style.opacity = '0';
+    bgBlur.style.zIndex = '-1';
 } else {
   ordernow.addEventListener('click', (event) => {
     event.preventDefault();
@@ -1473,12 +1486,10 @@ if (previousAllowCookiesValue === 'true') {
 
 allow.addEventListener('click', () => {
   setCookie(`allowCookies_${userId}`, true, 365);
-  console.log('Cookies allowed');
 });
 
 decline.addEventListener('click', () => {
   setCookie(`allowCookies_${userId}`, false, 365);
-  console.log('Cookies declined');
 });
 
 //forms contact
@@ -1525,3 +1536,58 @@ choose__top.addEventListener('click', () => {
     phone__change__top.removeAttribute('readonly');
   }
 });
+
+// tel click
+
+const telus = document.getElementById('contact__us');
+const bgfoot = document.getElementById('blurfoot');
+const ch__tel = document.getElementById('ch__tel');
+const close__phone = document.getElementById('close__phone');
+
+if (screenMob > 428) {
+  telus.addEventListener('click', () => {
+    bgfoot.style.left = '0%';
+    bgfoot.style.opacity = '1';
+    ch__tel.style.left = '17vw';
+
+    if (bgfoot.style.left === '0%') {
+      bgfoot.addEventListener('click', () => {
+        bgfoot.style.opacity = '0';
+        setTimeout(function() {
+          bgfoot.style.left = '-100%';
+        }, 300);
+        ch__tel.style.left = '-17vw';
+      });
+      close__phone.addEventListener('click', () => {
+        bgfoot.style.opacity = '0';
+        setTimeout(function() {
+          bgfoot.style.left = '-100%';
+        }, 300);
+        ch__tel.style.left = '-17vw';
+      });
+    };
+  });
+} else {
+  telus.addEventListener('click', () => {
+    bgfoot.style.left = '0%';
+    bgfoot.style.opacity = '1';
+    ch__tel.style.left = '44vw';
+
+    if (bgfoot.style.left === '0%') {
+      bgfoot.addEventListener('click', () => {
+        bgfoot.style.opacity = '0';
+        setTimeout(function() {
+          bgfoot.style.left = '-100%';
+        }, 300);
+        ch__tel.style.left = '-44vw';
+      });
+      close__phone.addEventListener('click', () => {
+        bgfoot.style.opacity = '0';
+        setTimeout(function() {
+          bgfoot.style.left = '-100%';
+        }, 300);
+        ch__tel.style.left = '-44vw';
+      });
+    };
+  });
+}

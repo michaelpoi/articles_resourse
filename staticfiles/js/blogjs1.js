@@ -665,25 +665,7 @@ function scrollToElementAndCloseMenu(elementId) {
   targetElement.scrollIntoView({ behavior: 'smooth' });
 }
 
-document.getElementById('main__home').addEventListener('click', () => {
-    window.location.href = '../landing.html#home__page';
-  });
-  
-  document.getElementById('main__props').addEventListener('click', () => {
-    window.location.href = '../landing.html#specialty';
-  });
-  
-  document.getElementById('main__adv').addEventListener('click', () => {
-    window.location.href = '../landing.html#portfolio__us';
-  });
-  
-  document.getElementById('main__develop').addEventListener('click', () => {
-    window.location.href = '../landing.html#faq__qq';
-  });
-  
-  document.getElementById('main__blog').addEventListener('click', () => {
-    window.location.href = '../landing.html#blog__us';
-  });
+
 
 document.getElementById('openButtonMobile').addEventListener('click', () => {
   scrollToElementAndCloseMenu('form__user__bot');

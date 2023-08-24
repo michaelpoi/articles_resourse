@@ -2042,7 +2042,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 @keyframes anigrad {
     to {
-        stroke-dashoffset: 0;
+        stroke-dashoffset: 0%;
     }
 }
 .svg__inside {
