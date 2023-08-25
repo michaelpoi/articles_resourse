@@ -13,6 +13,7 @@ class Article(models.Model):
     title = models.CharField(max_length=255)
     text = RichTextField(blank=True, null=True)
     footer_text = RichTextField(blank=True, default="This is a default footer")
+    bottom_text = RichTextField(default="This is a default bottom text")
     pub_date = models.DateTimeField(auto_now=True)
     likes = models.IntegerField(default=0)
     views = models.PositiveIntegerField(default=0)
@@ -53,6 +54,8 @@ class ArticleTransEn(models.Model):
     title = models.CharField(max_length=255)
     text = RichTextField()
     footer_text = RichTextField()
+    bottom_text = RichTextField(default="<p>default bottom text</p>")
+
 
     def __str__(self):
         return self.title
@@ -66,6 +69,7 @@ class ArticleTransIt(models.Model):
     title = models.CharField(max_length=255)
     text = RichTextField()
     footer_text = RichTextField()
+    bottom_text = RichTextField(default="<p>default bottom text</p>")
 
     def __str__(self):
         return self.title

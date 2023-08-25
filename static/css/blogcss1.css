@@ -324,3 +324,29 @@
         padding-right: 0.5vw;
     }
 }
+
+.halftext {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+.blog__text {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.descblog p, .textcontinue p, .blog__text p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1vw;
+    color: rgba(255,255,255,0.7);
+    font-weight: 400;
+}
+
+.blog__text {
+    width: 100%;
+    gap: 3vw;
+
+}

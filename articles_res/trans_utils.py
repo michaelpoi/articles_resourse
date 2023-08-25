@@ -73,6 +73,7 @@ def get_translation_article(article, lang_code):
         article.text = trans.text
         article.title = trans.title
         article.footer_text = trans.footer_text
+        article.bottom_text = trans.bottom_text
     except:
         return article
     return article

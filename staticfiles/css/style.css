@@ -280,6 +280,18 @@ section {
 }
 .formop .formfill {
     width: 100%;
+    position: relative;
+}
+.formop .blurfoot {
+    left: unset;
+    right: -100%;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+.formop .ch__tel {
+    left: unset !important;
+    right: -17vw;
+    top: 4.4vw;
 }
 .leaveout {
     height: 100%;
@@ -1301,7 +1313,9 @@ a {
     padding-bottom: 1vw;
     position: relative;
     height: 100%;
+    width: 100%;
 }
+
 .frcontent .container {
     display: flex;
     justify-content: space-between;
@@ -4329,7 +4343,7 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 60%;
 }
 
-@media (max-width: 428px) {
+@media (max-width: 440px) {
     .topform {
         margin-top: 0;
     }

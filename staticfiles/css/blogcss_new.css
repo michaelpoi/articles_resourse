@@ -375,7 +375,7 @@ p {
     display: none;
 }
 
-@media (max-width: 428px) {
+@media (max-width: 440px) {
     .seeblog1 {
         border-width: 0.5vw;
         border-radius: 2.4vw;

@@ -6,74 +6,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width">
     <link rel="stylesheet" href="{% static 'css/style_new.css' %}">
-    <link rel="stylesheet" href="{% static 'css/blogcss_new.css' %}">
-    <link rel="stylesheet" href="{% static 'css/blogcss1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/coockie.css' %}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
-        href="https://fonts.googleapis.com/css2?family=Crete+Round&family=DM+Sans&family=Inter:wght@800&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=M+PLUS+1p&family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Crete+Round&family=DM+Sans&family=Inter:wght@800&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=M+PLUS+1p&family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
 		rel="stylesheet">
 		<link
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
 	  />
-	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	  
 	  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>Blog</title>
+    <title>Coockie</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'media/img/main-web-icon.png' %}" >
 </head>
 <body>
-    <div class="root" id="root1">
-		<div class="bgblured" id="statcheck">
-
-		</div>
-		<div class="statsee" id="stat1">
-			<div class="statholder">
-				<div class="withclose">
-					<div class="toclose">
-						<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M1 1L8.5 8.5M16 16L8.5 8.5M8.5 8.5L16 1M8.5 8.5L1 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>								
-					</div>
-				</div>
-				<div class="stst blogdiv">
-					<p>
-						Статистика
+    <div id="root" class="root">
+        <div class="bluract" id="bluraction"></div>
+		<div class="ordernow" id="orderfast">
+			<p class="ortext">
+				Швидке замовлення
+			</p>
+			<form action="" class="fastorder" id="formorder">
+				<span class="fspan__text" id="fname">
+					ваше ім`я
+				</span>
+				<span class="fspan__text" id="fgmail">
+					електрона пошта
+				</span>
+				<span class="fspan__text" id="fphone">
+					телефон
+				</span>
+				<input type="text" name="" id="fastname" autocomplete="off" placeholder="" class="definp">
+				<input type="email" name="" id="fastmail" autocomplete="off" placeholder="" class="definp">
+				<input type="number" name="" id="fastphone" autocomplete="off" placeholder="" class="definp">
+				<p class="infofast">
+					З вами найближчим часом зв’яжеться наша група підтримки
+				</p>
+				<div class="fastmenu">
+					<button type="submit" class="fastsub gradient__bor" id="request__fast">
+						<p>
+							Замовити
+						</p>
+					</button>
+					<p class="customtxt" id="closefast">
+						Закрити
 					</p>
 				</div>
-				<div class="allstats">
-					<div class="stat__view">
-						<svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M1 9.25C1 9.25 5.5 1 12.25 1C19 1 23.5 9.25 23.5 9.25C23.5 9.25 19 17.5 12.25 17.5C5.5 17.5 1 9.25 1 9.25Z" stroke="white" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M12.25 13C14.3211 13 16 11.3211 16 9.25C16 7.17893 14.3211 5.5 12.25 5.5C10.1789 5.5 8.5 7.17893 8.5 9.25C8.5 11.3211 10.1789 13 12.25 13Z" stroke="white" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</form>
+		</div>
+        <div class="containerimo">
+            <!-- <div class="coockie" id="coockie">
+				<div class="top__coockie divcook">
+					<div class="svgcook">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M16.2104 16.0973C16.4035 16.2911 16.5349 16.5379 16.588 16.8063C16.641 17.0748 16.6133 17.3529 16.5084 17.6057C16.4034 17.8584 16.226 18.0743 15.9984 18.2263C15.7708 18.3782 15.5033 18.4593 15.2296 18.4593C14.956 18.4593 14.6885 18.3782 14.4609 18.2263C14.2333 18.0743 14.0558 17.8584 13.9509 17.6057C13.8459 17.3529 13.8182 17.0748 13.8713 16.8063C13.9243 16.5379 14.0557 16.2911 14.2488 16.0973C14.3775 15.9682 14.5303 15.8658 14.6986 15.7959C14.8669 15.726 15.0474 15.6901 15.2296 15.6901C15.4119 15.6901 15.5923 15.726 15.7606 15.7959C15.9289 15.8658 16.0818 15.9682 16.2104 16.0973ZM6.86423 15.1742C6.67107 15.3681 6.53968 15.6148 6.48664 15.8832C6.43361 16.1517 6.46131 16.4299 6.56625 16.6826C6.67119 16.9353 6.84866 17.1513 7.07625 17.3032C7.30385 17.4551 7.57136 17.5362 7.845 17.5362C8.11865 17.5362 8.38616 17.4551 8.61375 17.3032C8.84135 17.1513 9.01882 16.9353 9.12376 16.6826C9.2287 16.4299 9.2564 16.1517 9.20336 15.8832C9.15033 15.6148 9.01893 15.3681 8.82577 15.1742C8.69718 15.0455 8.54447 14.9434 8.37638 14.8737C8.20829 14.804 8.02812 14.7681 7.84616 14.7681C7.6642 14.7681 7.48402 14.804 7.31593 14.8737C7.14784 14.9434 6.99514 15.0455 6.86654 15.1742H6.86423ZM7.9027 10.6742C8.09586 10.4804 8.22725 10.2337 8.28029 9.96522C8.33332 9.69676 8.30562 9.4186 8.20068 9.16588C8.09574 8.91315 7.91827 8.69719 7.69068 8.54526C7.46308 8.39333 7.19557 8.31224 6.92193 8.31224C6.64828 8.31224 6.38077 8.39333 6.15318 8.54526C5.92558 8.69719 5.74811 8.91315 5.64317 9.16588C5.53823 9.4186 5.51053 9.69676 5.56357 9.96522C5.6166 10.2337 5.748 10.4804 5.94116 10.6742C6.06994 10.8032 6.22292 10.9054 6.3913 10.9751C6.55969 11.0448 6.74017 11.0805 6.92241 11.0803C7.10464 11.0801 7.28504 11.0439 7.45326 10.9738C7.62148 10.9038 7.77421 10.8012 7.9027 10.6719V10.6742ZM13.4412 10.5588C13.2473 10.3657 13.0006 10.2343 12.7321 10.1813C12.4637 10.1282 12.1855 10.1559 11.9328 10.2609C11.6801 10.3658 11.4641 10.5433 11.3122 10.7709C11.1603 10.9985 11.0792 11.266 11.0792 11.5396C11.0792 11.8133 11.1603 12.0808 11.3122 12.3084C11.4641 12.536 11.6801 12.7134 11.9328 12.8184C12.1855 12.9233 12.4637 12.951 12.7321 12.898C13.0006 12.8449 13.2473 12.7135 13.4412 12.5204C13.5702 12.3917 13.6727 12.2389 13.7425 12.0706C13.8124 11.9023 13.8484 11.7218 13.8484 11.5396C13.8484 11.3574 13.8124 11.1769 13.7425 11.0086C13.6727 10.8403 13.5702 10.6875 13.4412 10.5588ZM24 12C24 14.3734 23.2962 16.6934 21.9776 18.6668C20.6591 20.6402 18.7849 22.1783 16.5922 23.0865C14.3995 23.9948 11.9867 24.2324 9.65892 23.7694C7.33115 23.3064 5.19295 22.1635 3.51472 20.4853C1.83649 18.807 0.693605 16.6689 0.230582 14.3411C-0.232441 12.0133 0.00519941 9.60051 0.913451 7.4078C1.8217 5.21508 3.35977 3.34094 5.33316 2.02236C7.30655 0.703788 9.62663 0 12 0C12.2448 0 12.4796 0.0972524 12.6527 0.270363C12.8258 0.443473 12.9231 0.678262 12.9231 0.923077C12.9231 2.14715 13.4093 3.32109 14.2749 4.18665C15.1404 5.0522 16.3144 5.53846 17.5385 5.53846C17.7833 5.53846 18.0181 5.63571 18.1912 5.80882C18.3643 5.98193 18.4615 6.21672 18.4615 6.46154C18.4615 7.68561 18.9478 8.85955 19.8134 9.72511C20.6789 10.5907 21.8528 11.0769 23.0769 11.0769C23.3217 11.0769 23.5565 11.1742 23.7296 11.3473C23.9027 11.5204 24 11.7552 24 12ZM22.1181 12.8527C20.7356 12.6429 19.4582 11.9913 18.4767 10.9952C17.4953 9.99924 16.8625 8.71234 16.6731 7.32692C15.2877 7.13748 14.0008 6.50474 13.0048 5.52329C12.0087 4.54184 11.3571 3.2644 11.1473 1.88192C9.21857 2.04449 7.37647 2.75495 5.83807 3.92959C4.29966 5.10423 3.12905 6.69411 2.46415 8.51191C1.79925 10.3297 1.66777 12.2997 2.08521 14.1897C2.50264 16.0797 3.4516 17.8111 4.82026 19.1797C6.18892 20.5484 7.92026 21.4974 9.8103 21.9148C11.7003 22.3322 13.6703 22.2007 15.4881 21.5359C17.3059 20.871 18.8958 19.7003 20.0704 18.1619C21.2451 16.6235 21.9555 14.7814 22.1181 12.8527Z" fill="white"/>
 						</svg>
+					</div>
+					<div class="closecook" id="closecoockie">
+						<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 1L8.5 8.5M16 16L8.5 8.5M8.5 8.5L16 1M8.5 8.5L1 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</div>
+				</div>
+				<div class="text__name divcook">
+					<p>
+						Ми використовуємо Cookie
+					</p>
+				</div>
+				<div class="text__full divcook">
+					<p>
+						Ласкаво просимо! Ми використовуємо файли cookie, щоб покращити роботу сайту. Деталі в нашій Політиці конфіденційності.
+					</p>
+				</div>
+				<div class="coockie__control divcook">
+					<div class="conrol" id="allowcoockie">
 						<p>
-							{{ article.views }}
+							Прийняти
 						</p>
 					</div>
-					<div class="stat__view">
-						<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
+					<div class="conrol" id="declinecoockie">
 						<p>
-							{{ article.reposts }}
-						</p>
-					</div>
-					<div class="stat__view">
-						<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-						<p>
-							{{ article.likes }}
+							Вимкнути
 						</p>
 					</div>
 				</div>
-			</div>									
-		</div>
-        <div class="containerimo">
-            <div class="mobile__menu">
+			</div> -->
+			<div class="mobile__menu">
 				<div class="menu__menu">
 					<div class="svg__inside__mobile" id="openButtonMobile">
 						<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +104,7 @@
 							<stop offset="100%" stop-color="rgba(132, 6, 227, 1)" />
 							</linearGradient>
 						</defs>
-                        <rect x="1" y="1" width="99.5%" height="96%" rx="4%" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1%" />
+						<rect x="1" y="1" width="99.5%" height="96%" rx="4%" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1%" />
 						<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="5vw" fill="rgba(255, 255, 255, 1)">Зв’язок</text>
 						</svg>
 					</div>
@@ -103,12 +124,12 @@
 			
 						</div>
 					</div>
-					{% include 'base/link__holder_int.html' with code='it' %}
+					{% include 'base/link__holder_int.html' with code='en' %}
 				</div>
 			</div>
-            <div class="bgblured" id="bgBlured__port">
+			<div class="bgblured" id="bgBlured">
 			</div>
-			<div class="formop" id="formOp__port">
+			<div class="formop" id="formOp">
 				<div class="blurfoot" id="blurfoot__form">
 
 				</div>
@@ -152,7 +173,7 @@
 					<div class="padde">
 						<form action="" method="post" id="form__user" class="form__user">
 							<div class="formcont">
-								<div class="leaveout" id="leaveout__port">
+								<div class="leaveout" id="leaveout">
 									<div class="forarr">
 										<svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M3.01022 3L23 23.059L3 43" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -287,9 +308,9 @@
 			</div>
 			<div class="sticka viewbr brdrex">
 				<div class="navimo">
-					<div class="loger" id="to__back" onclick="window.location.href='{% url 'main_trans' lang_code='it' %}'">
+					<div class="loger" id="to__back" onclick="window.location.href='{% url 'main_trans' lang_code='en' %}'">
 						<?xml version="1.0" encoding="utf-8"?>
-						<svg width="2vw" height="2vw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<svg width="2" height="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M4 19H20M11.2929 5.70711L8.70711 8.2929C8.31658 8.68342 7.68342 8.68342 7.29289 8.2929L5.70711 6.70711C5.07714 6.07714 4 6.52331 4 7.41422V15C4 15.5523 4.44772 16 5 16H19C19.5523 16 20 15.5523 20 15V7.41421C20 6.52331 18.9229 6.07714 18.2929 6.70711L16.7071 8.2929C16.3166 8.68342 15.6834 8.68342 15.2929 8.2929L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711Z" stroke="rgba(255,255,255,1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
 						<div class="logotext" id="log2">
@@ -302,17 +323,17 @@
 						<div class="justline">
 							<span></span>
 						</div>
-						<div class="absdiv" id="langhold__port">
-							<div class="absas" id="lgcont__port">
-                                <div class="langchs">
-									<div class="langholder">
-                                        <p>IT</p>
+						<div class="absdiv" id="langhold">
+							<div class="absas" id="lgcont">
+								<div class="langchs">
+									<div class="langholder" id="uklang">
+										<p>EN</p>
 									</div>
-									<div class="langholder">
-										<a href="{% url 'article' article_id=article.article_id %}"><p>UA</p></a>
+									<div class="langholder" id="ualang">
+										<a href="{% url 'cookie' %}"><p>UA</p></a>
 									</div>
-									<div class="langholder">
-										<a href="{% url 'article_trans' lang_code='en' article_id=article.article_id%}"><p>EN</p></a>
+									<div class="langholder" id="delang">
+										<a href="{% url 'cookie_trans' lang_code='it' %}"><p>IT</p></a>
 									</div>
 								</div>
 							</div>
@@ -351,9 +372,9 @@
 							</svg>
 						</div>
 						<div class="mamany">
-							<div class="pelaha" id="pelaha__port">
-								<div class="kasj" id="kasj__port">
-									<input type="search" name="" id="nanas__port" class="nanas" placeholder="пошук по сайту" autocomplete="off">
+							<div class="pelaha" id="pelaha">
+								<div class="kasj" id="kasj">
+									<input type="search" name="" id="nanas" class="nanas" placeholder="пошук по сайту" autocomplete="off">
 								</div>
 								<div class="kakav">
 									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -362,13 +383,13 @@
 									</svg>
 								</div>
 							</div>
-							<div class="kakasa" id="kakasa__port">
+							<div class="kakasa" id="kakasa">
 				
 							</div>
 						</div>
 
 
-						<div class="svg__inside" id="openButton__port">
+						<div class="svg__inside" id="openButton">
 							<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
 							<defs>
 								<linearGradient id="gradientede__pc" x1="0" y1="0" x2="1" y2="1">
@@ -376,39 +397,39 @@
 								<stop offset="100%" stop-color="rgba(132, 6, 227, 1)" />
 								</linearGradient>
 							</defs>
-                            <rect x="1" y="1" width="96%" height="94%" rx="7%" fill="none" stroke-width="2%" />
+							<rect x="1" y="1" width="96%" height="94%" rx="7%" fill="none" stroke-width="2%" />
 							<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="1.2vw" fill="rgba(255, 255, 255, 1)">Зв’язок</text>
 							</svg>
 						</div>							  
 						<div class="typediva">
-							<div class="sztext helloas" id="navmenu__port">
+							<div class="sztext helloas" id="navmenu">
 								<div class="newasa">
-									<a href="{% url 'main_trans' lang_code='it' %}#home__page">
+									<a href="{% url 'main_trans' lang_code='en' %}#home__page">
 										<p class="navtext">Головна</p>
 									</a>
 								</div>
 								<div class="newasa">
-									<a href="{% url 'main_trans' lang_code='it' %}#specialty">
+									<a href="{% url 'main_trans' lang_code='en' %}#specialty">
 										<p class="navtext">Послуги</p>
 									</a>
 								</div>
 								<div class="newasa our__qq">
-									<a href="{% url 'main_trans' lang_code='it' %}#scrollto__works">
+									<a href="{% url 'main_trans' lang_code='en' %}#scrollto__works">
 										<p class="navtext">Наші роботи</p>
 									</a>
 								</div>
 								<div class="newasa pop__qq">
-									<a href="{% url 'main_trans' lang_code='it' %}#scrollto__faq">
+									<a href="{% url 'main_trans' lang_code='en' %}#scrollto__faq">
 										<p class="navtext">Популярні запитання</p>
 									</a>
 								</div>
 								<div class="newasa wasaa">
-									<a href="{% url 'main_trans' lang_code='it' %}#scrollto__bloger">
+									<a href="{% url 'main_trans' lang_code='en' %}#scrollto__bloger">
 										<p class="navtext">IT блог</p>
 									</a>
 								</div>
 							</div>
-							<div class="menu-toggle" id="menu__port">
+							<div class="menu-toggle" id="menu">
 								<div>
 									<span class="menu-toggle-bar menu-toggle-bar--top"></span>
 									<span class="menu-toggle-bar menu-toggle-bar--bottom"></span>
@@ -424,134 +445,48 @@
 					</div>
 				</div>
             </div>
-            <section class="blog1 defsect">
-				<div class="get__up borderm" id="get__up__port">
-					<svg class="for__pc" width="32" height="39" viewBox="0 0 32 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M16.0259 2V36.9738M16.0259 2L2 15.9667M16.0259 2L30 15.9667" stroke="white" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-					<svg class="for__phone" width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M9.01481 1V20.985M9.01481 1L1 8.98096M9.01481 1L17 8.98096" stroke="white" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</div>
-                <div class="blog1cont">
-					<div class="uphalf halfs">
-						<div class="name__desc">
-							<div class="nameblog">
-								<p>
-									{{ article.title }}
-								</p>
-							</div>
-							<div class="descblog">
-								<div class="imgblog" id="mobile__version">
-	
-								</div>
-
-								{{ article.text | safe }}
-							</div>
-						</div>
-						<div class="imgblog" id="pc__version" style="background-image: url('{{ article.image_main.url }}')">
-	
-						</div>
-					</div>
-					<div class="downhalf halfs">
-						<div class="imgblogsmall" style="background-image: url('{{ article.image_secondary.url }}')">
-	
-						</div>
-						<div class="textcontinue">
-							{{ article.footer_text | safe }}
-						</div>
-					</div>
-                    <div class="halftext">
-                        <div class="blog__text">
-                            {{ article.bottom_text | safe }}
-                        </div>
+            <section class="coockiepage" id="coockiepage">
+                <div class="cp__main">
+                    <div class="get__up borderm" id="get__up">
+                        <svg class="for__pc" width="32" height="39" viewBox="0 0 32 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.0259 2V36.9738M16.0259 2L2 15.9667M16.0259 2L30 15.9667" stroke="white" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg class="for__phone" width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.01481 1V20.985M9.01481 1L1 8.98096M9.01481 1L17 8.98096" stroke="white" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-					<div class="statchecker">
-						<div class="lookhere" id="statholder">
-							<div class="partstat">
-								<div class="topstat">
-									<div class="dateme">
-										<p>
-											{{ article.pub_date|date:"d.m.Y" }}
-										</p>
-									</div>
-									<div class="menume">
-										<div class="icon1 mainbrdr range brdrez icon__like" data-article-id="{{ article.article_id }}">
-											<svg class="heart" width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<defs>
-													<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-														<stop offset="0%" stop-color="var(--color-stop)" />
-														<stop offset="30%" stop-color="var(--color-stop)" />
-														<stop offset="100%" stop-color="var(--color-bot)" />
-													  </linearGradient>
-												</defs>
-                                                {% include 'base/like_button.html' with id=article.article_id|stringformat:"s" %}
-											</svg>
-										</div>
-										<div class="icon2 mainbrdr range brdrez" data-article-id="{{ article.article_id }}">
-											<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path
-													d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
-													stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
-												<path
-													d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862"
-													stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
-											</svg>
-										</div>
-										<div class="icon3 mainbrdr range brdrez" id="stats1">
-											<svg width="29" height="5" viewBox="0 0 29 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="showmestat" id="openstats">
-												<circle cx="2.5" cy="2.5" r="2.5" fill="white"/>
-												<circle cx="26.5" cy="2.5" r="2.5" fill="white"/>
-												<circle cx="14.5" cy="2.5" r="2.5" fill="white"/>
-											</svg>
-											<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidemestat" id="hidestats">
-												<path d="M1 1L8.5 8.5M16 16L8.5 8.5M8.5 8.5L16 1M8.5 8.5L1 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-											</svg>
-										</div>
-									</div>
-								</div>
-								<div class="fullstat">
-									<div class="statname">
-										<p>
-											Статистика
-										</p>
-									</div>
-									<div class="allstat">
-										<div class="statme">
-											<svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path fill-rule="evenodd" clip-rule="evenodd" d="M1 9.25C1 9.25 5.5 1 12.25 1C19 1 23.5 9.25 23.5 9.25C23.5 9.25 19 17.5 12.25 17.5C5.5 17.5 1 9.25 1 9.25Z" stroke="white" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-												<path fill-rule="evenodd" clip-rule="evenodd" d="M12.25 13C14.3211 13 16 11.3211 16 9.25C16 7.17893 14.3211 5.5 12.25 5.5C10.1789 5.5 8.5 7.17893 8.5 9.25C8.5 11.3211 10.1789 13 12.25 13Z" stroke="white" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-											</svg>
-											<p>
-												{{ article.views }}
-											</p>
-										</div>
-										<div class="statme">
-											<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-												<path d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-											</svg>
-											<p>
-												{{ article.reposts }}
-											</p>
-										</div>
-										<div class="statme">
-											<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path fill-rule="evenodd" clip-rule="evenodd" d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-											</svg>
-											<p>
-												{{ article.likes }}
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                    <div class="cp__title">
+                        <p>
+                            Cookie
+                        </p>
+                    </div>
+                    <div class="cp__text">
+                        <p>
+                            Cookies are used to improve the performance of the site and make it easier to use. Cookies are small pieces of data which enable the site to distinguish between new and old visitors to the site and to determine how the site is used, and cookies are necessary to enable the site to function.Through the use of cookies we can process your requests and process the information you provide to us.
+                        </p>
+                        <p>
+                            By using this site, you consent to the use of cookies in accordance with this notice in relation to this type of cookie. If you do not consent to the Site using this type of cookie, you must adjust your browser settings accordingly or not use the Site.
+                        </p>
+                        <p>
+                            If you wish to disable the use of cookies, you must go to the settings of your personal computer and disable the use of all types of cookies or enable the warning function when they are stored.
+                        </p>
+                        <p>
+                            This website uses Google Analytics, a service for analysing website traffic provided by Google Inc. ("Google"). Google Analytics uses cookies, text files that are placed on your computer and allow the analysis of user behaviour on the website. The information about your use of this website (including anonymous IP address) collected by the cookie is transmitted to and stored on a Google server in the USA.
+                        </p>
+                        <p>
+                            Google will use this information to analyse your use of the website, to compile reports on website activity for website operators and to provide other services relating to website activity and internet usage.
+                        </p>
+                        <p>
+                            Google may transfer such information to third parties to the extent permitted by applicable law and where said third parties process such data on behalf of Google. The IP address transmitted will not be merged with any other data held by Google. You can refuse the use of cookies in your browser settings, however, if you do so, you may not be able to use all the functions of this website.
+                        </p>
+                        <p>
+                            If you do not agree to this type of cookie being used on the website, you must set your browser settings accordingly or not use the Website.
+                        </p>
+                    </div>
+                </div>
             </section>
         </div>
-        <footer class="footr" id="callback__check__port">
+        <footer class="footr" id="callback__check">
 			<div class="blurfoot" id="blurfoot">
 
 			</div>
@@ -598,10 +533,10 @@
 							<div class="leftftr">
 								<div class="forleft">
 									<div class="contact">
-										<a href="{% url 'main_trans' lang_code='it' %}#home__page" class="tohome">
+										<a href="{% url 'main_trans' lang_code='en' %}#home__page" class="tohome">
 											<div class="bottomlogo">
 												<?xml version="1.0" encoding="utf-8"?>
-												<svg width="2vw" height="2vw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<svg width="2" height="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M4 19H20M11.2929 5.70711L8.70711 8.2929C8.31658 8.68342 7.68342 8.68342 7.29289 8.2929L5.70711 6.70711C5.07714 6.07714 4 6.52331 4 7.41422V15C4 15.5523 4.44772 16 5 16H19C19.5523 16 20 15.5523 20 15V7.41421C20 6.52331 18.9229 6.07714 18.2929 6.70711L16.7071 8.2929C16.3166 8.68342 15.6834 8.68342 15.2929 8.2929L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711Z" stroke="rgba(255,255,255,1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 												</svg>
 												<div class="logotext">
@@ -614,7 +549,7 @@
 									</div>
 									<div class="contact flexione">
 										<div class="gap__me">
-											<a href="{% url 'cookie_trans' lang_code='it' %}" class="linkt">
+											<a href="#" class="linkt">
 												<p>
 													Cookie
 												</p>
@@ -641,27 +576,27 @@
 											</a>
 										</div>
 										<div class="gap__me">
-											<a href="{% url 'main_trans' lang_code='it' %}#home__page" class="linkt">
+											<a href="{% url 'main_trans' lang_code='en' %}#home__page" class="linkt">
 												<p>
 													Головна
 												</p>
 											</a>
-											<a href="{% url 'main_trans' lang_code='it' %}#specialty" class="linkt">
+											<a href="{% url 'main_trans' lang_code='en' %}#specialty" class="linkt">
 												<p>
 													Послуги
 												</p>
 											</a>
-											<a href="{% url 'main_trans' lang_code='it' %}#advantages" class="linkt">
+											<a href="{% url 'main_trans' lang_code='en' %}#advantages" class="linkt">
 												<p>
 													Переваги
 												</p>
 											</a>
-											<a href="{% url 'main_trans' lang_code='it' %}#faq__qq" class="linkt">
+											<a href="{% url 'main_trans' lang_code='en' %}#faq__qq" class="linkt">
 												<p>
 													Популярні запитання
 												</p>
 											</a>
-											<a href="{% url 'main_trans' lang_code='it' %}#blog__us" class="linkt">
+											<a href="{% url 'main_trans' lang_code='en' %}#blog__us" class="linkt">
 												<p>
 													IT блог
 												</p>
@@ -860,41 +795,6 @@
 			</div>
 		</footer>
     </div>
-    <script>
-        $(document).ready(function (){
-            $('.icon1').click(function (){
-                var article_id = $(this).data('article-id')
-                console.log(article_id)
-                $.ajax({
-                    type:'POST',
-                    url:'{% url 'like_article' %}',
-                    data: {'article_id':article_id}
-                })
-            })
-                        const repostArticlesButtons = document.querySelectorAll('.icon2')
-            repostArticlesButtons.forEach(button=>{
-                button.addEventListener('click',function (event){
-                    event.stopPropagation()
-                    const article_id = this.getAttribute('data-article-id')
-                    const article_url = window.location.origin + '/blog/article/' + article_id
-                    copyToClipboard(article_url)
-                    $.ajax({
-                        type:'POST',
-                        url:'{% url 'repost_article' %}',
-                        data:{'article_id':article_id}
-                    })
-                })
-            })
-            function copyToClipboard(text) {
-                const textarea = document.createElement('textarea');
-                textarea.value = text;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-}
-        })
-    </script>
-    <script type="text/javascript" src="{% static 'js/blogjs1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/coockie.js' %}"></script>
 </body>
 </html>
