@@ -5,19 +5,31 @@ from portfolio.models import ProjectTransEn, ProjectTransIt
 
 def get_translation_offer(offer,lang_code):
     offer_id = offer.offer_id
-    match lang_code:
-        case 'en':
-            try:
-                trans = OfferTransEn.objects.get(offer_id=offer_id)
-            except:
-                return offer
-        case 'it':
-            try:
-                trans = OfferTransIt.objects.get(offer_id=offer_id)
-            except:
-                return offer
-        case 'ua':
-            return Offer.objects.get(offer_id=offer_id)
+    if lang_code == 'en':
+        try:
+            trans = OfferTransEn.objects.get(offer_id=offer_id)
+        except:
+            return offer
+    if lang_code == 'it':
+        try:
+            trans = OfferTransIt.objects.get(offer_id=offer_id)
+        except:
+            return offer
+    if lang_code == 'ua':
+        return offer
+    # match lang_code:
+    #     case 'en':
+    #         try:
+    #             trans = OfferTransEn.objects.get(offer_id=offer_id)
+    #         except:
+    #             return offer
+    #     case 'it':
+    #         try:
+    #             trans = OfferTransIt.objects.get(offer_id=offer_id)
+    #         except:
+    #             return offer
+    #     case 'ua':
+    #         return Offer.objects.get(offer_id=offer_id)
     try:
         offer.title = trans.title
         offer.intro = trans.intro
@@ -32,19 +44,31 @@ def get_translation_offer(offer,lang_code):
 
 def get_translation_article(article, lang_code):
     article_id = article.article_id
-    match lang_code:
-        case 'en':
-            try:
-                trans = ArticleTransEn.objects.get(article_id=article_id)
-            except:
-                return article
-        case 'it':
-            try:
-                trans = ArticleTransIt.objects.get(article_id=article_id)
-            except:
-                return article
-        case 'ua':
-            return Article.objects.get(article_id=article_id)
+    if lang_code == 'en':
+        try:
+            trans = ArticleTransEn.objects.get(article_id=article_id)
+        except:
+            return article
+    if lang_code == 'it':
+        try:
+            trans = ArticleTransIt.objects.get(article_id=article_id)
+        except:
+            return article
+    if lang_code == 'ua':
+        return article
+    # match lang_code:
+    #     case 'en':
+    #         try:
+    #             trans = ArticleTransEn.objects.get(article_id=article_id)
+    #         except:
+    #             return article
+    #     case 'it':
+    #         try:
+    #             trans = ArticleTransIt.objects.get(article_id=article_id)
+    #         except:
+    #             return article
+    #     case 'ua':
+    #         return Article.objects.get(article_id=article_id)
     try:
         article.text = trans.text
         article.title = trans.title
@@ -56,19 +80,31 @@ def get_translation_article(article, lang_code):
 
 def get_translation_project(project, lang_code):
     project_id = project.project_id
-    match lang_code:
-        case 'en':
-            try:
-                trans = ProjectTransEn.objects.get(project_id=project_id)
-            except:
-                return project
-        case 'it':
-            try:
-                trans = ProjectTransIt.objects.get(project_id=project_id)
-            except:
-                return project
-        case 'ua':
+    if lang_code == 'en':
+        try:
+            trans = ProjectTransEn.objects.get(project_id=project_id)
+        except:
             return project
+    if lang_code == 'it':
+        try:
+            trans = ProjectTransIt.objects.get(project_id=project_id)
+        except:
+            return project
+    if lang_code == 'ua':
+        return project
+    # match lang_code:
+    #     case 'en':
+    #         try:
+    #             trans = ProjectTransEn.objects.get(project_id=project_id)
+    #         except:
+    #             return project
+    #     case 'it':
+    #         try:
+    #             trans = ProjectTransIt.objects.get(project_id=project_id)
+    #         except:
+    #             return project
+    #     case 'ua':
+    #         return project
     try:
         project.desc = trans.desc
         project.title = trans.title
