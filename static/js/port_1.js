@@ -1,9 +1,9 @@
 //update on change size window
-let isMobile = window.innerWidth <= 428;
+let isMobile = window.innerWidth <= 440;
 
 function checkAndReload() {
   const screenWidth = window.innerWidth;
-  const isMobileNow = screenWidth <= 428;
+  const isMobileNow = screenWidth <= 440;
 
   if (isMobileNow !== isMobile) {
     location.reload();
@@ -446,7 +446,7 @@ spanElementName.addEventListener('click', () => {
 
 const screenMob = window.innerWidth;
 
-if (screenMob <= 428) {
+if (screenMob <= 440) {
 
   inputElementGmail.addEventListener('focus', () => {
     spanElementGmail.style.top = '22.5vw';
@@ -899,7 +899,7 @@ const bgfoot = document.getElementById('blurfoot');
 const ch__tel = document.getElementById('ch__tel');
 const close__phone = document.getElementById('close__phone');
 
-if (screenMob > 428) {
+if (screenMob > 440) {
   telus.addEventListener('click', () => {
     bgfoot.style.left = '0%';
     bgfoot.style.opacity = '1';
@@ -946,3 +946,113 @@ if (screenMob > 428) {
     };
   });
 }
+
+
+// input preopened
+
+const ph__bot = document.getElementById('ph__bot');
+const inst__bot = document.getElementById('inst__bot');
+const what__bot = document.getElementById('what__bot');
+
+inst__bot.addEventListener('click', () => {
+  window.open('https://instagram.com/crownsofts?igshid=MmIzYWVlNDQ5Yg==', '_blank');
+});
+
+what__bot.addEventListener('click', () => {
+  window.open('https://t.me/eternal_sorrow', '_blank');
+});
+
+if (screenMob > 440) {
+  ph__bot.addEventListener('click', () => {
+    bgfoot.style.left = '0%';
+    bgfoot.style.opacity = '1';
+    ch__tel.style.top = '4vw';
+    ch__tel.style.left = '75vw';
+  
+    if (bgfoot.style.left === '0%') {
+      bgfoot.addEventListener('click', () => {
+        bgfoot.style.opacity = '0';
+        setTimeout(function() {
+          bgfoot.style.left = '-100%';
+        }, 300);
+        ch__tel.style.left = '-17vw';
+      });
+      close__phone.addEventListener('click', () => {
+        bgfoot.style.opacity = '0';
+        setTimeout(function() {
+          bgfoot.style.left = '-100%';
+        }, 300);
+        ch__tel.style.left = '-17vw';
+      });
+    };
+  });
+} else {
+  ph__bot.addEventListener('click', () => {
+    bgfoot.style.left = '0%';
+    bgfoot.style.opacity = '1';
+    ch__tel.style.top = '200vw';
+    ch__tel.style.left = '44vw';
+  
+    if (bgfoot.style.left === '0%') {
+      bgfoot.addEventListener('click', () => {
+        bgfoot.style.opacity = '0';
+        setTimeout(function() {
+          bgfoot.style.left = '-100%';
+        }, 300);
+        ch__tel.style.left = '-44vw';
+      });
+      close__phone.addEventListener('click', () => {
+        bgfoot.style.opacity = '0';
+        setTimeout(function() {
+          bgfoot.style.left = '-100%';
+        }, 300);
+        ch__tel.style.left = '-44vw';
+      });
+    };
+  });
+}
+
+// form telephone choose + links
+
+const ph__top = document.getElementById('ph__top');
+const inst__top = document.getElementById('inst__top');
+const what__top = document.getElementById('what__top');
+
+const blurfoot__form = document.getElementById('blurfoot__form');
+const ch__tel__top = document.getElementById('ch__tel__top');
+const close__phone__top = document.getElementById('close__phone__top');
+
+inst__top.addEventListener('click', () => {
+  window.open('https://instagram.com/crownsofts?igshid=MmIzYWVlNDQ5Yg==', '_blank');
+});
+
+what__top.addEventListener('click', () => {
+  window.open('https://t.me/eternal_sorrow', '_blank');
+});
+
+
+ph__top.addEventListener('click', () => {
+  blurfoot__form.style.left = '0%';
+  blurfoot__form.style.opacity = '1';
+
+  ch__tel__top.style.right = '6vw';
+
+  if (blurfoot__form.style.left === '0%') {
+    blurfoot__form.addEventListener('click', () => {
+      blurfoot__form.style.opacity = '0';
+      setTimeout(function() {
+        blurfoot__form.style.left = 'unset';
+        blurfoot__form.style.right = '-100%';
+      }, 300);
+      ch__tel__top.style.right = '-17vw';
+    });
+    close__phone__top.addEventListener('click', () => {
+      blurfoot__form.style.opacity = '0';
+      setTimeout(function() {
+        blurfoot__form.style.left = 'unset';
+        blurfoot__form.style.right = '-100%';
+      }, 300);
+      ch__tel__top.style.right = '-17vw';
+    });
+  };
+})

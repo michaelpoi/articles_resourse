@@ -1492,7 +1492,7 @@ a {
     width: 1.5vw;
 }
 .formfill {
-
+    width: 64%;
     border-radius: 0.7vw;
     background-color: #1f1f1f;
 }
@@ -4433,7 +4433,7 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 60%;
 }
 
-@media (max-width: 428px) {
+@media (max-width: 440px) {
     .ch__tel {
         width: 40vw;
         height: 50vw;

@@ -414,7 +414,7 @@ p {
 }
 
 
-@media (max-width: 428px) {
+@media (max-width: 440px) {
     #pc__res {
         background-color: rgba(38,38,38,0.6);
     }

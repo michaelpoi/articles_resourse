@@ -220,7 +220,7 @@
 #mobile__version {
     display: none;
 }
-@media (max-width: 428px) {
+@media (max-width: 440px) {
     #mobile__version {
         display: flex;
     }

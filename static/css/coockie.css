@@ -47,7 +47,7 @@ p {
     text-align: justify;
 }
 
-@media (max-width: 428px) {
+@media (max-width: 440px) {
     .coockiepage {
         background-size: 170% 170%;
     }
