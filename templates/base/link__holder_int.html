@@ -1,27 +1,37 @@
 <div class="link__holder">
 						<div class="clicker" id="main__home" onclick="window.location.href='{% url 'main_trans' lang_code=code %}#home__page'">
 							<p class="go__to">
-								Головна
+								{% if code == 'en' %}
+                                    Home
+                                {% endif %}
 							</p>
 						</div>
 						<div class="clicker" id="main__props" onclick="window.location.href='{% url 'main_trans' lang_code=code %}#specialty'">
 							<p class="go__to">
-								Послуги
+								{% if code == 'en' %}
+                                    Services
+                                {% endif %}
 							</p>
 						</div>
 						<div class="clicker" id="main__adv" onclick="window.location.href='{% url 'main_trans' lang_code=code %}#portfolio__us'">
 							<p class="go__to">
-								Наші роботи
+								{% if code == 'en' %}
+                                    Our works
+                                {% endif %}
 							</p>
 						</div>
 						<div class="clicker" id="main__develop" onclick="window.location.href='{% url 'main_trans' lang_code=code %}#faq__qq'">
 							<p class="go__to">
-								Популярні запитання
+								{% if code == 'en' %}
+                                    FAQ
+                                {% endif %}
 							</p>
 						</div>
 						<div class="clicker" id="main__blog" onclick="window.location.href='{% url 'main_trans' lang_code=code %}#blog__us'">
 							<p class="go__to">
-								Наш блог
+								{% if code == 'en' %}
+                                    Our blog
+                                {% endif %}
 							</p>
 						</div>
 					</div>

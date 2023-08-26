@@ -728,8 +728,6 @@ likes.forEach(like => {
 // check stats
 
 const stats1 = document.getElementById('stats1');
-const stats2 = document.getElementById('stats2');
-const stats3 = document.getElementById('stats3');
 const stat1 = document.getElementById('stat1');
 const stat2 = document.getElementById('stat2');
 const stat3 = document.getElementById('stat3');
@@ -746,19 +744,7 @@ stats1.addEventListener('click', () => {
   bgblurstat.style.opacity = '1';
 });
 
-stats2.addEventListener('click', () => {
-  stat2.style.left = '8.6vw';
-  stat2.style.opacity = '1';
-  bgblurstat.style.right = '0';
-  bgblurstat.style.opacity = '1';
-});
 
-stats3.addEventListener('click', () => {
-  stat3.style.left = '8.6vw';
-  stat3.style.opacity = '1';
-  bgblurstat.style.right = '0';
-  bgblurstat.style.opacity = '1';
-});
 
 toClose1.addEventListener('click', () => {
     stat1.style.opacity = '0';
@@ -834,6 +820,8 @@ toClose3.addEventListener('click', () => {
 
   // tel click
 
+// tel click
+
 const telus = document.getElementById('contact__us');
 const bgfoot = document.getElementById('blurfoot');
 const ch__tel = document.getElementById('ch__tel');
@@ -843,6 +831,7 @@ if (screenMob > 440) {
   telus.addEventListener('click', () => {
     bgfoot.style.left = '0%';
     bgfoot.style.opacity = '1';
+    ch__tel.style.top = '9.4vw';
     ch__tel.style.left = '17vw';
 
     if (bgfoot.style.left === '0%') {
@@ -866,6 +855,7 @@ if (screenMob > 440) {
   telus.addEventListener('click', () => {
     bgfoot.style.left = '0%';
     bgfoot.style.opacity = '1';
+    ch__tel.style.top = '42vw';
     ch__tel.style.left = '44vw';
 
     if (bgfoot.style.left === '0%') {
@@ -907,7 +897,7 @@ if (screenMob > 440) {
     bgfoot.style.opacity = '1';
     ch__tel.style.top = '4vw';
     ch__tel.style.left = '75vw';
-  
+
     if (bgfoot.style.left === '0%') {
       bgfoot.addEventListener('click', () => {
         bgfoot.style.opacity = '0';
@@ -931,7 +921,7 @@ if (screenMob > 440) {
     bgfoot.style.opacity = '1';
     ch__tel.style.top = '200vw';
     ch__tel.style.left = '44vw';
-  
+
     if (bgfoot.style.left === '0%') {
       bgfoot.addEventListener('click', () => {
         bgfoot.style.opacity = '0';

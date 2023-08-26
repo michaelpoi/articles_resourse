@@ -1,9 +1,9 @@
 //update on change size window
-let isMobile = window.innerWidth <= 428;
+let isMobile = window.innerWidth <= 440;
 
 function checkAndReload() {
   const screenWidth = window.innerWidth;
-  const isMobileNow = screenWidth <= 428;
+  const isMobileNow = screenWidth <= 440;
 
   if (isMobileNow !== isMobile) {
     location.reload();
@@ -330,7 +330,7 @@ form.addEventListener('submit', (event) => {
   const screenWidth = window.innerWidth;
 
   if (hasNumberOne) {
-    if (screenWidth <= 428) {
+    if (screenWidth <= 440) {
       failedBlock.style.display = 'flex';
       failedBlock.style.animation = 'slideDownPhone 0.5s forwards';
 
@@ -352,7 +352,7 @@ form.addEventListener('submit', (event) => {
   inputs.forEach(input => {
     if (input.value.includes('1')) {
       input.style.border = '0.25vw solid red';
-      if (screenWidth <= 428) {
+      if (screenWidth <= 440) {
         input.style.border = '0.6vw solid red';
       }
       setTimeout(() => {
@@ -920,7 +920,7 @@ spanElementName.addEventListener('click', () => {
 
 const screenMob = window.innerWidth;
 
-if (screenMob <= 428) {
+if (screenMob <= 440) {
 
   fname.addEventListener('focus', () => {
     fspanname.style.top = '2.4%';
@@ -1355,7 +1355,7 @@ const fastordertop = document.getElementById('fastordertop');
 const fastorder__onlypc = document.getElementById('fastorder__onlypc');
 const fastorder__onlymobile = document.getElementById('fastorder__onlymobile');
 
-if (screenMob > 428) {
+if (screenMob > 440) {
   fastorder__onlypc.addEventListener('click', () => {
     bgBlur.style.right = '0';
     bgBlur.style.opacity = '1';
@@ -1587,17 +1587,20 @@ choose__top.addEventListener('click', () => {
 
 // tel click
 
+// tel click
+
 const telus = document.getElementById('contact__us');
 const bgfoot = document.getElementById('blurfoot');
 const ch__tel = document.getElementById('ch__tel');
 const close__phone = document.getElementById('close__phone');
 
-if (screenMob > 428) {
+if (screenMob > 440) {
   telus.addEventListener('click', () => {
     bgfoot.style.left = '0%';
     bgfoot.style.opacity = '1';
+    ch__tel.style.top = '9.4vw';
     ch__tel.style.left = '17vw';
-
+  
     if (bgfoot.style.left === '0%') {
       bgfoot.addEventListener('click', () => {
         bgfoot.style.opacity = '0';
@@ -1619,8 +1622,9 @@ if (screenMob > 428) {
   telus.addEventListener('click', () => {
     bgfoot.style.left = '0%';
     bgfoot.style.opacity = '1';
+    ch__tel.style.top = '42vw';
     ch__tel.style.left = '44vw';
-
+  
     if (bgfoot.style.left === '0%') {
       bgfoot.addEventListener('click', () => {
         bgfoot.style.opacity = '0';
@@ -1640,7 +1644,6 @@ if (screenMob > 428) {
   });
 }
 
-
 // input preopened
 
 const ph__bot = document.getElementById('ph__bot');
@@ -1655,7 +1658,7 @@ what__bot.addEventListener('click', () => {
   window.open('https://t.me/eternal_sorrow', '_blank');
 });
 
-if (screenMob > 428) {
+if (screenMob > 440) {
   ph__bot.addEventListener('click', () => {
     bgfoot.style.left = '0%';
     bgfoot.style.opacity = '1';

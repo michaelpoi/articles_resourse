@@ -713,6 +713,8 @@ document.getElementById('openButtonMobile').addEventListener('click', () => {
 
   // tel click
 
+// tel click
+
 const telus = document.getElementById('contact__us');
 const bgfoot = document.getElementById('blurfoot');
 const ch__tel = document.getElementById('ch__tel');
@@ -722,8 +724,9 @@ if (screenMob > 440) {
   telus.addEventListener('click', () => {
     bgfoot.style.left = '0%';
     bgfoot.style.opacity = '1';
+    ch__tel.style.top = '9.4vw';
     ch__tel.style.left = '17vw';
-
+  
     if (bgfoot.style.left === '0%') {
       bgfoot.addEventListener('click', () => {
         bgfoot.style.opacity = '0';
@@ -745,8 +748,9 @@ if (screenMob > 440) {
   telus.addEventListener('click', () => {
     bgfoot.style.left = '0%';
     bgfoot.style.opacity = '1';
+    ch__tel.style.top = '42vw';
     ch__tel.style.left = '44vw';
-
+  
     if (bgfoot.style.left === '0%') {
       bgfoot.addEventListener('click', () => {
         bgfoot.style.opacity = '0';
@@ -765,7 +769,6 @@ if (screenMob > 440) {
     };
   });
 }
-
 
 // input preopened
 

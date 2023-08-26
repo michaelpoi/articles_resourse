@@ -7,7 +7,7 @@
     <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width">
     <link rel="stylesheet" href="{% static 'css/style_new.css' %}">
     <link rel="stylesheet" href="{% static 'css/blogcss.css' %}">
-    <link rel="stylesheet" href="{% static 'css/blogcss1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blogcss1_new.css' %}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -461,6 +461,11 @@
 							{{ article.footer_text | safe }}
 						</div>
 					</div>
+                    <div class="halftext">
+                        <div class="blog__text">
+                            {{ article.bottom_text | safe }}
+                        </div>
+                    </div>
 					<div class="statchecker">
 						<div class="lookhere" id="statholder">
 							<div class="partstat">

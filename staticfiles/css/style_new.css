@@ -1396,6 +1396,7 @@ a {
     padding-bottom: 1vw;
     position: relative;
     height: 100%;
+    width: 100%;
 }
 .frcontent .container {
     display: flex;
