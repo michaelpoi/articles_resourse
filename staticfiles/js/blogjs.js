@@ -780,11 +780,7 @@ toClose3.addEventListener('click', () => {
 });
 
 
-  const linktoblog = document.getElementById('blog1');
-  
-  linktoblog.addEventListener('click', (event) => {
-      window.location.href = '../../../../CrownStudio/blog/blogs/blog1.html';
-  });
+
 
 
   choose__bot.addEventListener('click', () => {
