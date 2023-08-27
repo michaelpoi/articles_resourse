@@ -1599,7 +1599,7 @@
 							<div class="proposal__sale see__able">
 								<div class="gradient__sale">
 									<p>
-										-17% for orders of this type
+										-17% for custom design
 									</p>
 								</div>
 							</div>
@@ -2116,7 +2116,7 @@
 														{{ article.title }}
 													</h1>
 													<p class="textblog__bot">
-                                                        {{ article.text | safe }}
+                                                        {{ article.text | safe|slice:":700" }}
 													</p>
 													<!-- <p>
 														Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

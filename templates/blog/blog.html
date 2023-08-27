@@ -544,7 +544,7 @@
 														{{ article.title }}
 													</h1>
 													<p class="textblog">
-                                                        {{ article.text | safe }}
+                                                        {{ article.text | safe|slice:":700" }}
 													</p>
 													<!-- <p>
 														Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -719,7 +719,7 @@
                                 </p>
                             </div>
                             <div class="blogdesc blogdiv arrangetxt">
-                                {{ cards.0.text | safe | slice:':500' }}
+                                {{ cards.0.text | safe | slice:':500' }}...
                             </div>
                             <div class="icons__blog">
                                 <div class="icon1 mainbrdr range brdrez icon__like" id="icon__like1" data-article-id="{{ cards.0.article_id }}">
@@ -759,7 +759,7 @@
 										</p>
 									</div>
 									<div class="blogdesc blogdiv">
-										{{ cards.1.text | safe | slice:":300" }}
+										{{ cards.1.text | safe | slice:":200" }}...
 									</div>
 									<div class="icons__blog">
 										<div class="icon1 mainbrdr range brdrez icon__like" id="icon__like3" data-article-id="{{ cards.1.article_id }}">
@@ -800,7 +800,7 @@
 										</p>
 									</div>
 									<div class="blogdesc blogdiv">
-										{{ cards.2.text | safe|slice:":300" }}
+										{{ cards.2.text | safe|slice:":200" }}...
 									</div>
 									<div class="icons__blog">
 										<div class="icon1 mainbrdr range brdrez icon__like" id="icon__like4" data-article-id="{{ cards.2.article_id }}">
@@ -845,7 +845,7 @@
 										</p>
 									</div>
 									<div class="blogdesc blogdiv">
-										{{ cards.4.text | safe | slice:":300" }}
+										{{ cards.4.text | safe | slice:":200" }}...
 									</div>
 									<div class="icons__blog">
 										<div class="icon1 mainbrdr range brdrez icon__like" id="icon__like5" data-article-id="{{ cards.4.article_id }}">
@@ -886,7 +886,7 @@
 										</p>
 									</div>
 									<div class="blogdesc blogdiv arrangetxt1">
-										{{ cards.3.text | safe | slice:":300" }}
+										{{ cards.3.text | safe | slice:":200" }}...
 									</div>
 									<div class="icons__blog">
 										<div class="icon1 mainbrdr range brdrez icon__like" id="icon__like6" data-article-id="{{ cards.3.article_id }}">
@@ -925,7 +925,7 @@
 									</p>
 								</div>
 								<div class="blogdesc blogdiv arrangetxt2">
-									{{ cards.5.text | safe | slice:':600' }}
+									{{ cards.5.text | safe | slice:':600' }}...
 								</div>
 								<div class="icons__blog">
 									<div class="icon1 mainbrdr range brdrez icon__like" id="icon__like" data-article-id="{{ cards.5.article_id }}">
