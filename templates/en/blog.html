@@ -175,7 +175,7 @@
 					<div class="mamany">
 						<div class="pelaha" id="mobile__vers">
 							<div class="kasj" id="mobile__tpp">
-								<input type="search" name="" id="input__write" class="nanas" placeholder="пошук по сайту" autocomplete="off">
+								<input type="search" name="" id="input__write" class="nanas" placeholder="search" autocomplete="off">
 							</div>
 							<div class="kakav">
 								<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -441,7 +441,7 @@
 						<div class="mamany">
 							<div class="pelaha" id="pelaha__port">
 								<div class="kasj" id="kasj__port">
-									<input type="search" name="" id="nanas__port" class="nanas" placeholder="пошук по сайту" autocomplete="off">
+									<input type="search" name="" id="nanas__port" class="nanas" placeholder="search" autocomplete="off">
 								</div>
 								<div class="kakav">
 									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -465,7 +465,7 @@
 								</linearGradient>
 							</defs>
                             <rect x="1" y="1" width="96%" height="94%" rx="7%" fill="none" stroke-width="2%" />
-							<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="1.2vw" fill="rgba(255, 255, 255, 1)">Зв’язок</text>
+							<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="1.2vw" fill="rgba(255, 255, 255, 1)">Contact</text>
 							</svg>
 						</div>							  
 						<div class="typediva">
@@ -1104,6 +1104,66 @@
     </div>
     <script>
         $(document).ready(function (){
+            $('#form__user').submit(function (event){
+                event.preventDefault()
+                let formData = $(this).serialize()
+                let name = $('#input__forme').val()
+                let email = $('#gmail__forme').val()
+                let phone = $('#phone__change__top').val()
+                let msg = $('#text__send').val()
+                console.log(phone)
+                console.log(email)
+                console.log(name)
+                console.log(formData)
+
+                var activeLabels = [];
+
+                $(".raddiv.radchoosen").each(function() {
+                  var label = $(this).find("label").text().trim();
+                  activeLabels.push(label);
+                });
+
+                data_new = {
+                    'name':name,
+                    'email':email,
+                    'phone':phone,
+                    'services':activeLabels,
+                    'message':msg,
+                    'lang_code':'en'
+                }
+                console.log(data_new)
+                $.ajax({
+                    type:'POST',
+                    url:'https://nethunt.com/service/automation/hooks/64ea27e1520a810009613fb9',
+                    data: data_new
+                })
+
+            })
+            $('#form__user__bot').submit(function (event){
+                event.preventDefault()
+                let name = $('#name__change').val()
+                let email = $('#gmail__change').val()
+                let phone = $('#phone__change').val()
+                let msg = $('#text__send__bot').val()
+                activeLabels = []
+                $(".raddiv.radchoosen").each(function() {
+                  var label = $(this).find("label").text().trim();
+                  activeLabels.push(label);
+                });
+                data_new = {
+                    'name':name,
+                    'email':email,
+                    'phone':phone,
+                    'services':activeLabels,
+                    'message':msg,
+                    'lang_code':'en'
+                }
+                $.ajax({
+                    type:'POST',
+                    url:'https://nethunt.com/service/automation/hooks/64ea27e1520a810009613fb9',
+                    data:data_new
+                })
+            })
             $('.icon1').click(function (event){
                 event.stopPropagation()
                 var article_id = $(this).data('article-id')

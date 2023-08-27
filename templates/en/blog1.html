@@ -820,6 +820,66 @@
     </div>
     <script>
         $(document).ready(function (){
+            $('#form__user').submit(function (event){
+                event.preventDefault()
+                let formData = $(this).serialize()
+                let name = $('#input__forme').val()
+                let email = $('#gmail__forme').val()
+                let phone = $('#phone__change__top').val()
+                let msg = $('#text__send').val()
+                console.log(phone)
+                console.log(email)
+                console.log(name)
+                console.log(formData)
+
+                var activeLabels = [];
+
+                $(".raddiv.radchoosen").each(function() {
+                  var label = $(this).find("label").text().trim();
+                  activeLabels.push(label);
+                });
+
+                data_new = {
+                    'name':name,
+                    'email':email,
+                    'phone':phone,
+                    'services':activeLabels,
+                    'message':msg,
+                    'lang_code':'en'
+                }
+                console.log(data_new)
+                $.ajax({
+                    type:'POST',
+                    url:'https://nethunt.com/service/automation/hooks/64ea27e1520a810009613fb9',
+                    data: data_new
+                })
+
+            })
+            $('#form__user__bot').submit(function (event){
+                event.preventDefault()
+                let name = $('#name__change').val()
+                let email = $('#gmail__change').val()
+                let phone = $('#phone__change').val()
+                let msg = $('#text__send__bot').val()
+                activeLabels = []
+                $(".raddiv.radchoosen").each(function() {
+                  var label = $(this).find("label").text().trim();
+                  activeLabels.push(label);
+                });
+                data_new = {
+                    'name':name,
+                    'email':email,
+                    'phone':phone,
+                    'services':activeLabels,
+                    'message':msg,
+                    'lang_code':'en'
+                }
+                $.ajax({
+                    type:'POST',
+                    url:'https://nethunt.com/service/automation/hooks/64ea27e1520a810009613fb9',
+                    data:data_new
+                })
+            })
             $('.icon1').click(function (){
                 var article_id = $(this).data('article-id')
                 console.log(article_id)
