@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import render, redirect
 
 from art_overview.models import Article
@@ -68,6 +68,8 @@ def main_page_trans(request, lang_code):
     if lang_code == 'it':
         response = render(request, 'it/landing.html',context=context)
         response.set_cookie('user_lang', 'it')
+    if response is None:
+        raise Http404("Not found")
     return response
 
 
@@ -80,3 +82,4 @@ def cookie_trans(request,lang_code):
         return render(request,'en/coockie_en.html')
     if lang_code == 'it':
         return render(request, 'it/coockie_it.html')
+    raise Http404("Not found")

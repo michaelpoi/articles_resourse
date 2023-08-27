@@ -44,6 +44,7 @@ class OfferTransEn(models.Model):
     text_field_2 = models.CharField(max_length=255)
     text_field_3 = models.CharField(max_length=255)
     footer = RichTextField()
+    duration = models.CharField(max_length=63)
 
     def __str__(self):
         return self.title
@@ -60,6 +61,7 @@ class OfferTransIt(models.Model):
     text_field_2 = models.CharField(max_length=255)
     text_field_3 = models.CharField(max_length=255)
     footer = RichTextField()
+    duration = models.CharField(max_length=63)
 
     def __str__(self):
         return self.title

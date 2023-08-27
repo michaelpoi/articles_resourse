@@ -29,7 +29,7 @@ class ProjectPortfolio(models.Model):
     link = models.URLField(blank=True)
     style = models.CharField(max_length=255)
     type = models.CharField(max_length=255)
-    duration = models.CharField(max_length=20)
+    duration = models.CharField(max_length=63)
     hashtags = models.ManyToManyField(Hashtag, blank=True)
     image = models.ImageField(upload_to='images/')
 
@@ -65,6 +65,7 @@ class ProjectTransEn(models.Model):
     desc = RichTextField()
     style = models.CharField(max_length=255)
     type = models.CharField(max_length=255)
+    duration = models.CharField(max_length=63)
 
     def __str__(self):
         return self.title
@@ -79,7 +80,7 @@ class ProjectTransIt(models.Model):
     desc = RichTextField()
     style = models.CharField(max_length=255)
     type = models.CharField(max_length=255)
-
+    duration = models.CharField(max_length=63)
     def __str__(self):
         return self.title
 

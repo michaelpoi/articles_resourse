@@ -37,6 +37,7 @@ def get_translation_offer(offer,lang_code):
         offer.text_field_2 = trans.text_field_2
         offer.text_field_3 = trans.text_field_3
         offer.footer = trans.footer
+        offer.duration = trans.duration
     except:
         return offer
     return offer
@@ -111,6 +112,7 @@ def get_translation_project(project, lang_code):
         project.title = trans.title
         project.style = trans.style
         project.type = trans.type
+        project.duration = trans.duration
     except:
         return project
     return project

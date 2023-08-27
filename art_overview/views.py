@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, Http404
 from django.shortcuts import render, get_object_or_404
 
 from articles_res.trans_utils import get_translation_article
@@ -106,6 +106,8 @@ def blog_trans(request,lang_code):
     if lang_code == 'it':
         response = render(request, 'it/blog.html',context=context)
         response.set_cookie('user_lang', 'it')
+    if response is None:
+        raise Http404("Not found")
     return response
 
 
@@ -122,6 +124,8 @@ def article_trans(request,lang_code,article_id):
     if lang_code == 'it':
         response = render(request,'it/blog1.html',{'article':trans_art})
         response.set_cookie('user_lang','it')
+    if response is None:
+        raise Http404("Not found")
     if not is_watched(request,article_id):
         response.set_cookie(str(article_id), "watched")
 

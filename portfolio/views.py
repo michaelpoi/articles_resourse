@@ -1,4 +1,4 @@
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse, Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
@@ -104,10 +104,13 @@ def portfolio_trans(request, lang_code):
     if lang_code == 'it':
         response = render(request, 'it/portfolio.html', context=context)
         response.set_cookie('user_lang', 'it')
+    if response is None:
+        raise Http404("Not found")
     return response
 
 
 def project_trans(request, lang_code, project_id):
+    response = None
     project = get_object_or_404(ProjectPortfolio, project_id=project_id)
     if not is_watched(request,project_id):
         project.watch()
@@ -120,4 +123,6 @@ def project_trans(request, lang_code, project_id):
         response.set_cookie('user_lang', 'it')
     if not is_watched(request,project_id):
         response.set_cookie(str(project_id),"watched")
+    if response is None:
+        raise Http404("Not found")
     return response
