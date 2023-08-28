@@ -1,4 +1,5 @@
 from django.core.paginator import Paginator
+from django.db.models import Q
 from django.http import HttpResponse, JsonResponse, Http404
 from django.shortcuts import render, get_object_or_404
 
@@ -130,3 +131,13 @@ def article_trans(request,lang_code,article_id):
         response.set_cookie(str(article_id), "watched")
 
     return response
+
+
+def search(request):
+    if request.method == "GET":
+        searched = request.GET['searched']
+        articles = Article.objects.filter(Q(title__contains=searched)).order_by('-likes').all()
+        p = Paginator(articles, 6)
+        page = request.GET.get('page')
+        cards = p.get_page(page)
+        return render(request, 'blog/search.html', {'cards':cards})

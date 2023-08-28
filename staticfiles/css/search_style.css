@@ -1,0 +1,8 @@
+.forsearch{
+        margin-top: 5vw;
+    }
+@media (max-width: 440px) {
+    .forsearch{
+        margin-top: 22vw;
+    }
+}

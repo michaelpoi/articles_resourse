@@ -7,6 +7,7 @@
     <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width">
     <link rel="stylesheet" href="{% static 'css/style_new.css' %}">
     <link rel="stylesheet" href="{% static 'css/blogcss_new.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search_style.css' %}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -175,9 +176,7 @@
 					<div class="mamany">
 						<div class="pelaha" id="mobile__vers">
 							<div class="kasj" id="mobile__tpp">
-                                <form method="GET" action="{% url 'search' %}">
-                                    <input type="search" name="searched" id="input__write" class="nanas" placeholder="пошук по сайту" autocomplete="off">
-                                </form>
+								<input type="search" name="" id="input__write" class="nanas" placeholder="пошук по сайту" autocomplete="off">
 							</div>
 							<div class="kakav">
 								<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -443,9 +442,7 @@
 						<div class="mamany">
 							<div class="pelaha" id="pelaha__port">
 								<div class="kasj" id="kasj__port">
-                                    <form method="GET" action="{% url 'search' %}">
-                                        <input type="search" name="searched" id="nanas__port" class="nanas" placeholder="пошук по сайту" autocomplete="off">
-                                    </form>
+									<input type="search" name="" id="nanas__port" class="nanas" placeholder="пошук по сайту" autocomplete="off">
 								</div>
 								<div class="kakav">
 									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -516,187 +513,7 @@
 					</div>
 				</div>
             </div>
-            <section class="blog__all defsect">
-                <div class="name__holder" id="scrollto__bloger">
-					<p>
-						Наш блог
-					</p>
-				</div>
-				<div class="mainswiper">
-					<div class="swiper blogger">
-						<div class="swiper-wrapper">
-                            {% for article in slider_articles %}
-						  <div class="swiper-slide slide__one">
-								<div class="containercont">
-									<div class="contentswiper mainbrdr">
-										<div class="slidecontent">
-											<div class="imagecont">
-											<div class="eximg sizeof mainbrdr" style="background-image: url('{{ article.image_main.url }}')">
-											</div>
-										</div>
-										<div class="txtcont sizeof">
-											<div class="textarea sizeof1">
-												<div class="txt">
-													<div class="hashtag">
-                                                        {% for hash in article.hashtags.all %}
-														<div class="hash">
-                                                            <p>{{ hash }}</p>
-														</div>
-                                                            {% endfor %}
-													</div>
-													<h1 class="sheader">
-														{{ article.title }}
-													</h1>
-													<p class="textblog">
-                                                        {{ article.text | safe|slice:":700" }}
-													</p>
-													<!-- <p>
-														Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-													</p> -->
-												</div>
-											</div>
-											<div class="icons sizeof1">
-												<div class="icon1 mainbrdr range brdrez" data-article-id="{{ article.article_id }}">
-													<svg class="heart" width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<defs>
-															<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-																<stop offset="0%" stop-color="var(--color-stop)" />
-																<stop offset="30%" stop-color="var(--color-stop)" />
-																<stop offset="100%" stop-color="var(--color-bot)" />
-															  </linearGradient>
-														</defs>
-                                                        {% with id=article.article_id|stringformat:"s" %}
-                                                            {% if id|add:"_l" in request.COOKIES %}
-                                                                <path fill-rule="evenodd" clip-rule="evenodd"
-															d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
-															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange hertlike active"/>
-                                                            {% else %}
-                                                                <path fill-rule="evenodd" clip-rule="evenodd"
-															d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
-															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange hertlike"/>
-                                                            {% endif %}
-                                                        {% endwith %}
-
-													</svg>
-												</div>
-												<div class="icon2 mainbrdr range brdrez" data-article-id="{{ article.article_id }}">
-													<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path
-															d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296"
-															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
-														<path
-															d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862"
-															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange"/>
-													</svg>
-												</div>
-												<div class="icon3 mainbrdr range brdrez" id="stats1">
-													<svg width="29" height="5" viewBox="0 0 29 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<circle cx="2.5" cy="2.5" r="2.5" fill="white"/>
-														<circle cx="26.5" cy="2.5" r="2.5" fill="white"/>
-														<circle cx="14.5" cy="2.5" r="2.5" fill="white"/>
-													</svg>
-												</div>
-												<div class="seeblog1" id="blog1" onclick="window.location.href='{% url 'article' article_id=article.article_id %}'">
-													<p>
-														Читати весь
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						  </div>
-                            {% endfor %}
-						  ...
-						</div>
-						<div class="swiper-pagination"></div>
-					  
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
-					</div>
-					<script>
-						const swiper = new Swiper('.blogger', {
-								on: {
-									init: function () {
-									console.log('swiper initialized');
-									initSlideListeners(this.slides);
-									updateButtonZIndex(false);
-									},
-									slideChange: function () {
-									resetSlideListeners(this.slides);
-									initSlideListeners(this.slides);
-									updateButtonZIndex(false);
-									},
-									transitionStart: function () {
-									updateButtonZIndex(true);
-									},
-									transitionEnd: function () {
-									updateButtonZIndex(false);
-									}
-								},
-								speed: 500,
-								effect: 'slide',
-								mousewheel: false,
-								navigation: {
-									nextEl: '.swiper-button-next',
-									prevEl: '.swiper-button-prev',
-								},
-								pagination: {
-									el: '.swiper-pagination',
-									clickable: true,
-								},
-								keyboard: {
-										enabled: true,
-									},
-								});
-
-								function initSlideListeners(slides) {
-									slides.forEach(function (slide) {
-										const heartIcon = slide.querySelector('.heart');
-										const strokeChange = slide.querySelector('.strokechange');
-										const iconContainer = slide.querySelector('.icon1');
-										const iconContainer2 = slide.querySelector('.icon2');
-
-										iconContainer.addEventListener('click', toggleLike);
-									});
-									}
-
-									function toggleLike() {
-									const hertlike = this.querySelector('.hertlike');
-									if (hertlike.classList.contains('active')) {
-										hertlike.classList.remove('active');
-										hertlike.classList.add('strokechange');
-									} else {
-										hertlike.classList.remove('strokechange');
-										hertlike.classList.add('active');
-									}
-									}
-
-									function resetSlideListeners(slides) {
-									slides.forEach(function (slide) {
-										const iconContainer = slide.querySelector('.icon1');
-										iconContainer.removeEventListener('click', toggleLike);
-									});
-									}
-
-
-								function updateButtonZIndex(isMoving) {
-								const prevButton = document.querySelector('.swiper-button-prev');
-								const nextButton = document.querySelector('.swiper-button-next');
-
-								if (isMoving) {
-									prevButton.style.zIndex = '-1';
-									nextButton.style.zIndex = '-1';
-								} else {
-									prevButton.style.zIndex = '1';
-									nextButton.style.zIndex = '1';
-								}
-								}
-					</script>			  
-				</div>
-            </section>
-            <section class="all__ports defsect">
+            <section class="all__ports defsect forsearch">
 				<div class="get__up borderm" id="get__up__port">
 					<svg class="for__pc" width="32" height="39" viewBox="0 0 32 39" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M16.0259 2V36.9738M16.0259 2L2 15.9667M16.0259 2L30 15.9667" stroke="white" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -707,7 +524,7 @@
 				</div>
                 <div class="checklist">
                     <p>
-                        Перелік усіх новин
+                        Результат пошуку за {{ request.GET.searched }}
                     </p>
                 </div>
                 <div class="check__all">
@@ -750,7 +567,7 @@
                                 </div>
                             </div>
                         </div>
-						<div class="smallhz ">
+						<div class="smallhz">
                             {% if cards.1 %}
 							<div class="smallblog borderdef" onclick="window.location.href='{% url 'article' article_id=cards.1.article_id %}'">
 								<div class="forsqimg borderimg" style="background-image: url('{{ cards.1.image_main.url }}')">
@@ -838,7 +655,7 @@
                     <div class="halfblog">
 						<div class="smallhz">
                             {% if cards.4 %}
-							<div class="smallblog borderdef " onclick="window.location.href='{% url 'article' article_id=cards.4.article_id %}'">
+							<div class="smallblog borderdef" onclick="window.location.href='{% url 'article' article_id=cards.4.article_id %}'">
 								<div class="forsqimg borderimg" style="background-image: url('{{ cards.4.image_main.url }}')">
 
 								</div>
@@ -965,7 +782,7 @@
 					<div class="chpage">
 						<div class="chmenu">
                             {% if cards.has_previous %}
-                                <a href="?page={{ cards.previous_page_number }}">
+                                <a href="?searched={{ request.GET.searched }}&page={{ cards.previous_page_number }}">
                                     <div class="forarrm arrleft">
 								        <svg width="26" height="46" class="leftarr" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
 									    <path d="M3.01022 3L23 23.059L3 43" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -984,7 +801,7 @@
 									<div class="chnum">
                                          {% if cards.has_next %}
 										<p>
-											<a href="?page={{ cards.next_page_number }}">{{ cards.next_page_number }}</a>
+											<a href="?searched={{ request.GET.searched }}&page={{ cards.next_page_number }}">{{ cards.next_page_number }}</a>
 										</p>
                                         {% endif %}
 									</div>
@@ -993,7 +810,7 @@
 									<div class="chnum">
                                         {% if cards.paginator.num_pages >= cards.next_page_number|add:'1'  %}
 										<p>
-											<a href="?page={{ cards.next_page_number|add:'1' }}">{{ cards.next_page_number|add:'1' }}</a>
+											<a href="?searched={{ request.GET.searched }}&page={{ cards.next_page_number|add:'1' }}">{{ cards.next_page_number|add:'1' }}</a>
 										</p>
                                         {% endif %}
 									</div>
@@ -1001,7 +818,7 @@
 								</div>
 							</div>
                             {% if cards.has_next %}
-                                <a href="?page={{ cards.next_page_number }}">
+                                <a href="?searched={{ request.GET.searched }}&page={{ cards.next_page_number }}">
                                     <div class="forarrm arrright">
                                         <svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3.01022 3L23 23.059L3 43" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>

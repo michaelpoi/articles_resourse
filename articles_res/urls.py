@@ -31,6 +31,7 @@ urlpatterns = [
                   path('blog/', include(blog_urls),),
                   path('portfolio/', include(port_urls),),
                   path('cookie/', views.cookie_page, name='cookie'),
+                  path('search/', blog_views.search, name='search'),
                   path('set_lang/<str:lang_code>/', views.set_lang, name="set_lang"),
                   path('<str:lang_code>/', views.main_page_trans, name='main_trans'),
                   path('<str:lang_code>/blog/', blog_views.blog_trans, name='blog_trans'),
