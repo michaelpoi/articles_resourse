@@ -133,7 +133,7 @@ def article_trans(request, lang_code, article_id):
 
     return response
 
-
+@csrf_exempt
 def search(request):
     try:
         searched = request.GET['searched']
@@ -146,6 +146,7 @@ def search(request):
     return render(request, 'blog/search.html', {'cards': cards})
 
 
+@csrf_exempt
 def search_trans(request, lang_code):
     try:
         searched = request.GET['searched']
