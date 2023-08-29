@@ -32,13 +32,20 @@ urlpatterns = [
                   path('portfolio/', include(port_urls),),
                   path('cookie/', views.cookie_page, name='cookie'),
                   path('search/', blog_views.search, name='search'),
+                  path('deadlines/', views.deadline_page, name='dead'),
+                  path('terms/', views.terms_page, name='terms'),
+                  path('privacy/', views.privacy_page, name='privacy'),
                   path('set_lang/<str:lang_code>/', views.set_lang, name="set_lang"),
                   path('<str:lang_code>/', views.main_page_trans, name='main_trans'),
                   path('<str:lang_code>/blog/', blog_views.blog_trans, name='blog_trans'),
                   path('<str:lang_code>/portfolio/',port_views.portfolio_trans, name='portfolio_trans'),
                   path('<str:lang_code>/blog/article/<uuid:article_id>/', blog_views.article_trans,name='article_trans'),
                   path('<str:lang_code>/portfolio/<uuid:project_id>/',port_views.project_trans,name='project_trans'),
-                  path('<str:lang_code>/cookie/', views.cookie_trans, name='cookie_trans')
+                  path('<str:lang_code>/search/', blog_views.search_trans, name='search_trans'),
+                  path('<str:lang_code>/cookie/', views.cookie_trans, name='cookie_trans'),
+                  path('<str:lang_code>/deadlines/', views.deadline_trans, name='deadlines_trans'),
+                  path('<str:lang_code>/terms/', views.terms_trans, name='terms_trans'),
+                  path('<str:lang_code>/privacy/', views.privacy_trans, name='privacy_trans')
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'articles_res.views.error_404'

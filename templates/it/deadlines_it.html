@@ -111,7 +111,7 @@
 					<div class="mamany">
 						<div class="pelaha" id="mobile__vers">
 							<div class="kasj" id="mobile__tpp">
-                                <form method="GET" action="{% url 'search_trans' lang_code='en' %}">
+                                <form method="GET" action="{% url 'search_trans' lang_code='it' %}">
                                     <input type="search" name="searched" id="input__write" class="nanas" placeholder="пошук по сайту" autocomplete="off">
                                 </form>
 							</div>
@@ -126,7 +126,7 @@
 			
 						</div>
 					</div>
-					{% include 'base/link__holder_int.html' with code='en' %}
+					{% include 'base/link__holder_int.html' with code='it' %}
 				</div>
 			</div>
 			<div class="bgblured" id="bgBlured">
@@ -253,7 +253,7 @@
 			</div>
 			<div class="sticka viewbr brdrex">
 				<div class="navimo">
-					<div class="loger" id="to__back" onclick="window.location.href='{% url 'main_trans' lang_code='en' %}'">
+					<div class="loger" id="to__back" onclick="window.location.href='{% url 'main_trans' lang_code='it' %}'">
 						<?xml version="1.0" encoding="utf-8"?>
 						<svg width="2" height="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M4 19H20M11.2929 5.70711L8.70711 8.2929C8.31658 8.68342 7.68342 8.68342 7.29289 8.2929L5.70711 6.70711C5.07714 6.07714 4 6.52331 4 7.41422V15C4 15.5523 4.44772 16 5 16H19C19.5523 16 20 15.5523 20 15V7.41421C20 6.52331 18.9229 6.07714 18.2929 6.70711L16.7071 8.2929C16.3166 8.68342 15.6834 8.68342 15.2929 8.2929L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711Z" stroke="rgba(255,255,255,1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -272,13 +272,13 @@
 							<div class="absas" id="lgcont">
 								<div class="langchs">
 									<div class="langholder" id="uklang">
-										<p>EN</p>
+										<p>IT</p>
 									</div>
 									<div class="langholder" id="ualang">
 										<a href="{% url 'dead' %}"><p>UA</p></a>
 									</div>
 									<div class="langholder" id="delang">
-										<a href="{% url 'deadlines_trans' lang_code='it' %}"><p>IT</p></a>
+										<a href="{% url 'deadlines_trans' lang_code='en' %}"><p>EN</p></a>
 									</div>
 								</div>
 							</div>
@@ -319,7 +319,7 @@
 						<div class="mamany">
 							<div class="pelaha" id="pelaha">
 								<div class="kasj" id="kasj">
-                                    <form method="GET" action="{% url 'search_trans' lang_code='en' %}">
+                                    <form method="GET" action="{% url 'search_trans' lang_code='it' %}">
                                         <input type="search" name="searched" id="nanas" class="nanas" placeholder="пошук по сайту" autocomplete="off">
                                     </form>
 								</div>
@@ -351,27 +351,27 @@
 						<div class="typediva">
 							<div class="sztext helloas" id="navmenu">
 								<div class="newasa">
-									<a href="{% url 'main_trans' lang_code='en' %}#home__page">
+									<a href="{% url 'main_trans' lang_code='it' %}#home__page">
 										<p class="navtext">Home</p>
 									</a>
 								</div>
 								<div class="newasa">
-									<a href="{% url 'main_trans' lang_code='en' %}#specialty">
+									<a href="{% url 'main_trans' lang_code='it' %}#specialty">
 										<p class="navtext">Services</p>
 									</a>
 								</div>
 								<div class="newasa our__qq">
-									<a href="{% url 'main_trans' lang_code='en' %}#scrollto__works">
+									<a href="{% url 'main_trans' lang_code='it' %}#scrollto__works">
 										<p class="navtext">Our works</p>
 									</a>
 								</div>
 								<div class="newasa pop__qq">
-									<a href="{% url 'main_trans' lang_code='en' %}#scrollto__faq">
+									<a href="{% url 'main_trans' lang_code='it' %}#scrollto__faq">
 										<p class="navtext">FAQ</p>
 									</a>
 								</div>
 								<div class="newasa wasaa">
-									<a href="{% url 'main_trans' lang_code='en' %}#scrollto__bloger">
+									<a href="{% url 'main_trans' lang_code='it' %}#scrollto__bloger">
 										<p class="navtext">IT blog</p>
 									</a>
 								</div>
@@ -480,7 +480,7 @@
 							<div class="leftftr">
 								<div class="forleft">
 									<div class="contact">
-										<a href="{% url 'main_trans' lang_code='en' %}#home__page" class="tohome">
+										<a href="{% url 'main_trans' lang_code='it' %}#home__page" class="tohome">
 											<div class="bottomlogo">
 												<?xml version="1.0" encoding="utf-8"?>
 												<svg width="2" height="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -617,7 +617,7 @@
                     'phone':phone,
                     'services':activeLabels,
                     'message':msg,
-                    'lang_code':'en'
+                    'lang_code':'it'
                 }
                 console.log(data_new)
                 $.ajax({
@@ -644,7 +644,7 @@
                     'phone':phone,
                     'services':activeLabels,
                     'message':msg,
-                    'lang_code':'en'
+                    'lang_code':'it'
                 }
                 $.ajax({
                     type:'POST',

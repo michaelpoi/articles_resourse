@@ -83,3 +83,37 @@ def cookie_trans(request,lang_code):
     if lang_code == 'it':
         return render(request, 'it/coockie_it.html')
     raise Http404("Not found")
+
+def deadline_page(request):
+    return render(request,'articles_res/deadlines.html')
+
+
+def deadline_trans(request,lang_code):
+    if lang_code == 'en':
+        return render(request,'en/deadlines_en.html')
+    if lang_code == 'it':
+        return render(request, 'it/deadlines_it.html')
+    raise Http404("Not found")
+
+def terms_page(request):
+    return render(request,'articles_res/terms.html')
+
+
+def privacy_page(request):
+    return render(request, 'articles_res/privacy.html')
+
+
+def terms_trans(request, lang_code):
+    if lang_code == 'en':
+        return render(request, 'en/terms_en.html')
+    if lang_code == 'it':
+        return render(request, 'it/terms_it.html')
+    raise Http404("Not found")
+
+
+def privacy_trans(request, lang_code):
+    if lang_code == 'en':
+        return render(request, 'en/privacy_en.html')
+    if lang_code == 'it':
+        return render(request, 'it/privacy_it.html')
+    raise Http404("Not found")

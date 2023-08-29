@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width">
     <link rel="stylesheet" href="{% static 'css/style_new.css' %}">
-    <link rel="stylesheet" href="{% static 'css/blogcss.css' %}">
-    <link rel="stylesheet" href="{% static 'css/blogcss1_new.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blogcss_upd.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blogcss1_upd.css' %}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -90,7 +90,7 @@
 					<div class="mamany">
 						<div class="pelaha" id="mobile__vers">
 							<div class="kasj" id="mobile__tpp">
-								<input type="search" name="" id="input__write" class="nanas" placeholder="пошук по сайту" autocomplete="off">
+                                {% include 'base/search.html' %}
 							</div>
 							<div class="kakav">
 								<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -353,7 +353,7 @@
 						<div class="mamany">
 							<div class="pelaha" id="pelaha__port">
 								<div class="kasj" id="kasj__port">
-									<input type="search" name="" id="nanas__port" class="nanas" placeholder="пошук по сайту" autocomplete="off">
+                                    {% include 'base/search.html' %}
 								</div>
 								<div class="kakav">
 									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -619,12 +619,12 @@
 													Cookie
 												</p>
 											</a>
-											<a href="" class="linkt">
+											<a href="{% url 'terms' %}" class="linkt">
 												<p>
 													Умови користування
 												</p>
 											</a>
-											<a href="" class="linkt">
+											<a href="{% url 'dead' %}" class="linkt">
 												<p>
 													Строки виконання
 												</p>
@@ -634,9 +634,9 @@
 													Site map
 												</p>
 											</a>
-											<a href="" class="linkt">
+											<a href="{% url 'privacy' %}" class="linkt">
 												<p>
-													Рекомендації
+													Захист персональних даних
 												</p>
 											</a>
 										</div>

@@ -2,6 +2,7 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 from django.http import HttpResponse, JsonResponse, Http404
 from django.shortcuts import render, get_object_or_404
+from django.utils.datastructures import MultiValueDictKeyError
 
 from articles_res.trans_utils import get_translation_article
 from requests.forms import RequestForm
@@ -14,12 +15,12 @@ def blog(request):
     return render(request, 'blog/blog.html', context=context)
 
 
-def get_blog_context(request,lang_code='ua'):
+def get_blog_context(request, lang_code='ua'):
     context = {}
     articles = Article.objects.order_by('-likes').filter(is_published=True).all()
     if lang_code != 'ua':
         for art in articles:
-            art = get_translation_article(art,lang_code)
+            art = get_translation_article(art, lang_code)
     slider_articles = articles[:3]
     context['slider_articles'] = slider_articles
     cards_articles = articles[3:]
@@ -98,46 +99,72 @@ def repost_article(request):
         return repost_control(request, article_id)
 
 
-def blog_trans(request,lang_code):
+def blog_trans(request, lang_code):
     response = None
-    context = get_blog_context(request,lang_code)
+    context = get_blog_context(request, lang_code)
     if lang_code == 'en':
-        response = render(request,'en/blog.html', context=context)
-        response.set_cookie('user_lang','en')
+        response = render(request, 'en/blog.html', context=context)
+        response.set_cookie('user_lang', 'en')
     if lang_code == 'it':
-        response = render(request, 'it/blog.html',context=context)
+        response = render(request, 'it/blog.html', context=context)
         response.set_cookie('user_lang', 'it')
     if response is None:
         raise Http404("Not found")
     return response
 
 
-def article_trans(request,lang_code,article_id):
-    art = get_object_or_404(Article,article_id=article_id)
-    if not is_watched(request,article_id):
+def article_trans(request, lang_code, article_id):
+    art = get_object_or_404(Article, article_id=article_id)
+    if not is_watched(request, article_id):
         art.watch()
-    trans_art = get_translation_article(art,lang_code)
+    trans_art = get_translation_article(art, lang_code)
     print(art == trans_art)
     response = None
     if lang_code == 'en':
-        response = render(request,'en/blog1.html',{'article':trans_art})
-        response.set_cookie('user_lang','en')
+        response = render(request, 'en/blog1.html', {'article': trans_art})
+        response.set_cookie('user_lang', 'en')
     if lang_code == 'it':
-        response = render(request,'it/blog1.html',{'article':trans_art})
-        response.set_cookie('user_lang','it')
+        response = render(request, 'it/blog1.html', {'article': trans_art})
+        response.set_cookie('user_lang', 'it')
     if response is None:
         raise Http404("Not found")
-    if not is_watched(request,article_id):
+    if not is_watched(request, article_id):
         response.set_cookie(str(article_id), "watched")
 
     return response
 
 
 def search(request):
-    if request.method == "GET":
+    try:
         searched = request.GET['searched']
-        articles = Article.objects.filter(Q(title__contains=searched)).order_by('-likes').all()
-        p = Paginator(articles, 6)
-        page = request.GET.get('page')
-        cards = p.get_page(page)
-        return render(request, 'blog/search.html', {'cards':cards})
+    except MultiValueDictKeyError:
+        raise Http404('not found')
+    articles = Article.objects.filter(Q(title__contains=searched)).order_by('-likes').all()
+    p = Paginator(articles, 6)
+    page = request.GET.get('page')
+    cards = p.get_page(page)
+    return render(request, 'blog/search.html', {'cards': cards})
+
+
+def search_trans(request, lang_code):
+    try:
+        searched = request.GET['searched']
+    except MultiValueDictKeyError:
+        raise Http404("Not found")
+    match lang_code:
+        case 'en':
+            articles = Article.objects.filter(translation_en__title__contains=searched).all()
+            for article in articles:
+                article = get_translation_article(article,'en')
+        case 'it':
+            articles = Article.objects.filter(translation_de__title__contains=searched).all()
+            for article in articles:
+                article = get_translation_article(article, 'it')
+        case _:
+            raise Http404("Not found")
+
+    p = Paginator(articles,6)
+    page = request.GET.get('page')
+    cards = p.get_page(page)
+    return render(request, f"{lang_code}/search.html", {'cards':cards})
+

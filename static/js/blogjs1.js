@@ -712,8 +712,10 @@ showstat.addEventListener('click', () => {
     hidestats.style.display = 'none';
   }
   } else {
+    const distanceFromTop = openstats.getBoundingClientRect().top + window.scrollY - 11;
     statcont.style.left = '57%';
     statcont.style.opacity = '1';
+    statcont.style.top = `${distanceFromTop}px`;
     bgbluredstat.style.right = '0';
     bgbluredstat.style.opacity = '1';
     closestat.addEventListener('click', () => {

@@ -112,7 +112,9 @@
 					<div class="mamany">
 						<div class="pelaha" id="mobile__vers">
 							<div class="kasj" id="mobile__tpp">
-								<input type="search" name="" id="input__write" class="nanas" placeholder="пошук по сайту" autocomplete="off">
+                                <form method="GET" action="{% url 'search_trans' lang_code='en' %}">
+                                    <input type="search" name="searched" id="input__write" class="nanas" placeholder="пошук по сайту" autocomplete="off">
+                                </form>
 							</div>
 							<div class="kakav">
 								<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2314,60 +2316,7 @@
 										</a>
 									</div>
 									<div class="contact flexione">
-										<div class="gap__me">
-											<a href="{% url 'cookie_trans' lang_code='en' %}" class="linkt">
-												<p>
-													Cookie
-												</p>
-											</a>
-											<a href="" class="linkt">
-												<p>
-													Terms of use
-												</p>
-											</a>
-											<a href="" class="linkt">
-												<p>
-													Terms of execution
-												</p>
-											</a>
-											<a href="" class="linkt">
-												<p>
-													Recruitments
-												</p>
-											</a>
-											<a href="" class="linkt">
-												<p>
-													Recommendations
-												</p>
-											</a>
-										</div>
-										<div class="gap__me">
-											<a href="#home__page" class="linkt">
-												<p>
-													Home
-												</p>
-											</a>
-											<a href="#specialty" class="linkt">
-												<p>
-													Services
-												</p>
-											</a>
-											<a href="#advantages" class="linkt">
-												<p>
-													Benefits
-												</p>
-											</a>
-											<a href="#faq__qq" class="linkt">
-												<p>
-													FAQ
-												</p>
-											</a>
-											<a href="#blog__us" class="linkt">
-												<p>
-													IT blog
-												</p>
-											</a>
-										</div>
+										{% include 'base/gap_me.html' %}
 									</div>
 									<div class="contact flexiico">
 										<div class="icns">
