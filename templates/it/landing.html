@@ -161,35 +161,10 @@
 
 				</div>
 				<div class="ch__tel" id="ch__tel__top">
-					<div class="tel__all">
-						<a href="tel:" class="numnum">
-							<p>
-								UKR
-								<span class="ccolr">
-									(+380)
-								</span>
-							</p>
-						</a>
-						<a href="tel:" class="numnum">
-							<p>
-								UK
-								<span class="ccolr">
-									(+44)
-								</span>
-							</p>
-						</a>
-						<a href="tel:" class="numnum">
-							<p>
-								IT
-								<span class="ccolr">
-									(+39)
-								</span>
-							</p>
-						</a>
-					</div>
+					{% include 'base/tel.html' %}
 					<div class="text__close">
 						<p>
-							Формат
+							Formato
 						</p>
 						<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" id="close__phone__top">
 							<path d="M1 1L8.5 8.5M16 16L8.5 8.5M8.5 8.5L16 1M8.5 8.5L1 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2252,32 +2227,7 @@
 
 			</div>
 			<div class="ch__tel" id="ch__tel">
-				<div class="tel__all">
-					<a href="tel:" class="numnum">
-						<p>
-							UKR
-							<span class="ccolr">
-								(+380)
-							</span>
-						</p>
-					</a>
-					<a href="tel:" class="numnum">
-						<p>
-							UK
-							<span class="ccolr">
-								(+44)
-							</span>
-						</p>
-					</a>
-					<a href="tel:" class="numnum">
-						<p>
-							IT
-							<span class="ccolr">
-								(+39)
-							</span>
-						</p>
-					</a>
-				</div>
+				{% include 'base/tel.html' %}
 				<div class="text__close">
 					<p>
 						Formato

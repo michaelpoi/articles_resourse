@@ -159,33 +159,8 @@
 				<div class="blurfoot" id="blurfoot__form">
 
 				</div>
-				<div class="ch__tel" id="ch__tel__top">
-					<div class="tel__all">
-						<a href="tel:" class="numnum">
-							<p>
-								UKR
-								<span class="ccolr">
-									(+380)
-								</span>
-							</p>
-						</a>
-						<a href="tel:" class="numnum">
-							<p>
-								UK
-								<span class="ccolr">
-									(+44)
-								</span>
-							</p>
-						</a>
-						<a href="tel:" class="numnum">
-							<p>
-								IT
-								<span class="ccolr">
-									(+39)
-								</span>
-							</p>
-						</a>
-					</div>
+				<div>
+                    {% include 'base/tel.html' %}
 					<div class="text__close">
 						<p>
 							Формат
@@ -513,32 +488,7 @@
 
 			</div>
 			<div class="ch__tel" id="ch__tel">
-				<div class="tel__all">
-					<a href="tel:" class="numnum">
-						<p>
-							UKR
-							<span class="ccolr">
-								(+380)
-							</span>
-						</p>
-					</a>
-					<a href="tel:" class="numnum">
-						<p>
-							UK
-							<span class="ccolr">
-								(+44)
-							</span>
-						</p>
-					</a>
-					<a href="tel:" class="numnum">
-						<p>
-							IT
-							<span class="ccolr">
-								(+39)
-							</span>
-						</p>
-					</a>
-				</div>
+				{% include 'base/tel.html' %}
 				<div class="text__close">
 					<p>
 						Формат

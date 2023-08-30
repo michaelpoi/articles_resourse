@@ -453,11 +453,11 @@ radioOptions.forEach((radio) => {
 const formPass = document.getElementById('port__view');
 const submitButton = document.getElementById('getport');
 
-document.addEventListener('keyup', (event) => {
-  if (event.key === 'Enter') {
-    formPass.submit(); // Отправляем форму
-  }
-});
+// document.addEventListener('keyup', (event) => {
+//   if (event.key === 'Enter') {
+//     formPass.submit(); // Отправляем форму
+//   }
+// });
 
 // Добавляем обработчик события на кнопку для отправки формы при клике на неё
 submitButton.addEventListener('click', () => {
