@@ -1,3 +1,5 @@
+import datetime
+
 from django.http import JsonResponse, HttpResponse, Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
@@ -33,7 +35,8 @@ def project_page(request, project_id):
     response = render(request, 'portfolio/port__1.html', {'project': project})
     if not is_watched(request, project_id):
         project.watch()
-        response.set_cookie(str(project_id), "watched")
+        exp = datetime.datetime.now() + datetime.timedelta(days=7)
+        response.set_cookie(str(project_id), "watched",expires=exp)
     return response
 
 
@@ -59,8 +62,9 @@ def like_control(request, project_id):
         project.unlike()
         response.delete_cookie(project_id + "_l")
     else:
+        exp = datetime.datetime.now() + datetime.timedelta(days=30)
         project.like()
-        response.set_cookie(project_id + "_l", "liked")
+        response.set_cookie(project_id + "_l", "liked", expires=exp)
     return response
 
 
@@ -84,7 +88,8 @@ def repost_control(request, project_id):
     response = JsonResponse({'reposts': project.reposts})
     if not is_reposted(request, project_id):
         project.repost()
-        response.set_cookie(project_id + "_r", "reposted")
+        exp = datetime.datetime.now() + datetime.timedelta(days=30)
+        response.set_cookie(project_id + "_r", "reposted", expires=exp)
     return response
 
 
@@ -122,7 +127,8 @@ def project_trans(request, lang_code, project_id):
         response = render(request, 'it/port__1.html', {'project': project})
         response.set_cookie('user_lang', 'it')
     if not is_watched(request,project_id):
-        response.set_cookie(str(project_id),"watched")
+        exp = datetime.datetime.now() + datetime.timedelta(days=7)
+        response.set_cookie(str(project_id),"watched", expires=exp)
     if response is None:
         raise Http404("Not found")
     return response

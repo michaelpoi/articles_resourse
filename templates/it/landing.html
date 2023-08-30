@@ -28,32 +28,32 @@
 		<div class="bluract" id="bluraction"></div>
 		<div class="ordernow" id="orderfast">
 			<p class="ortext">
-				Швидке замовлення
+				Ordinazione rapida
 			</p>
 			<form action="" class="fastorder" id="formorder">
 				<span class="fspan__text" id="fname">
-					ваше ім`я
+					il tuo nome
 				</span>
 				<span class="fspan__text" id="fgmail">
-					електрона пошта
+					e-mail
 				</span>
 				<span class="fspan__text" id="fphone">
-					телефон
+					telefono
 				</span>
 				<input type="text" name="name" id="fastname" autocomplete="off" placeholder="" class="definp">
 				<input type="email" name="email" id="fastmail" autocomplete="off" placeholder="" class="definp">
 				<input type="number" name="number" id="fastphone" autocomplete="off" placeholder="" class="definp">
 				<p class="infofast">
-					З вами найближчим часом зв’яжеться наша група підтримки
+					Il nostro team di assistenza vi contatterà a breve
 				</p>
 				<div class="fastmenu">
 					<button type="submit" class="fastsub gradient__bor" id="request__fast">
 						<p>
-							Замовити
+							Ordine
 						</p>
 					</button>
 					<p class="customtxt" id="closefast">
-						Закрити
+						Chiudere
 					</p>
 				</div>
 			</form>
@@ -74,23 +74,23 @@
 				</div>
 				<div class="text__name divcook">
 					<p>
-						Ми використовуємо Cookie
+						Utilizziamo i cookie
 					</p>
 				</div>
 				<div class="text__full divcook">
 					<p>
-						Ласкаво просимо! Ми використовуємо файли cookie, щоб покращити роботу сайту. Деталі в нашій Політиці конфіденційності.
+                        Benvenuti nel sito web! Utilizziamo i cookie per migliorare la vostra esperienza sul nostro sito web. I dettagli nella nostra Informativa sulla privacy.
 					</p>
 				</div>
 				<div class="coockie__control divcook">
 					<div class="conrol" id="allowcoockie">
 						<p>
-							Прийняти
+							Accetta
 						</p>
 					</div>
 					<div class="conrol" id="declinecoockie">
 						<p>
-							Вимкнути
+							Spegnere
 						</p>
 					</div>
 				</div>
@@ -183,80 +183,8 @@
 									</div>
 								</div>
 								<div class="leftpart wds">
-									<div class="conts">
-										<p>
-											Зв’яжіться з нами
-										</p>
-										<input type="text" name="" id="input__forme" class="definp" placeholder="" autocomplete="off">
-										<span class="span__text" id="span__top1">
-											ваше ім'я
-										</span>
-										<input type="gmail" name="" id="gmail__forme" class="definp" placeholder="" autocomplete="off">
-										<span class="span__text" id="span__top2">
-											ваша пошта
-										</span>
-										<p class="choose">
-											Оберіть послугу
-										</p>
-									</div>
-									<fieldset class="radioopt">
-										<div class="scrolld">
-											<div class="raddiv">
-												<div class="paddonly">
-													<label>
-														Верстка сайту
-													</label>
-													<div class="chooseot">
-													</div>
-												</div>
-											</div>
-											<div class="raddiv">
-												<div class="paddonly">
-													<label>
-														Налаштування серверу
-													</label>
-													<div class="chooseot">
-													</div>
-												</div>
-											</div>
-											<div class="raddiv">
-												<div class="paddonly">
-													<label>
-														Оновлення коду вашого проекту і поліпшення дизайну
-													</label>
-													<div class="chooseot">
-													</div>
-												</div>
-											</div>
-											<div class="raddiv">
-												<div class="paddonly">
-													<label>
-														Консультація
-													</label>
-													<div class="chooseot">
-													</div>
-												</div>
-											</div>
-											<div class="raddiv">
-												<div class="paddonly">
-													<label>
-														Свій варіант
-													</label>
-													<div class="chooseot">
-													</div>
-												</div>
-											</div>
-											<div class="raddiv">
-												<div class="paddonly">
-													<label>
-														Жоден з варіантів
-													</label>
-													<div class="chooseot">
-													</div>
-												</div>
-											</div>
-										</div>
-									</fieldset>
+                                    {% include 'base/conts_it.html' %}
+									{% include 'base/fieldset_it.html' %}
 								</div>
 								<div class="rightpart wds">
 									<div class="textfi topform">
@@ -287,20 +215,7 @@
 												<path d="M23.2955 20.0397L23.9736 20.7217L23.2942 20.0397H23.2955ZM7.13545 17.2759L7.81231 16.5939L7.13417 17.2759H7.13545ZM1.8462 3.69769L1.16934 3.01699L1.84748 3.69898L1.8462 3.69769ZM17.1499 16.2042L17.7357 15.6235L16.3782 14.2595L15.7962 14.8402L17.1499 16.2042ZM19.6958 15.3799L22.1456 16.7119L23.0622 15.0223L20.6137 13.6916L19.6958 15.3799ZM22.616 19.3578L20.7957 21.1691L22.1507 22.5318L23.971 20.7217L22.616 19.3578ZM19.6856 21.7511C17.8268 21.9255 13.0195 21.7704 7.81231 16.5939L6.45603 17.9566C12.1375 23.6061 17.546 23.883 19.865 23.6663L19.6843 21.7511H19.6856ZM7.81231 16.5939C2.84995 11.6585 2.02696 7.50887 1.9244 5.70776L0.00406811 5.81673C0.132261 8.08318 1.1514 12.6827 6.45603 17.9566L7.81231 16.5939ZM9.57496 8.67159L9.94288 8.30495L8.58916 6.94226L8.22125 7.30761L9.57625 8.6703L9.57496 8.67159ZM10.2352 3.64513L8.61993 1.48636L7.08033 2.6401L8.69556 4.79759L10.2352 3.64513ZM3.18326 1.01589L1.17063 3.01571L2.52691 4.37968L4.53826 2.37987L3.18326 1.01589ZM8.8981 7.9896C8.21868 7.30761 8.21868 7.30761 8.21868 7.31017H8.21612L8.21227 7.3153C8.15175 7.37708 8.09723 7.44447 8.04947 7.51657C7.98024 7.61912 7.90461 7.75372 7.84051 7.92422C7.68441 8.36433 7.64553 8.83748 7.7277 9.29717C7.89948 10.406 8.66351 11.8713 10.6197 13.8173L11.976 12.4533C10.1441 10.6329 9.70829 9.52535 9.62752 9.00232C9.58907 8.75363 9.62881 8.63056 9.64034 8.60236C9.64675 8.58441 9.64932 8.58313 9.64034 8.59467C9.62904 8.61245 9.61617 8.62918 9.60188 8.64466L9.58907 8.65748C9.58492 8.66147 9.58065 8.66532 9.57625 8.66902L8.89682 7.9896H8.8981ZM10.6197 13.8173C12.5772 15.7632 14.0502 16.5221 15.1603 16.6913C15.7282 16.7785 16.1859 16.7093 16.5333 16.5798C16.7276 16.5079 16.9093 16.4058 17.0717 16.2773C17.0938 16.2588 17.1151 16.2396 17.1358 16.2196L17.1448 16.2119L17.1486 16.2081L17.1499 16.2055C17.1499 16.2055 17.1512 16.2042 16.473 15.5222C15.7936 14.8402 15.7975 14.839 15.7975 14.839L15.8 14.8364L15.8026 14.8338L15.8103 14.8274L15.8231 14.8146C15.8385 14.8008 15.8548 14.7879 15.8718 14.7761C15.8846 14.7672 15.8808 14.771 15.8628 14.7787C15.8308 14.7902 15.7052 14.83 15.4526 14.7915C14.9219 14.7095 13.8066 14.2736 11.976 12.4533L10.6197 13.8173ZM8.61993 1.48508C7.31236 -0.258346 4.74337 -0.535243 3.18326 1.01589L4.53826 2.37987C5.22024 1.70173 6.43039 1.77223 7.08033 2.6401L8.61864 1.48508H8.61993ZM1.92568 5.70904C1.90004 5.26549 2.10387 4.80144 2.52691 4.38096L1.16934 3.01699C0.480947 3.70154 -0.0613104 4.67068 0.00406811 5.81673L1.92568 5.70904ZM20.7957 21.1691C20.4445 21.5204 20.065 21.7178 19.6868 21.7524L19.865 23.6663C20.8072 23.5779 21.5777 23.1036 22.152 22.5331L20.7957 21.1691ZM9.94288 8.30495C11.2056 7.04994 11.2992 5.0668 10.2364 3.64642L8.69684 4.79887C9.21346 5.48983 9.13654 6.39616 8.58788 6.94354L9.94288 8.30495ZM22.1469 16.7131C23.1942 17.2823 23.357 18.6232 22.6173 19.359L23.9736 20.7217C25.6914 19.0129 25.162 16.1632 23.0634 15.0236L22.1469 16.7131ZM17.7357 15.6248C18.228 15.1351 19.0202 15.0146 19.6971 15.3812L20.615 13.6929C19.2253 12.9366 17.5024 13.1455 16.3795 14.2608L17.7357 15.6248Z" fill="white" fill-opacity="0.4"/>
 											</svg>
 										</div>
-										<span class="span__text" id="span__form__tp__top">
-											ваш телефон
-										</span>
-										<input type="number" id="phone__change__top" class="inpphone definp" placeholder="" autocomplete="off" readonly>
-										<span class="span__text" id="span__topform">
-											ваше повідомлення
-										</span>
-										<textarea name="texte" id="text__send" class="message__send" placeholder=""></textarea>
-										<small class="inf__o">
-											З вами найближчим часом зв’яжеться наша група підтримки
-										</small>
-										<button type="submit" class="send__form">
-											<p>Відправити</p>
-										</button>
+                                        {% include 'base/span__form.html' %}
 									</div>
 								</div>
 							</div>
@@ -2104,7 +2019,7 @@
 															  </linearGradient>
 														</defs>
                                                         {% with id=article.article_id|stringformat:"s" %}
-                                                            {% if id in request.COOKIES %}
+                                                            {% if id|add:"_l" in request.COOKIES %}
                                                         <path fill-rule="evenodd" clip-rule="evenodd"
 															d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z"
 															stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="strokechange hertlike active"></path>
@@ -2259,60 +2174,7 @@
 										</a>
 									</div>
 									<div class="contact flexione">
-										<div class="gap__me">
-											<a href="{% url 'cookie_trans' lang_code='it' %}" class="linkt">
-												<p>
-													Cookie
-												</p>
-											</a>
-											<a href="" class="linkt">
-												<p>
-													Condizioni d'uso
-												</p>
-											</a>
-											<a href="" class="linkt">
-												<p>
-                                                    Condizioni di esecuzione
-												</p>
-											</a>
-											<a href="" class="linkt">
-												<p>
-													Occupazione
-												</p>
-											</a>
-											<a href="" class="linkt">
-												<p>
-													Tutela dei dati personali
-												</p>
-											</a>
-										</div>
-										<div class="gap__me">
-											<a href="#home__page" class="linkt">
-												<p>
-													Casa
-												</p>
-											</a>
-											<a href="#specialty" class="linkt">
-												<p>
-													Servizi
-												</p>
-											</a>
-											<a href="#advantages" class="linkt">
-												<p>
-													Nostra lavori
-												</p>
-											</a>
-											<a href="#faq__qq" class="linkt">
-												<p>
-													Domande frequenti
-												</p>
-											</a>
-											<a href="#blog__us" class="linkt">
-												<p>
-													Blog IT
-												</p>
-											</a>
-										</div>
+										{% include 'base/gap_me_it.html' %}
 									</div>
 									<div class="contact flexiico">
 										<div class="icns">
@@ -2374,78 +2236,21 @@
 										<div class="leftpart wds">
 											<div class="conts">
 												<p>
-													Зв’яжіться з нами
+													Contattateci
 												</p>
 												<input type="text" name="" id="name__change" class="definp inp__name" placeholder="" autocomplete="off">
 												<span class="span__text" id="span__bot1">
-													ваше ім'я
+													il tuo nome
 												</span>
 												<input type="gmail" name="" id="gmail__change" class="definp inp__gmail" placeholder="" autocomplete="off">
 												<span class="span__text" id="span__bot2">
-													ваша пошта
+													la vostra posta
 												</span>
 												<p class="choose">
-													Оберіть послугу
+													Scegliere un servizio
 												</p>
 											</div>
-											<fieldset class="radioopt">
-												<div class="scrolld">
-													<div class="raddiv">
-														<div class="paddonly">
-															<label>
-																Верстка сайту
-															</label>
-															<div class="chooseot">
-															</div>
-														</div>
-													</div>
-													<div class="raddiv">
-														<div class="paddonly">
-															<label>
-																Налаштування серверу
-															</label>
-															<div class="chooseot">
-															</div>
-														</div>
-													</div>
-													<div class="raddiv">
-														<div class="paddonly">
-															<label>
-																Оновлення коду вашого проекту і поліпшення дизайну
-															</label>
-															<div class="chooseot">
-															</div>
-														</div>
-													</div>
-													<div class="raddiv">
-														<div class="paddonly">
-															<label>
-																Консультація
-															</label>
-															<div class="chooseot">
-															</div>
-														</div>
-													</div>
-													<div class="raddiv">
-														<div class="paddonly">
-															<label>
-																Свій варіант
-															</label>
-															<div class="chooseot">
-															</div>
-														</div>
-													</div>
-													<div class="raddiv">
-														<div class="paddonly">
-															<label>
-																Жоден з варіантів
-															</label>
-															<div class="chooseot">
-															</div>
-														</div>
-													</div>
-												</div>
-											</fieldset>
+											{% include 'base/fieldset_it.html' %}
 										</div>
 										<div class="rightpart wds">
 											<div class="invis__block">
@@ -2482,18 +2287,18 @@
 													</svg>
 												</div>
 												<span class="span__text" id="span__form__bot">
-													ваше повідомлення
+													il tuo messaggio
 												</span>
 												<span class="span__text" id="span__form__tp">
-													ваш телефон
+													il vostro telefono
 												</span>
 												<input type="number" id="phone__change" class="inpphone definp" placeholder="" autocomplete="off" readonly>
 												<textarea name="texte" id="text__send__bot" class="message__send" placeholder="" autocomplete="off"></textarea>
 												<small class="inf__o">
-													З вами найближчим часом зв’яжеться наша група підтримки
+													Il nostro team di assistenza vi contatterà a breve
 												</small>
 												<button type="submit" class="send__form">
-													<p>Відправити</p>
+													<p>Inviare</p>
 												</button>
 											</div>
 										</div>
@@ -2562,6 +2367,7 @@
                     'message':msg,
                     'lang_code':'it'
                 }
+                console.log(data_new)
                 $.ajax({
                     type:'POST',
                     url:'https://nethunt.com/service/automation/hooks/64ea27e1520a810009613fb9',

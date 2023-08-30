@@ -357,31 +357,7 @@
 						</div>							  
 						<div class="typediva">
 							<div class="sztext helloas" id="navmenu__port">
-								<div class="newasa">
-									<a href="{% url 'main_trans' lang_code='it' %}#home__page">
-										<p class="navtext">Головна</p>
-									</a>
-								</div>
-								<div class="newasa">
-									<a href="{% url 'main_trans' lang_code='it' %}#specialty">
-										<p class="navtext">Послуги</p>
-									</a>
-								</div>
-								<div class="newasa our__qq">
-									<a href="{% url 'main_trans' lang_code='it' %}#scrollto__works">
-										<p class="navtext">Наші роботи</p>
-									</a>
-								</div>
-								<div class="newasa pop__qq">
-									<a href="{% url 'main_trans' lang_code='it' %}#scrollto__faq">
-										<p class="navtext">Популярні запитання</p>
-									</a>
-								</div>
-								<div class="newasa wasaa">
-									<a href="{% url 'main_trans' lang_code='it' %}#scrollto__bloger">
-										<p class="navtext">IT блог</p>
-									</a>
-								</div>
+								{% include 'base/newasa_it.html' %}
 							</div>
 							<div class="menu-toggle" id="menu__port">
 								<div>
