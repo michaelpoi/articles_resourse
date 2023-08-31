@@ -79,7 +79,7 @@
 				</div>
 				<div class="text__full divcook">
 					<p>
-                        Welcome to the website! We use cookies to improve your experience on our website. Details in our Privacy Policy.
+                        Welcome to the website! We use cookies to improve your experience on our website. Details in our <a href="{% url 'privacy_trans' lang_code='en' %}">Privacy Policy</a>.
 					</p>
 				</div>
 				<div class="coockie__control divcook">
@@ -112,9 +112,7 @@
 					<div class="mamany">
 						<div class="pelaha" id="mobile__vers">
 							<div class="kasj" id="mobile__tpp">
-                                <form method="GET" action="{% url 'search_trans' lang_code='en' %}">
-                                    <input type="search" name="searched" id="input__write" class="nanas" placeholder="пошук по сайту" autocomplete="off">
-                                </form>
+                            {% include 'base/search_en.html' %}
 							</div>
 							<div class="kakav">
 								<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -378,7 +376,7 @@
 						<div class="mamany">
 							<div class="pelaha" id="pelaha">
 								<div class="kasj" id="kasj">
-									<input type="search" name="" id="nanas" class="nanas" placeholder="пошук по сайту" autocomplete="off">
+                                    {% include 'base/search_en.html' %}
 								</div>
 								<div class="kakav">
 									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -489,7 +487,7 @@
 											{{ controller.experience }}
 										</p>
 										<p class="smallop">
-											Years on the market
+											Years of exp
 										</p>
 									</div>
 								</div>
@@ -1009,7 +1007,7 @@
 									</div>
 									<div class="memb__citata forhonor">
 										<p>
-											“You lost, again again and again, but the light is cut off”
+											“non progredi est regredi”
 										</p>
 									</div>
 								</div>
@@ -1026,17 +1024,17 @@
 								<div class="memb__info">
 									<div class="memb__name forhonor">
 										<p>
-											Gosha
+											Lev
 										</p>
 									</div>
 									<div class="memb__role forhonor">
 										<p>
-											Head Developer
+											Client Manager
 										</p>
 									</div>
 									<div class="memb__citata forhonor">
 										<p>
-											"Code is like paint, programmers can proudly call themselves artists"
+											"Consistency is the key to success"
 										</p>
 									</div>
 								</div>

@@ -1655,7 +1655,7 @@ inst__bot.addEventListener('click', () => {
 });
 
 what__bot.addEventListener('click', () => {
-  window.open('https://t.me/eternal_sorrow', '_blank');
+  window.open('https://wa.me/380992109290', '_blank');
 });
 
 if (screenMob > 440) {
@@ -1723,7 +1723,7 @@ inst__top.addEventListener('click', () => {
 });
 
 what__top.addEventListener('click', () => {
-  window.open('https://t.me/eternal_sorrow', '_blank');
+  window.open('https://wa.me/380992109290', '_blank');
 });
 
 
