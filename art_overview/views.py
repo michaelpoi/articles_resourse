@@ -7,7 +7,6 @@ from django.shortcuts import render, get_object_or_404
 from django.utils.datastructures import MultiValueDictKeyError
 
 from articles_res.trans_utils import get_translation_article
-from requests.forms import RequestForm
 from art_overview.models import Article, ArticleTransIt, ArticleTransEn
 from django.views.decorators.csrf import csrf_exempt
 
@@ -55,13 +54,14 @@ def like_control(request, article_id):
     article_id = str(article_id)
     article = get_object_or_404(Article, article_id=article_id)
     response = JsonResponse({'likes': article.likes})
-    if is_liked(request, article_id):
-        article.unlike()
-        response.delete_cookie(article_id + "_l")
-    else:
-        article.like()
-        exp = datetime.datetime.now() + datetime.timedelta(days=30)
-        response.set_cookie(article_id + "_l", "liked", expires=exp)
+    if request.COOKIES.get('allowCookies') == 'true':
+        if is_liked(request, article_id):
+            article.unlike()
+            response.delete_cookie(article_id + "_l")
+        else:
+            article.like()
+            exp = datetime.datetime.now() + datetime.timedelta(days=30)
+            response.set_cookie(article_id + "_l", "liked", expires=exp)
     return response
 
 
@@ -74,14 +74,14 @@ def like_article(request):
 
 def is_watched(request, article_id):
     article_id = str(article_id)
-    if article_id in request.COOKIES:
+    if article_id in request.COOKIES or request.COOKIES.get('allowCookies') == 'false':
         return True
     return False
 
 
 def is_reposted(request, article_id):
     article_id = str(article_id)
-    if (article_id + "_r") in request.COOKIES:
+    if (article_id + "_r") in request.COOKIES or request.COOKIES.get('allowCookies') == 'false':
         return True
     return False
 

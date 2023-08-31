@@ -49,7 +49,7 @@ def is_liked(request, project_id):
 
 def is_watched(request, project_id):
     project_id = str(project_id)
-    if project_id in request.COOKIES and 'watched' == request.COOKIES.get(project_id):
+    if project_id in request.COOKIES or request.COOKIES.get('allowCookies') == 'false':
         return True
     return False
 
@@ -58,13 +58,14 @@ def like_control(request, project_id):
     project_id = str(project_id)
     project = get_object_or_404(ProjectPortfolio, project_id=project_id)
     response = JsonResponse({'likes': project.likes})
-    if is_liked(request, project_id):
-        project.unlike()
-        response.delete_cookie(project_id + "_l")
-    else:
-        exp = datetime.datetime.now() + datetime.timedelta(days=30)
-        project.like()
-        response.set_cookie(project_id + "_l", "liked", expires=exp)
+    if request.COOKIES.get('allowCookies') == 'true':
+        if is_liked(request, project_id):
+            project.unlike()
+            response.delete_cookie(project_id + "_l")
+        else:
+            exp = datetime.datetime.now() + datetime.timedelta(days=30)
+            project.like()
+            response.set_cookie(project_id + "_l", "liked", expires=exp)
     return response
 
 
@@ -77,7 +78,7 @@ def like_project(request):
 
 def is_reposted(request, project_id):
     project_id = str(project_id)
-    if (project_id + "_r") in request.COOKIES:
+    if (project_id + "_r") in request.COOKIES or request.COOKIES.get('allowCookies') == 'false':
         return True
     return False
 

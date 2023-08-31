@@ -64,10 +64,10 @@ def main_page_trans(request, lang_code):
     context = get_main_page_context(lang_code)
     if lang_code == 'en':
         response = render(request, 'en/landing.html',context=context)
-        response.set_cookie('user_lang', 'en')
+        #response.set_cookie('user_lang', 'en')
     if lang_code == 'it':
         response = render(request, 'it/landing.html',context=context)
-        response.set_cookie('user_lang', 'it')
+        #response.set_cookie('user_lang', 'it')
     if response is None:
         raise Http404("Not found")
     return response

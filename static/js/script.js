@@ -1503,7 +1503,7 @@ function getCookie(name) {
 
 const userId = encodeURIComponent(navigator.userAgent);
 
-const previousAllowCookiesValue = getCookie(`allowCookies_${userId}`);
+const previousAllowCookiesValue = getCookie(`allowCookies`);
 if (previousAllowCookiesValue === 'true') {
   coockie.style.display = 'none';
     bgBlur.style.opacity = '0';
@@ -1533,11 +1533,11 @@ if (previousAllowCookiesValue === 'true') {
 }
 
 allow.addEventListener('click', () => {
-  setCookie(`allowCookies_${userId}`, true, 365);
+  setCookie(`allowCookies`, true, 365);
 });
 
 decline.addEventListener('click', () => {
-  setCookie(`allowCookies_${userId}`, false, 365);
+  setCookie(`allowCookies`, false, 365);
 });
 
 //forms contact
