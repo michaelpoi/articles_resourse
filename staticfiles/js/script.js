@@ -1655,7 +1655,7 @@ inst__bot.addEventListener('click', () => {
 });
 
 what__bot.addEventListener('click', () => {
-    window.open('', '_blank');
+    window.open('https://wa.me/380992109290', '_blank');
 });
 
 if (screenMob > 440) {
