@@ -160,11 +160,11 @@ def search_trans(request, lang_code):
         raise Http404("Not found")
     match lang_code:
         case 'en':
-            articles = Article.objects.filter(translation_en__title__contains=searched).all()
+            articles = Article.objects.filter(translation_en__title__contains=searched).order_by('-likes').all()
             for article in articles:
                 article = get_translation_article(article,'en')
         case 'it':
-            articles = Article.objects.filter(translation_de__title__contains=searched).all()
+            articles = Article.objects.filter(translation_de__title__contains=searched).order_by('-likes').all()
             for article in articles:
                 article = get_translation_article(article, 'it')
         case _:
