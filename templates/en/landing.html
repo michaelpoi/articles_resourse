@@ -1203,7 +1203,7 @@
 						</div>
 						<div class="client__row">
 							<div class="img__boxholer">
-								<div class="img__box img__one borderm">
+								<div class="img__box img__one borderm" style="background-image: url('{% static 'media/img/customs.jpg' %}')">
 									
 								</div>
 								<div class="img__box img__two borderm">
@@ -1417,7 +1417,7 @@
 									</div>
 									<div class="small__meintxt">
 										<p>
-                                            {{ project.desc|safe }}
+                                            {{ project.desc|safe|slice:":200" }}
 										</p>
 									</div>
 									<div class="work__items">
