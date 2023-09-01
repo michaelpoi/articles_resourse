@@ -679,10 +679,10 @@ document.getElementById('openButtonMobile__port').addEventListener('click', () =
 const seeAllButton = document.getElementById('see__all');
 const hide__four = document.getElementById('hide__four');
 const defportItems = document.querySelectorAll('.allholder .defport');
-
+console.log(defportItems)
 seeAllButton.addEventListener('click', () => {
   defportItems.forEach((item, index) => {
-    if (index >= 4) {
+    if (index >= 3) {
       item.style.display = 'flex';
     }
   });
@@ -700,7 +700,7 @@ seeAllButton.addEventListener('click', () => {
 
 hide__four.addEventListener('click', () => {
   defportItems.forEach((item, index) => {
-    if (index >= 4) {
+    if (index >= 3) {
       item.style.display = 'none';
     }
   });

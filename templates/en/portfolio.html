@@ -462,7 +462,7 @@
 						</svg>
 					</div>
                     {% for project in cards_projects %}
-                        <div class="defport" onclick="window.location.href='{% url 'project_trans' lang_code='en' project_id=project.project_id %}'">
+                        <div class="defport {% if forloop.counter > 3 %}hide{% endif %}" onclick="window.location.href='{% url 'project_trans' lang_code='en' project_id=project.project_id %}'">
                         <div class="pad__port">
                             <div class="port__img" style="background-image: url('{{ project.image.url }}')">
 
