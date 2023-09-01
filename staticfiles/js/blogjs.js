@@ -746,14 +746,14 @@ stats1.addEventListener('click', () => {
   bgblurstat.style.opacity = '1';
 });
 stats2.addEventListener('click', () => {
-  stat1.style.left = '8.6vw';
-  stat1.style.opacity = '1';
+  stat2.style.left = '8.6vw';
+  stat2.style.opacity = '1';
   bgblurstat.style.right = '0';
   bgblurstat.style.opacity = '1';
 });
 stats3.addEventListener('click', () => {
-  stat1.style.left = '8.6vw';
-  stat1.style.opacity = '1';
+  stat3.style.left = '8.6vw';
+  stat3.style.opacity = '1';
   bgblurstat.style.right = '0';
   bgblurstat.style.opacity = '1';
 });
