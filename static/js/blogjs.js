@@ -728,6 +728,8 @@ likes.forEach(like => {
 // check stats
 
 const stats1 = document.getElementById('stats1');
+const stats2 = document.getElementById('stats2');
+const stats3 = document.getElementById('stats3');
 const stat1 = document.getElementById('stat1');
 const stat2 = document.getElementById('stat2');
 const stat3 = document.getElementById('stat3');
@@ -743,7 +745,18 @@ stats1.addEventListener('click', () => {
   bgblurstat.style.right = '0';
   bgblurstat.style.opacity = '1';
 });
-
+stats2.addEventListener('click', () => {
+  stat1.style.left = '8.6vw';
+  stat1.style.opacity = '1';
+  bgblurstat.style.right = '0';
+  bgblurstat.style.opacity = '1';
+});
+stats3.addEventListener('click', () => {
+  stat1.style.left = '8.6vw';
+  stat1.style.opacity = '1';
+  bgblurstat.style.right = '0';
+  bgblurstat.style.opacity = '1';
+});
 
 
 toClose1.addEventListener('click', () => {

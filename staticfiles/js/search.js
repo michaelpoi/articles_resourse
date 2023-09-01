@@ -161,6 +161,7 @@ navTexts.forEach((text) => {
 });
 
 
+
 // span transform
 
 // span bottom
@@ -619,15 +620,9 @@ getUpDiv.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// direct port
-
-const number1 = document.getElementById('num1');
-
-
-
 // nav mobile version
 
-const openButtonMobile = document.getElementById('menu__mobile__port');
+const openButtonMobile = document.getElementById('menu__mobile');
 const mobileMenu = document.querySelector('.mobile__menu');
 let isMenuOpen = false;
 
@@ -670,81 +665,156 @@ function scrollToElementAndCloseMenu(elementId) {
   targetElement.scrollIntoView({ behavior: 'smooth' });
 }
 
-
-
-document.getElementById('openButtonMobile__port').addEventListener('click', () => {
+document.getElementById('openButtonMobile').addEventListener('click', () => {
   scrollToElementAndCloseMenu('form__user__bot');
 });
 
-const seeAllButton = document.getElementById('see__all');
-const hide__four = document.getElementById('hide__four');
-const defportItems = document.querySelectorAll('.allholder .defport');
-console.log(defportItems)
-seeAllButton.addEventListener('click', () => {
-  defportItems.forEach((item, index) => {
-    if (index >= 3) {
-      item.style.display = 'flex';
+// const seeAllButton = document.getElementById('see__all');
+// const hide__four = document.getElementById('hide__four');
+// const defportItems = document.querySelectorAll('.allholder .defport');
+
+// seeAllButton.addEventListener('click', () => {
+//   defportItems.forEach((item, index) => {
+//     if (index >= 4) {
+//       item.style.display = 'flex';
+//     }
+//   });
+//   window.scrollTo(0, 210 * window.innerWidth / 100);
+
+//   seeAllButton.style.opacity = '0';
+//   seeAllButton.style.pointerEvents = 'none';
+
+//   hide__four.style.opacity = '1';
+//   hide__four.style.pointerEvents = 'all';
+//   hide__four.addEventListener('transitionend', () => {
+//     seeAllButton.style.pointerEvents = 'none';
+//   }, { once: true });
+// });
+
+// hide__four.addEventListener('click', () => {
+//   defportItems.forEach((item, index) => {
+//     if (index >= 4) {
+//       item.style.display = 'none';
+//     }
+//   });
+//   window.scrollTo(0, 210 * window.innerWidth / 100);
+
+//   hide__four.style.opacity = '0';
+//   hide__four.style.pointerEvents = 'none';
+//   hide__four.addEventListener('transitionend', () => {
+//     seeAllButton.style.opacity = '1';
+//     seeAllButton.style.pointerEvents = 'all';
+//   }, { once: true });
+// });
+
+// work clickable section
+
+const likes = document.querySelectorAll('.icon__like');
+
+likes.forEach(like => {
+  like.addEventListener('click', () => {
+    const path = like.querySelector('.forheart');
+
+    if (path.classList.contains('active')) {
+      path.classList.remove('active');
+      path.classList.add('strokechange');
+    } else {
+      path.classList.remove('strokechange');
+      path.classList.add('active');
     }
   });
-  window.scrollTo(0, 210 * window.innerWidth / 100);
-
-  seeAllButton.style.opacity = '0';
-  seeAllButton.style.pointerEvents = 'none';
-
-  hide__four.style.opacity = '1';
-  hide__four.style.pointerEvents = 'all';
-  hide__four.addEventListener('transitionend', () => {
-    seeAllButton.style.pointerEvents = 'none';
-  }, { once: true });
 });
 
-hide__four.addEventListener('click', () => {
-  defportItems.forEach((item, index) => {
-    if (index >= 3) {
-      item.style.display = 'none';
+// check stats
+
+// const stats1 = document.getElementById('stats1');
+// const stat1 = document.getElementById('stat1');
+// const stat2 = document.getElementById('stat2');
+// const stat3 = document.getElementById('stat3');
+// const toClose1 = stat1.querySelector('.toclose');
+// const toClose2 = stat2.querySelector('.toclose');
+// const toClose3 = stat3.querySelector('.toclose');
+// const bgblurstat = document.getElementById('statcheck');
+//
+// // Добавьте обработчики события клика для каждого элемента stats
+// stats1.addEventListener('click', () => {
+//   stat1.style.left = '8.6vw';
+//   stat1.style.opacity = '1';
+//   bgblurstat.style.right = '0';
+//   bgblurstat.style.opacity = '1';
+// });
+//
+//
+//
+// toClose1.addEventListener('click', () => {
+//     stat1.style.opacity = '0';
+//     bgblurstat.style.opacity = '0';
+//     setTimeout(function() {
+//         stat1.style.left = '-100%';
+//     }, 300);
+//     setTimeout(function() {
+//         bgblurstat.style.right = '-100%';
+//       }, 300);
+// });
+//
+// toClose2.addEventListener('click', () => {
+//     stat2.style.opacity = '0';
+//     bgblurstat.style.opacity = '0';
+//     setTimeout(function() {
+//         stat2.style.left = '-100%';
+//     }, 300);
+//     setTimeout(function() {
+//         bgblurstat.style.right = '-100%';
+//       }, 300);
+// });
+//
+// toClose3.addEventListener('click', () => {
+//     stat3.style.opacity = '0';
+//     bgblurstat.style.opacity = '0';
+//     setTimeout(function() {
+//         stat3.style.left = '-100%';
+//     }, 300);
+//     setTimeout(function() {
+//         bgblurstat.style.right = '-100%';
+//       }, 300);
+// });
+
+
+
+
+
+  choose__bot.addEventListener('click', () => {
+    behind1.classList.toggle('longchoose');
+    if (behind1.classList.contains('longchoose')) {
+      opened__ch.style.display = 'none';
+      closed__ch.style.display = 'flex';
+      choose__bot.style.borderColor = 'rgba(255,255,255,1)';
+      phone__change.setAttribute('readonly', 'readonly');
+    } else {
+      opened__ch.style.display = 'flex';
+      closed__ch.style.display = 'none';
+      choose__bot.style.borderColor = '';
+      phone__change.removeAttribute('readonly');
     }
   });
-  window.scrollTo(0, 210 * window.innerWidth / 100);
+  
+  choose__top.addEventListener('click', () => {
+    behind1__top.classList.toggle('longchoose');
+    if (behind1__top.classList.contains('longchoose')) {
+      opened__ch__top.style.display = 'none';
+      closed__ch__top.style.display = 'flex';
+      choose__top.style.borderColor = 'rgba(255,255,255,1)';
+      phone__change__top.setAttribute('readonly', 'readonly');
+    } else {
+      opened__ch__top.style.display = 'flex';
+      closed__ch__top.style.display = 'none';
+      choose__top.style.borderColor = '';
+      phone__change__top.removeAttribute('readonly');
+    }
+  });
 
-  hide__four.style.opacity = '0';
-  hide__four.style.pointerEvents = 'none';
-  hide__four.addEventListener('transitionend', () => {
-    seeAllButton.style.opacity = '1';
-    seeAllButton.style.pointerEvents = 'all';
-  }, { once: true });
-});
 
-choose__bot.addEventListener('click', () => {
-  behind1.classList.toggle('longchoose');
-  if (behind1.classList.contains('longchoose')) {
-    opened__ch.style.display = 'none';
-    closed__ch.style.display = 'flex';
-    choose__bot.style.borderColor = 'rgba(255,255,255,1)';
-    phone__change.setAttribute('readonly', 'readonly');
-  } else {
-    opened__ch.style.display = 'flex';
-    closed__ch.style.display = 'none';
-    choose__bot.style.borderColor = '';
-    phone__change.removeAttribute('readonly');
-  }
-});
-
-choose__top.addEventListener('click', () => {
-  behind1__top.classList.toggle('longchoose');
-  if (behind1__top.classList.contains('longchoose')) {
-    opened__ch__top.style.display = 'none';
-    closed__ch__top.style.display = 'flex';
-    choose__top.style.borderColor = 'rgba(255,255,255,1)';
-    phone__change__top.setAttribute('readonly', 'readonly');
-  } else {
-    opened__ch__top.style.display = 'flex';
-    closed__ch__top.style.display = 'none';
-    choose__top.style.borderColor = '';
-    phone__change__top.removeAttribute('readonly');
-  }
-});
-
-// tel click
+  // tel click
 
 // tel click
 
@@ -759,7 +829,7 @@ if (screenMob > 440) {
     bgfoot.style.opacity = '1';
     ch__tel.style.top = '9.4vw';
     ch__tel.style.left = '17vw';
-  
+
     if (bgfoot.style.left === '0%') {
       bgfoot.addEventListener('click', () => {
         bgfoot.style.opacity = '0';
@@ -783,7 +853,7 @@ if (screenMob > 440) {
     bgfoot.style.opacity = '1';
     ch__tel.style.top = '42vw';
     ch__tel.style.left = '44vw';
-  
+
     if (bgfoot.style.left === '0%') {
       bgfoot.addEventListener('click', () => {
         bgfoot.style.opacity = '0';
@@ -823,7 +893,7 @@ if (screenMob > 440) {
     bgfoot.style.opacity = '1';
     ch__tel.style.top = '4vw';
     ch__tel.style.left = '75vw';
-  
+
     if (bgfoot.style.left === '0%') {
       bgfoot.addEventListener('click', () => {
         bgfoot.style.opacity = '0';
@@ -847,7 +917,7 @@ if (screenMob > 440) {
     bgfoot.style.opacity = '1';
     ch__tel.style.top = '200vw';
     ch__tel.style.left = '44vw';
-  
+
     if (bgfoot.style.left === '0%') {
       bgfoot.addEventListener('click', () => {
         bgfoot.style.opacity = '0';

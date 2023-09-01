@@ -454,7 +454,10 @@ p {
     #hide__four {
         opacity: 0;
         pointer-events: none;
-    }   
+    }
+    .hide{
+        display: none;
+    }
     .see__all {
         position: absolute;
         bottom: -15vw;
