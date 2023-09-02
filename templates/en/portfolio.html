@@ -584,7 +584,10 @@
                 $.ajax({
                     type:'POST',
                     url:'https://nethunt.com/service/automation/hooks/64ea27e1520a810009613fb9',
-                    data: data_new
+                    data: data_new,
+                    success: function (response){
+                        window.location.reload()
+                    }
                 })
 
             })
@@ -610,8 +613,12 @@
                 $.ajax({
                     type:'POST',
                     url:'https://nethunt.com/service/automation/hooks/64ea27e1520a810009613fb9',
-                    data:data_new
+                    data:data_new,
+                    success: function (response){
+                        window.location.reload()
+                    }
                 })
+
             })
                 const repostButtons = document.querySelectorAll('.icon__copy')
             repostButtons.forEach(button=>{

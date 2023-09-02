@@ -57,7 +57,7 @@
 							<path d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 							<path d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
-						<p>
+						<p class="reposts">
 							{{ article.reposts }}
 						</p>
 					</div>
@@ -65,7 +65,7 @@
 						<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
-						<p>
+						<p class="likes">
 							{{ article.likes }}
 						</p>
 					</div>
@@ -449,7 +449,7 @@
 												<path d="M14.0912 10.9088C16.3478 13.1654 16.3478 16.8107 14.0912 19.0673L10.8509 22.3654C8.59434 24.622 4.94906 24.622 2.69245 22.3654C0.435849 20.1088 0.435849 16.4635 2.69245 14.2069L5.58553 11.4296" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 												<path d="M10.8509 14.1491C8.5943 11.8925 8.5943 8.24717 10.8509 5.99057L14.0912 2.69245C16.3478 0.435849 20.0509 0.435849 22.3075 2.69245C24.5641 4.94906 24.5641 8.59434 22.3075 10.8509L19.4144 13.6862" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 											</svg>
-											<p>
+											<p class="reposts">
 												{{ article.reposts }}
 											</p>
 										</div>
@@ -457,7 +457,7 @@
 											<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path fill-rule="evenodd" clip-rule="evenodd" d="M22.2265 2.77351C21.0915 1.63798 19.5518 1 17.9463 1C16.3408 1 14.801 1.63798 13.666 2.77351L12.4997 3.93985L11.3334 2.77351C8.96947 0.409613 5.13683 0.409613 2.77293 2.77351C0.409025 5.13742 0.409024 8.97006 2.77293 11.334L3.93926 12.5003L12.4997 21.0607L21.0602 12.5003L22.2265 11.334C23.362 10.199 24 8.65925 24 7.05374C24 5.44823 23.362 3.90852 22.2265 2.77351Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 											</svg>
-											<p>
+											<p class="likes">
 												{{ article.likes }}
 											</p>
 										</div>
@@ -564,7 +564,10 @@
                 $.ajax({
                     type:'POST',
                     url:'https://nethunt.com/service/automation/hooks/64ea27e1520a810009613fb9',
-                    data: data_new
+                    data: data_new,
+                    success: function (response){
+                        window.location.reload()
+                    }
                 })
 
             })
@@ -590,7 +593,10 @@
                 $.ajax({
                     type:'POST',
                     url:'https://nethunt.com/service/automation/hooks/64ea27e1520a810009613fb9',
-                    data:data_new
+                    data:data_new,
+                    success: function (response){
+                        window.location.reload()
+                    }
                 })
             })
             $('.icon1').click(function (){
@@ -599,7 +605,10 @@
                 $.ajax({
                     type:'POST',
                     url:'{% url 'like_article' %}',
-                    data: {'article_id':article_id}
+                    data: {'article_id':article_id},
+                    success: function (response){
+                        $('.likes').text(response.likes)
+                    }
                 })
             })
                         const repostArticlesButtons = document.querySelectorAll('.icon2')
@@ -612,7 +621,10 @@
                     $.ajax({
                         type:'POST',
                         url:'{% url 'repost_article' %}',
-                        data:{'article_id':article_id}
+                        data:{'article_id':article_id},
+                        success: function (response){
+                        $('.reposts').text(response.reposts)
+                    }
                     })
                 })
             })

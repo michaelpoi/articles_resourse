@@ -53,16 +53,19 @@ def is_liked(request, article_id):
 def like_control(request, article_id):
     article_id = str(article_id)
     article = get_object_or_404(Article, article_id=article_id)
-    response = JsonResponse({'likes': article.likes})
     if request.COOKIES.get('allowCookies') == 'true':
         if is_liked(request, article_id):
             article.unlike()
+            response = JsonResponse({'likes': article.likes})
             response.delete_cookie(article_id + "_l")
+            return response
         else:
             article.like()
+            response = JsonResponse({'likes': article.likes})
             exp = datetime.datetime.now() + datetime.timedelta(days=30)
             response.set_cookie(article_id + "_l", "liked", expires=exp)
-    return response
+            return response
+    return JsonResponse({'likes':article.likes})
 
 
 @csrf_exempt
@@ -89,12 +92,13 @@ def is_reposted(request, article_id):
 def repost_control(request, article_id):
     article_id = str(article_id)
     article = get_object_or_404(Article, article_id=article_id)
-    response = JsonResponse({'reposts': article.reposts})
     if not is_reposted(request, article_id):
         article.repost()
+        response = JsonResponse({'reposts': article.reposts})
         exp = datetime.datetime.now() + datetime.timedelta(days=30)
         response.set_cookie(article_id + "_r", "reposted", expires=exp)
-    return response
+        return response
+    return JsonResponse({'reposts': article.reposts})
 
 
 @csrf_exempt
