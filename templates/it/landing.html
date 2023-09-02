@@ -42,7 +42,7 @@
 				</span>
 				<input type="text" name="name" id="fastname" autocomplete="off" placeholder="" class="definp">
 				<input type="email" name="email" id="fastmail" autocomplete="off" placeholder="" class="definp">
-				<input type="number" name="number" id="fastphone" autocomplete="off" placeholder="" class="definp">
+				<input type="tel" name="number" id="fastphone" autocomplete="off" placeholder="" class="definp">
 				<p class="infofast">
 					Il nostro team di assistenza vi contatterà a breve
 				</p>
@@ -2292,7 +2292,7 @@
 												<span class="span__text" id="span__form__tp">
 													il vostro telefono
 												</span>
-												<input type="number" id="phone__change" class="inpphone definp" placeholder="" autocomplete="off" readonly>
+												<input type="tel" id="phone__change" class="inpphone definp" placeholder="" autocomplete="off" readonly>
 												<textarea name="texte" id="text__send__bot" class="message__send" placeholder="" autocomplete="off"></textarea>
 												<small class="inf__o">
 													Il nostro team di assistenza vi contatterà a breve
@@ -2313,6 +2313,7 @@
 	</div>
     <script>
         $(document).ready(function (){
+            $('#phone__change__top').mask("+99(999)-9999");
             $('#form__user').submit(function (event){
                 event.preventDefault()
                 let formData = $(this).serialize()
