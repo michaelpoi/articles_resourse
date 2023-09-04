@@ -1404,13 +1404,13 @@ if (screenMob > 440) {
     })
   });
   
-  ordernow.addEventListener('click', () => {
-    bgBlur.style.opacity = '0';
-  setTimeout(() => {
-    bgBlur.style.right = '-100%';
-  }, 300);
-    divorder.style.left = '-100%';
-  });
+  // ordernow.addEventListener('click', () => {
+  //   bgBlur.style.opacity = '0';
+  // setTimeout(() => {
+  //   bgBlur.style.right = '-100%';
+  // }, 300);
+  //   divorder.style.left = '-100%';
+  // });
   
   closeorder.addEventListener('click', () => {
     bgBlur.style.opacity = '0';
@@ -1468,13 +1468,13 @@ if (screenMob > 440) {
     })
   });
   
-  ordernow.addEventListener('click', () => {
-    bgBlur.style.opacity = '0';
-  setTimeout(() => {
-    bgBlur.style.right = '-100%';
-  }, 300);
-    divorder.style.left = '-100%';
-  });
+  // ordernow.addEventListener('click', () => {
+  //   bgBlur.style.opacity = '0';
+  // setTimeout(() => {
+  //   bgBlur.style.right = '-100%';
+  // }, 300);
+  //   divorder.style.left = '-100%';
+  // });
   
   closeorder.addEventListener('click', () => {
     bgBlur.style.opacity = '0';
