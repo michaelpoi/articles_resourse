@@ -128,10 +128,7 @@
 					<div class="mamany">
 						<div class="pelaha" id="mobile__vers">
 							<div class="kasj" id="mobile__tpp">
-                                <form method="GET" action="{% url 'search_trans' lang_code='it' %}">
-                                    <input type="search" name="" id="input__write" class="nanas" placeholder="пошук по сайту" autocomplete="off">
-                                </form>
-
+                                {% include 'base/search_it.html' %}
 							</div>
 							<div class="kakav">
 								<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -284,9 +281,7 @@
 						<div class="mamany">
 							<div class="pelaha" id="pelaha">
 								<div class="kasj" id="kasj">
-                                    <form method="GET" action="{% url 'search_trans' lang_code='it' %}">
-                                        <input type="search" name="" id="nanas" class="nanas" placeholder="пошук по сайту" autocomplete="off">
-                                    </form>
+                                   {% include 'base/search_it.html' %}
 								</div>
 								<div class="kakav">
 									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

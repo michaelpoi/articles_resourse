@@ -187,7 +187,7 @@
 							</linearGradient>
 						</defs>
 						<rect x="1" y="1" width="99.5%" height="96%" rx="4%" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1%" />
-						<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="5vw" fill="rgba(255, 255, 255, 1)">Зв’язок</text>
+						<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="5vw" fill="rgba(255, 255, 255, 1)">Collegamento</text>
 						</svg>
 					</div>
 					<div class="mamany">
@@ -302,13 +302,13 @@
 							<div class="absas" id="lgcont__port">
 								<div class="langchs">
 									<div class="langholder">
-										<p>UA</p>
+										<p>IT</p>
 									</div>
 									<div class="langholder">
 										<a href="{% url 'blog_trans' lang_code='en' %}"><p>EN</p></a>
 									</div>
 									<div class="langholder">
-										<a href="{% url 'blog_trans' lang_code='it' %}"><p>IT</p></a>
+										<a href="{% url 'blog' %}"><p>UA</p></a>
 									</div>
 								</div>
 							</div>
@@ -373,36 +373,12 @@
 								</linearGradient>
 							</defs>
                             <rect x="1" y="1" width="96%" height="94%" rx="7%" fill="none" stroke-width="2%" />
-							<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="1.2vw" fill="rgba(255, 255, 255, 1)">Зв’язок</text>
+							<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="1.2vw" fill="rgba(255, 255, 255, 1)">Collegamento</text>
 							</svg>
 						</div>							  
 						<div class="typediva">
 							<div class="sztext helloas" id="navmenu__port">
-								<div class="newasa">
-									<a href="{% url 'main' %}#home__page">
-										<p class="navtext">Головна</p>
-									</a>
-								</div>
-								<div class="newasa">
-									<a href="{% url 'main' %}#specialty">
-										<p class="navtext">Послуги</p>
-									</a>
-								</div>
-								<div class="newasa our__qq">
-									<a href="{% url 'main' %}#scrollto__works">
-										<p class="navtext">Наші роботи</p>
-									</a>
-								</div>
-								<div class="newasa pop__qq">
-									<a href="{% url 'main' %}#scrollto__faq">
-										<p class="navtext">Популярні запитання</p>
-									</a>
-								</div>
-								<div class="newasa wasaa">
-									<a href="{% url 'main' %}#scrollto__bloger">
-										<p class="navtext">IT блог</p>
-									</a>
-								</div>
+								{% include 'base/newasa_it.html' %}
 							</div>
 							<div class="menu-toggle" id="menu__port">
 								<div>
@@ -895,7 +871,7 @@
                     'phone':phone,
                     'services':activeLabels,
                     'message':msg,
-                    'lang_code':'ua'
+                    'lang_code':'it'
                 }
                 console.log(data_new)
                 $.ajax({
@@ -925,7 +901,7 @@
                     'phone':phone,
                     'services':activeLabels,
                     'message':msg,
-                    'lang_code':'ua'
+                    'lang_code':'it'
                 }
                 $.ajax({
                     type:'POST',
