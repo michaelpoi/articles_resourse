@@ -187,7 +187,7 @@
 							</linearGradient>
 						</defs>
 						<rect x="1" y="1" width="99.5%" height="96%" rx="4%" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1%" />
-						<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="5vw" fill="rgba(255, 255, 255, 1)">Зв’язок</text>
+						<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="5vw" fill="rgba(255, 255, 255, 1)">Contact</text>
 						</svg>
 					</div>
 					<div class="mamany">
@@ -206,7 +206,7 @@
 			
 						</div>
 					</div>
-					{% include 'base/link__holder.html' %}
+					{% include 'base/link__holder_int.html' with code='en' %}
 				</div>
 			</div>
             <div class="bgblured" id="bgBlured__port">
@@ -243,78 +243,21 @@
 								<div class="leftpart wds">
 									<div class="conts">
 										<p>
-											Зв’яжіться з нами
+											Contact us
 										</p>
 										<input type="text" name="" id="input__forme" class="definp" placeholder="" autocomplete="off">
 										<span class="span__text" id="span__top1">
-											ваше ім'я
+											your name
 										</span>
-										<input type="gmail" name="" id="gmail__forme" class="definp" placeholder="" autocomplete="off">
+										<input type="email" name="" id="gmail__forme" class="definp" placeholder="" autocomplete="off">
 										<span class="span__text" id="span__top2">
-											ваша пошта
+											e-mail
 										</span>
 										<p class="choose">
-											Оберіть послугу
+											Choose services
 										</p>
 									</div>
-									<fieldset class="radioopt">
-										<div class="scrolld">
-											<div class="raddiv">
-												<div class="paddonly">
-													<label>
-														Верстка сайту
-													</label>
-													<div class="chooseot">
-													</div>
-												</div>
-											</div>
-											<div class="raddiv">
-												<div class="paddonly">
-													<label>
-														Налаштування серверу
-													</label>
-													<div class="chooseot">
-													</div>
-												</div>
-											</div>
-											<div class="raddiv">
-												<div class="paddonly">
-													<label>
-														Оновлення коду вашого проекту і поліпшення дизайну
-													</label>
-													<div class="chooseot">
-													</div>
-												</div>
-											</div>
-											<div class="raddiv">
-												<div class="paddonly">
-													<label>
-														Консультація
-													</label>
-													<div class="chooseot">
-													</div>
-												</div>
-											</div>
-											<div class="raddiv">
-												<div class="paddonly">
-													<label>
-														Свій варіант
-													</label>
-													<div class="chooseot">
-													</div>
-												</div>
-											</div>
-											<div class="raddiv">
-												<div class="paddonly">
-													<label>
-														Жоден з варіантів
-													</label>
-													<div class="chooseot">
-													</div>
-												</div>
-											</div>
-										</div>
-									</fieldset>
+									{% include 'base/fieldset_en.html' %}
 								</div>
 								<div class="rightpart wds">
 									<div class="textfi topform">
@@ -346,18 +289,18 @@
 											</svg>
 										</div>
 										<span class="span__text" id="span__form__tp__top">
-											ваш телефон
+											phone number
 										</span>
 										<input type="number" id="phone__change__top" class="inpphone definp" placeholder="" autocomplete="off" readonly>
 										<span class="span__text" id="span__topform">
-											ваше повідомлення
+											your message
 										</span>
 										<textarea name="texte" id="text__send" class="message__send" placeholder=""></textarea>
 										<small class="inf__o">
-											З вами найближчим часом зв’яжеться наша група підтримки
+											Our support team will contact you shortly
 										</small>
 										<button type="submit" class="send__form">
-											<p>Відправити</p>
+											<p>Submit</p>
 										</button>
 									</div>
 								</div>
@@ -368,7 +311,7 @@
 			</div>
 			<div class="sticka viewbr brdrex">
 				<div class="navimo">
-					<div class="loger" id="to__back" onclick="window.location.href='{% url 'main' %}'">
+					<div class="loger" id="to__back" onclick="window.location.href='{% url 'main_trans' lang_code='en' %}'">
 						<?xml version="1.0" encoding="utf-8"?>
 						<svg width="2vw" height="2vw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M4 19H20M11.2929 5.70711L8.70711 8.2929C8.31658 8.68342 7.68342 8.68342 7.29289 8.2929L5.70711 6.70711C5.07714 6.07714 4 6.52331 4 7.41422V15C4 15.5523 4.44772 16 5 16H19C19.5523 16 20 15.5523 20 15V7.41421C20 6.52331 18.9229 6.07714 18.2929 6.70711L16.7071 8.2929C16.3166 8.68342 15.6834 8.68342 15.2929 8.2929L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711Z" stroke="rgba(255,255,255,1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -387,10 +330,10 @@
 							<div class="absas" id="lgcont__port">
 								<div class="langchs">
 									<div class="langholder">
-										<p>UA</p>
+										<p>EN</p>
 									</div>
 									<div class="langholder">
-										<a href="{% url 'blog_trans' lang_code='en' %}"><p>EN</p></a>
+										<a href="{% url 'blog' %}"><p>UA</p></a>
 									</div>
 									<div class="langholder">
 										<a href="{% url 'blog_trans' lang_code='it' %}"><p>IT</p></a>
@@ -458,34 +401,34 @@
 								</linearGradient>
 							</defs>
                             <rect x="1" y="1" width="96%" height="94%" rx="7%" fill="none" stroke-width="2%" />
-							<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="1.2vw" fill="rgba(255, 255, 255, 1)">Зв’язок</text>
+							<text x="50%" y="52%" text-anchor="middle" line-height="0.1px" alignment-baseline="middle" font-weight="400" font-family="Roboto" font-size="1.2vw" fill="rgba(255, 255, 255, 1)">Contact</text>
 							</svg>
 						</div>							  
 						<div class="typediva">
 							<div class="sztext helloas" id="navmenu__port">
 								<div class="newasa">
-									<a href="{% url 'main' %}#home__page">
-										<p class="navtext">Головна</p>
+									<a href="{% url 'main_trans' lang_code='en' %}#home__page">
+										<p class="navtext">Home</p>
 									</a>
 								</div>
 								<div class="newasa">
-									<a href="{% url 'main' %}#specialty">
-										<p class="navtext">Послуги</p>
+									<a href="{% url 'main_trans' lang_code='en' %}#specialty">
+										<p class="navtext">Services</p>
 									</a>
 								</div>
 								<div class="newasa our__qq">
-									<a href="{% url 'main' %}#scrollto__works">
-										<p class="navtext">Наші роботи</p>
+									<a href="{% url 'main_trans' lang_code='en' %}#scrollto__works">
+										<p class="navtext">Our works</p>
 									</a>
 								</div>
 								<div class="newasa pop__qq">
-									<a href="{% url 'main' %}#scrollto__faq">
-										<p class="navtext">Популярні запитання</p>
+									<a href="{% url 'main_trans' lang_code='en' %}#scrollto__faq">
+										<p class="navtext">FAQ</p>
 									</a>
 								</div>
 								<div class="newasa wasaa">
-									<a href="{% url 'main' %}#scrollto__bloger">
-										<p class="navtext">IT блог</p>
+									<a href="{% url 'main_trans' lang_code='en' %}#scrollto__bloger">
+										<p class="navtext">IT blog</p>
 									</a>
 								</div>
 							</div>
@@ -851,7 +794,7 @@
 							<div class="leftftr">
 								<div class="forleft">
 									<div class="contact">
-										<a href="../{% url 'main' %}#home__page" class="tohome">
+										<a href="{% url 'main_trans' lang_code='en' %}#home__page" class="tohome">
 											<div class="bottomlogo">
 												<?xml version="1.0" encoding="utf-8"?>
 												<svg width="2vw" height="2vw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -866,60 +809,7 @@
 										</a>
 									</div>
 									<div class="contact flexione">
-										<div class="gap__me">
-											<a href="{% url 'cookie' %}" class="linkt">
-												<p>
-													Cookie
-												</p>
-											</a>
-											<a href="" class="linkt">
-												<p>
-													Умови користування
-												</p>
-											</a>
-											<a href="" class="linkt">
-												<p>
-													Строки виконання
-												</p>
-											</a>
-											<a href="" class="linkt">
-												<p>
-													Site map
-												</p>
-											</a>
-											<a href="" class="linkt">
-												<p>
-													Рекомендації
-												</p>
-											</a>
-										</div>
-										<div class="gap__me">
-											<a href="{% url 'main' %}#home__page" class="linkt">
-												<p>
-													Головна
-												</p>
-											</a>
-											<a href="{% url 'main' %}#specialty" class="linkt">
-												<p>
-													Послуги
-												</p>
-											</a>
-											<a href="{% url 'main' %}#advantages" class="linkt">
-												<p>
-													Переваги
-												</p>
-											</a>
-											<a href="{% url 'main' %}#faq__qq" class="linkt">
-												<p>
-													Популярні запитання
-												</p>
-											</a>
-											<a href="{% url 'main' %}#blog__us" class="linkt">
-												<p>
-													IT блог
-												</p>
-											</a>
-										</div>
+										{% include 'base/gap_me.html' %}
 									</div>
 									<div class="contact flexiico">
 										<div class="icns">
@@ -939,78 +829,21 @@
 										<div class="leftpart wds">
 											<div class="conts">
 												<p>
-													Зв’яжіться з нами
+													Contact us
 												</p>
 												<input type="text" name="" id="name__change" class="definp inp__name" placeholder="" autocomplete="off">
 												<span class="span__text" id="span__bot1">
-													ваше ім'я
+													your name
 												</span>
 												<input type="gmail" name="" id="gmail__change" class="definp inp__gmail" placeholder="" autocomplete="off">
 												<span class="span__text" id="span__bot2">
-													ваша пошта
+													e-mail
 												</span>
 												<p class="choose">
 													Оберіть послугу
 												</p>
 											</div>
-											<fieldset class="radioopt">
-												<div class="scrolld">
-													<div class="raddiv">
-														<div class="paddonly">
-															<label>
-																Верстка сайту
-															</label>
-															<div class="chooseot">
-															</div>
-														</div>
-													</div>
-													<div class="raddiv">
-														<div class="paddonly">
-															<label>
-																Налаштування серверу
-															</label>
-															<div class="chooseot">
-															</div>
-														</div>
-													</div>
-													<div class="raddiv">
-														<div class="paddonly">
-															<label>
-																Оновлення коду вашого проекту і поліпшення дизайну
-															</label>
-															<div class="chooseot">
-															</div>
-														</div>
-													</div>
-													<div class="raddiv">
-														<div class="paddonly">
-															<label>
-																Консультація
-															</label>
-															<div class="chooseot">
-															</div>
-														</div>
-													</div>
-													<div class="raddiv">
-														<div class="paddonly">
-															<label>
-																Свій варіант
-															</label>
-															<div class="chooseot">
-															</div>
-														</div>
-													</div>
-													<div class="raddiv">
-														<div class="paddonly">
-															<label>
-																Жоден з варіантів
-															</label>
-															<div class="chooseot">
-															</div>
-														</div>
-													</div>
-												</div>
-											</fieldset>
+											{% include 'base/fieldset_en.html' %}
 										</div>
 										<div class="rightpart wds">
 											<div class="invis__block">
@@ -1047,18 +880,18 @@
 													</svg>
 												</div>
 												<span class="span__text" id="span__form__bot">
-													ваше повідомлення
+													your message
 												</span>
 												<span class="span__text" id="span__form__tp">
-													ваш телефон
+													phone number
 												</span>
 												<input type="number" id="phone__change" class="inpphone definp" placeholder="" autocomplete="off" readonly>
 												<textarea name="texte" id="text__send__bot" class="message__send" placeholder="" autocomplete="off"></textarea>
 												<small class="inf__o">
-													З вами найближчим часом зв’яжеться наша група підтримки
+													Our support team will contact you shortly
 												</small>
 												<button type="submit" class="send__form">
-													<p>Відправити</p>
+													<p>Submit</p>
 												</button>
 											</div>
 										</div>
@@ -1093,7 +926,7 @@
                     'phone':phone,
                     'services':activeLabels,
                     'message':msg,
-                    'lang_code':'ua'
+                    'lang_code':'en'
                 }
                 console.log(data_new)
                 $.ajax({
@@ -1120,7 +953,7 @@
                     'phone':phone,
                     'services':activeLabels,
                     'message':msg,
-                    'lang_code':'ua'
+                    'lang_code':'en'
                 }
                 $.ajax({
                     type:'POST',
