@@ -21,3 +21,14 @@ function botFormSuccess(response){
         }, 3000);
 
 }
+
+function fastOrderSuccess(response){
+    $('#fastname').val('');
+    $('#fastmail').val('');
+    $('#fastphone').val('');
+    hideOrderForm();
+    $('#form_send').css('display', 'flex');
+    setTimeout(function() {
+        $('#form_send').css('animation', 'slideUp 0.5s');
+        }, 3000);
+}

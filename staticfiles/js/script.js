@@ -460,9 +460,9 @@ const submitButton = document.getElementById('getport');
 // });
 
 // Добавляем обработчик события на кнопку для отправки формы при клике на неё
-submitButton.addEventListener('click', () => {
-  formPass.submit(); // Отправляем форму
-});
+// submitButton.addEventListener('click', () => {
+//   formPass.submit(); // Отправляем форму
+// });
 
 // nav mobile version
 
@@ -1411,7 +1411,13 @@ if (screenMob > 440) {
   // }, 300);
   //   divorder.style.left = '-100%';
   // });
-  
+  function hideOrderForm(){
+    bgBlur.style.opacity = '0';
+    setTimeout(() => {
+      bgBlur.style.right = '-100%';
+    },300);
+      divorder.style.left = '-100%';
+  }
   closeorder.addEventListener('click', () => {
     bgBlur.style.opacity = '0';
   setTimeout(() => {
