@@ -18,6 +18,7 @@
 	  />
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/formSuccess.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Blog</title>
@@ -43,6 +44,7 @@
 <body>
     <div class="root" id="root1">
         <div class="containerimo">
+            {% include 'base/form_send.html' with code='it' %}
 			<div class="statsee" id="stat1">
 				<div class="statholder">
 					<div class="withclose">
@@ -54,7 +56,7 @@
 					</div>
 					<div class="stst blogdiv">
 						<p>
-							Статистика
+							Statistica
 						</p>
 					</div>
 					<div class="allstats">
@@ -98,7 +100,7 @@
 					</div>
 					<div class="stst blogdiv">
 						<p>
-							Статистика
+							Statistica
 						</p>
 					</div>
 					<div class="allstats">
@@ -142,7 +144,7 @@
 					</div>
 					<div class="stst blogdiv">
 						<p>
-							Статистика
+							Statistica
 						</p>
 					</div>
 					<div class="allstats">
@@ -481,7 +483,7 @@
 												</div>
 												<div class="seeblog1" id="blog1" onclick="window.location.href='{% url 'article_trans' lang_code='it' article_id=article.article_id %}'">
 													<p>
-														Читати весь
+														Leggi tutto
 													</p>
 												</div>
 											</div>
@@ -590,7 +592,7 @@
 				</div>
                 <div class="checklist">
                     <p>
-                        Перелік усіх новин
+                        Elenco delle notizie
                     </p>
                 </div>
                 <div class="check__all">
@@ -1038,9 +1040,7 @@
                     type:'POST',
                     url:'https://nethunt.com/service/automation/hooks/64ea27e1520a810009613fb9',
                     data: data_new,
-                    success: function (response){
-                        window.location.reload()
-                    }
+                    success: topFormSuccess
                 })
 
             })
@@ -1068,9 +1068,7 @@
                     type:'POST',
                     url:'https://nethunt.com/service/automation/hooks/64ea27e1520a810009613fb9',
                     data:data_new,
-                    success: function (response){
-                        window.location.reload()
-                    }
+                    success: botFormSuccess
                 })
             })
             $('.icon1').click(function (event){
