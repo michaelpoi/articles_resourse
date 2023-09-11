@@ -2,7 +2,6 @@ import uuid
 
 from django.db import models
 from ckeditor.fields import RichTextField
-from django.urls import reverse
 
 
 class PhotoAlbum(models.Model):

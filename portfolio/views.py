@@ -1,12 +1,10 @@
 import datetime
 
-from django.http import JsonResponse, HttpResponse, Http404
-from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse
+from django.http import JsonResponse, Http404
+from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponseNotFound
 from articles_res.trans_utils import get_translation_project
-from portfolio.models import ProjectPortfolio, ProjectTransEn, ProjectTransIt
+from portfolio.models import ProjectPortfolio
 
 
 # Create your views here.

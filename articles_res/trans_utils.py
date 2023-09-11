@@ -1,9 +1,9 @@
-from art_overview.models import ArticleTransEn, ArticleTransIt, Article
-from offer.models import OfferTransEn, OfferTransIt, Offer
+from art_overview.models import ArticleTransEn, ArticleTransIt
+from offer.models import OfferTransEn, OfferTransIt
 from portfolio.models import ProjectTransEn, ProjectTransIt
 
 
-def get_translation_offer(offer,lang_code):
+def get_translation_offer(offer, lang_code):
     offer_id = offer.offer_id
     if lang_code == 'en':
         try:

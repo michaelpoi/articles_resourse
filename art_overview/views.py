@@ -2,12 +2,12 @@ import datetime
 
 from django.core.paginator import Paginator
 from django.db.models import Q
-from django.http import HttpResponse, JsonResponse, Http404
+from django.http import JsonResponse, Http404
 from django.shortcuts import render, get_object_or_404
 from django.utils.datastructures import MultiValueDictKeyError
 
 from articles_res.trans_utils import get_translation_article
-from art_overview.models import Article, ArticleTransIt, ArticleTransEn
+from art_overview.models import Article
 from django.views.decorators.csrf import csrf_exempt
 
 

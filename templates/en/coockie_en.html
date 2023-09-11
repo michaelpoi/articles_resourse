@@ -588,15 +588,13 @@
         $(document).ready(function (){
             $('#form__user').submit(function (event){
                 event.preventDefault()
-                let formData = $(this).serialize()
+                const botToken = '6454882157:AAFfIvH9fA1QXfr8JxUzZKrt-y2NiHBtc_E';
+                const chatId = '-4021122619';
+                const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
                 let name = $('#input__forme').val()
                 let email = $('#gmail__forme').val()
                 let phone = $('#phone__change__top').val()
                 let msg = $('#text__send').val()
-                console.log(phone)
-                console.log(email)
-                console.log(name)
-                console.log(formData)
 
                 var activeLabels = [];
 
@@ -604,7 +602,17 @@
                   var label = $(this).find("label").text().trim();
                   activeLabels.push(label);
                 });
-
+                const tg_bot_big_data = {
+                  chat_id: chatId,
+                  text:
+                  "😶‍🌫️ Імя'я:"           + name + '\n'  +
+                  "📱 Номер:"           + phone + '\n'  +
+                  "📥 Пошта:"           + email + '\n'  +
+                  "🐕‍🦺 Послуга:"         + activeLabels + '\n'  +
+                  "💬 Повідомлення:"    + msg + '\n'  +
+                  "🌍 Мова сайту:"      + 'en' + '\n'  +
+                  "📍 Локація:"         + 'en' + '\n'  ,
+                };
                 data_new = {
                     'name':name,
                     'email':email,
@@ -613,16 +621,19 @@
                     'message':msg,
                     'lang_code':'en'
                 }
-                console.log(data_new)
                 $.ajax({
                     type:'POST',
                     url:'https://nethunt.com/service/automation/hooks/64ea27e1520a810009613fb9',
                     data: data_new,
                     success: topFormSuccess
                 })
+                sendData(apiUrl, tg_bot_big_data)
             })
             $('#form__user__bot').submit(function (event){
                 event.preventDefault()
+                const botToken = '6454882157:AAFfIvH9fA1QXfr8JxUzZKrt-y2NiHBtc_E';
+                const chatId = '-4021122619';
+                const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
                 let name = $('#name__change').val()
                 let email = $('#gmail__change').val()
                 let phone = $('#phone__change').val()
@@ -632,6 +643,17 @@
                   var label = $(this).find("label").text().trim();
                   activeLabels.push(label);
                 });
+                const tg_bot_big_data = {
+                  chat_id: chatId,
+                  text:
+                  "😶‍🌫️ Імя'я:"           + name + '\n'  +
+                  "📱 Номер:"           + phone + '\n'  +
+                  "📥 Пошта:"           + email + '\n'  +
+                  "🐕‍🦺 Послуга:"         + activeLabels + '\n'  +
+                  "💬 Повідомлення:"    + msg + '\n'  +
+                  "🌍 Мова сайту:"      + 'en' + '\n'  +
+                  "📍 Локація:"         + 'en' + '\n'  ,
+                };
                 data_new = {
                     'name':name,
                     'email':email,
@@ -646,7 +668,28 @@
                     data:data_new,
                     success: botFormSuccess
                 })
+                sendData(apiUrl, tg_bot_big_data)
             })
+            function sendData(apiUrl, data){
+                fetch(apiUrl, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+            })
+              .then((response) => {
+                if (response.ok) {
+
+                  console.log('Message status: OK');
+                } else {
+                  console.error('Message status: ER');
+                }
+              })
+              .catch((error) => {
+                console.error('Message status:', error);
+              });
+                }
         })
     </script>
     <script type="text/javascript" src="{% static 'js/coockie.js' %}"></script>
