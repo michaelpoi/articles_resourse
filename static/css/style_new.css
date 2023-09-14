@@ -4662,61 +4662,61 @@ input[type="number"]::-webkit-outer-spin-button {
         display: none;
     }
     .homepage {
-        background-image: url('../media/img/bg__phone1.png');
+        background-image: url('../media/img/bg__phone1.webp');
         background-repeat: no-repeat;
         background-size: 100% 105%;
     }
     .special {
-        background-image: url('../media/img/bg__phone2.png'), url('../media/img/bg__phone3.png');
+        background-image: url('../media/img/bg__phone2.webp'), url('../media/img/bg__phone3.webp');
         background-repeat: no-repeat;
         background-size: 100% 118%, 100% 120%;
         background-position: center, 0 130%;
     }
     .team__ceo {
-        background-image: url('../media/img/bg__phone3.png'), url('../media/img/bg__phone2.png');
+        background-image: url('../media/img/bg__phone3.webp'), url('../media/img/bg__phone2.webp');
         background-repeat: no-repeat;
         background-position: 100% 70%, 0% 60%;
         background-size: 100% 140%, 100% 130%;
     }
     .clients__get {
-        background-image: url('../media/img/bg__phone4.png'), url('../media/img/bg__phone4.png');
+        background-image: url('../media/img/bg__phone4.webp'), url('../media/img/bg__phone4.webp');
         background-repeat: no-repeat;
         background-size: 100% 108%, 100% 105%;
         background-position: 0% 30%, left;
     }
     .popular {
-        background-image: url('../media/img/bg__phone5.png'), url('../media/img/bg__phone5.png');
+        background-image: url('../media/img/bg__phone5.webp'), url('../media/img/bg__phone5.webp');
         background-repeat: no-repeat;
         background-size: 100% 120%, 100% 110%;
         background-position: left, right;
     }
     .our__works {
-        background-image: url('../media/img/bg__phone6.png'), url('../media/img/bg__phone3.png');
+        background-image: url('../media/img/bg__phone6.webp'), url('../media/img/bg__phone3.webp');
         background-repeat: no-repeat;
         background-size: 120% 120%, 100% 140%;
         background-position: right, center;
     }
     .get__passwprd {
-        background-image: url('../media/img/bg__phone7.png');
+        background-image: url('../media/img/bg__phone7.webp');
         background-repeat: no-repeat;
         background-size: 100% 160%;
         background-position: center;
     }
     .proposal {
         padding-top: 0 !important;
-        background-image: url('../media/img/bg__phone8.png');
+        background-image: url('../media/img/bg__phone8.webp');
         background-repeat: no-repeat;
         background-size: 100% 130%;
         background-position: 0% 60%;
     }
     .faq {
-        background-image: url('../media/img/bg__phone9.png'), url('../media/img/bg__phone8.png');
+        background-image: url('../media/img/bg__phone9.webp'), url('../media/img/bg__phone8.webp');
         background-repeat: no-repeat;
         background-size: 100% 120%, 100% 130%;
         background-position: 0% 0%, 100% 84%;
     }
     .blog__our {
-        background-image: url('../media/img/bg__phone9.png'), url('../media/img/bg__phone8.png');
+        background-image: url('../media/img/bg__phone9.webp'), url('../media/img/bg__phone8.webp');
         background-size: 100% 120%, 100% 120%;
         background-repeat: no-repeat;
         background-position: 0 20%, 0% 100%;
@@ -5316,7 +5316,7 @@ input[type="number"]::-webkit-outer-spin-button {
         aspect-ratio: 1 / 1;
         height: 100%;
         border-radius: 3.2vw;
-        background-image: url('../media/img/1.png');
+        background-image: url('../media/img/1.webp');
         background-position: center;
         background-size: cover;
     }
