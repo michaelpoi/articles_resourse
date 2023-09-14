@@ -845,7 +845,7 @@ h1 {
     background-size: contain;
 }
 .eximg {
-    background-image: url('../media/img/1.png');
+    background-image: url('../media/img/1.webp');
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2950,22 +2950,22 @@ input[type="number"]::-webkit-outer-spin-button {
     background-position: center;
 }
 .spec1 {
-    background-image: url('../media/img/spec1bg.png');
+    background-image: url('../media/img/spec1bg.webp');
 }
 .spec2 {
-    background-image: url('../media/img/spec2bg.png');
+    background-image: url('../media/img/spec2bg.webp');
 }
 .spec3 {
-    background-image: url('../media/img/spec4bg.png');
+    background-image: url('../media/img/spec4bg.webp');
 }
 .spec4 {
-    background-image: url('../media/img/spec5bg.png');
+    background-image: url('../media/img/spec5bg.webp');
 }
 .spec5 {
-    background-image: url('../media/img/spec6bg.png');
+    background-image: url('../media/img/spec6bg.webp');
 }
 .spec6 {
-    background-image: url('../media/img/spec3bg.png');
+    background-image: url('../media/img/spec3bg.webp');
 }
 .meinc {
     display: flex;
@@ -3480,7 +3480,7 @@ input[type="number"]::-webkit-outer-spin-button {
     border: 0.1vw solid rgba(255, 255, 255, 0.3);
     background-color: rgba(39, 39, 39, 0.6);
     border-radius: 1.2vw;
-    background-image: url('../media/img/1.png');
+    background-image: url('../media/img/1.webp');
     background-position: center;
     background-size: cover;
 }
@@ -4257,7 +4257,7 @@ input[type="number"]::-webkit-outer-spin-button {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('../media/img/1.png');
+    background-image: url('../media/img/1.webp');
 }
 .img__box svg {
     width: 1.5vw;
