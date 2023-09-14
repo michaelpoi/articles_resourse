@@ -29,7 +29,7 @@
 }
 .blog__all {
     padding-top: 12vw;
-    background-image: url('../media/img/bgblog1.png');
+    background-image: url('../media/img/bgblog1.webp');
     background-position: center;
     background-size: 100% 110%;
     background-repeat: no-repeat;
@@ -37,7 +37,7 @@
 .all__ports {
     padding-top: 5vw;
     position: relative;
-    background-image: url('../media/img/bgblog2.png');
+    background-image: url('../media/img/bgblog2.webp');
     background-position: center;
     background-size: 100% 110%;
     background-repeat: no-repeat;

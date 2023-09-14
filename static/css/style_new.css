@@ -2875,14 +2875,14 @@ input[type="number"]::-webkit-outer-spin-button {
 .homepage {
     position: relative;
     height: auto;
-    background-image: url('../media/img/bg__pc1.png');
+    background-image: url('../media/img/bg__pc1.webp');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding-bottom: 10vw;
 }
 .special {
     padding-top: 3vw;
-    background-image: url('../media/img/bg__pc2.png');
+    background-image: url('../media/img/bg__pc2.webp');
     background-repeat: no-repeat;
     background-size: 100% 106%;
     padding-bottom: 5vw;
@@ -3073,7 +3073,7 @@ input[type="number"]::-webkit-outer-spin-button {
     height: auto;
     z-index: 1;
     position: relative;
-    background-image: url('../media/img/bg__pc3.png'), url('../media/img/bg__pc2.png');
+    background-image: url('../media/img/bg__pc3.webp'), url('../media/img/bg__pc2.webp');
     background-repeat: no-repeat;
     background-position: left, right;
     background-size: 100% 130%, 100% 120%;
@@ -3239,7 +3239,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .popular {
     height: auto;
-    background-image: url('../media/img/bg__pc5.png');
+    background-image: url('../media/img/bg__pc5.webp');
     background-repeat: no-repeat;
     background-size: 100% 120%;
     background-position: left;
@@ -3515,7 +3515,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .our__works {
     height: auto;
     position: relative;
-    background-image: url('../media/img/bg__pc6.png');
+    background-image: url('../media/img/bg__pc6.webp');
     background-repeat: no-repeat;
     background-size: 120% 120%;
     background-position: right;
@@ -3743,7 +3743,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .get__passwprd {
     position: relative;
     height: auto;
-    background-image: url('../media/img/bg__pc7.png');
+    background-image: url('../media/img/bg__pc7.webp');
     background-repeat: no-repeat;
     background-size: 100% 160%;
     background-position: center;
@@ -3769,7 +3769,7 @@ input[type="number"]::-webkit-outer-spin-button {
 } */
 .proposal {
     height: auto;
-    background-image: url('../media/img/bg__pc8.png');
+    background-image: url('../media/img/bg__pc8.webp');
     background-repeat: no-repeat;
     background-size: 100% 120%;
     background-position: center;
@@ -3813,7 +3813,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .faq {
     height: auto;
-    background-image: url('../media/img/bg__pc9.png');
+    background-image: url('../media/img/bg__pc9.webp');
     background-repeat: no-repeat;
     background-size: 100% 120%;
     padding-bottom: 5vw;
@@ -4036,7 +4036,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .blog__our {
     height: 65vw;
-    background-image: url('../media/img/bg__pc4.png');
+    background-image: url('../media/img/bg__pc4.webp');
     background-size: 100% 110%;
     background-repeat: no-repeat;
 }
@@ -4063,7 +4063,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .clients__get {
     height: auto;
-    background-image: url('../media/img/bg__pc4.png');
+    background-image: url('../media/img/bg__pc4.webp');
     background-repeat: no-repeat;
     background-size: 100% 106%;
 }

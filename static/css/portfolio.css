@@ -23,7 +23,7 @@
 }
 .blog__our {
     height: auto;
-    background-image: url('../media/img/bgport1.png');
+    background-image: url('../media/img/bgport1.webp');
     background-size: 110% 110%;
     background-repeat: no-repeat;
 }
@@ -36,7 +36,7 @@
 .others__port {
     padding-top: 0vw;
     padding-bottom: 10vw;
-    background-image: url('../media/img/bgport2.png');
+    background-image: url('../media/img/bgport2.webp');
     background-position: center;
     background-size: 100% 110%;
 }
@@ -258,7 +258,7 @@ p {
 }
 .direct__sect {
     padding-top: 12vw;
-    background-image: url('../media/img/bg__portnum.png');
+    background-image: url('../media/img/bg__portnum.webp');
     background-position: center;
     background-size: 100%;
 }
