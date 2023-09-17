@@ -1426,6 +1426,20 @@ if (screenMob > 440) {
     divorder.style.left = '-100%';
   });
 } else {
+  function hideOrderForm(){
+    bgBlur.style.opacity = '0';
+    setTimeout(() => {
+      bgBlur.style.right = '-100%';
+    },300);
+      divorder.style.left = '-100%';
+  }
+  closeorder.addEventListener('click', () => {
+    bgBlur.style.opacity = '0';
+  setTimeout(() => {
+    bgBlur.style.right = '-100%';
+  }, 300);
+    divorder.style.left = '-100%';
+  });
   fastorder__onlymobile.addEventListener('click', () => {
     bgBlur.style.right = '0';
     bgBlur.style.opacity = '1';
