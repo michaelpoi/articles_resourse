@@ -8,6 +8,10 @@ function topFormSuccess(response){
     setTimeout(function() {
         $('#form_send').css('animation', 'slideUp 0.5s');
         }, 3000);
+    setTimeout(function (){
+        $('#form_send').css('display', 'none');
+        $('#form_send').css('animation', 'slideDown 0.5s forwards');
+    },3500);
 }
 
 function botFormSuccess(response){
@@ -19,6 +23,10 @@ function botFormSuccess(response){
     setTimeout(function() {
         $('#form_send').css('animation', 'slideUp 0.5s');
         }, 3000);
+    setTimeout(function (){
+        $('#form_send').css('display', 'none');
+        $('#form_send').css('animation', 'slideDown 0.5s forwards');
+    },3500);
 
 }
 
@@ -31,4 +39,8 @@ function fastOrderSuccess(response){
     setTimeout(function() {
         $('#form_send').css('animation', 'slideUp 0.5s');
         }, 3000);
+    setTimeout(function (){
+        $('#form_send').css('display', 'none');
+        $('#form_send').css('animation', 'slideDown 0.5s forwards');
+    },3500);
 }

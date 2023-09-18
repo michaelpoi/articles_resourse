@@ -1522,20 +1522,21 @@ function getCookie(name) {
 }
 
 const userId = encodeURIComponent(navigator.userAgent);
-
-const previousAllowCookiesValue = getCookie(`allowCookies`);
+function handleFastOrder(event){
+    event.preventDefault();
+    if (getCookie('allowCookies') === 'false'){
+      if (coockie.style.animation = '0.6s ease 0s 1 normal forwards running popDown') {
+      coockie.style.animation = 'popUp 0.6s forwards';
+    }
+    }
+  }
+let previousAllowCookiesValue = getCookie(`allowCookies`);
 if (previousAllowCookiesValue === 'true') {
   coockie.style.display = 'none';
     bgBlur.style.opacity = '0';
     bgBlur.style.zIndex = '-1';
 } else {
-  ordernow.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (coockie.style.animation = '0.6s ease 0s 1 normal forwards running popDown') {
-      coockie.style.animation = 'popUp 0.6s forwards';
-    }
-  });
-
+  ordernow.addEventListener('click', handleFastOrder);
   formOp.addEventListener('submit', (event) => {
     event.preventDefault();
     hideForm();
@@ -1554,6 +1555,12 @@ if (previousAllowCookiesValue === 'true') {
 
 allow.addEventListener('click', () => {
   setCookie(`allowCookies`, true, 365);
+  if (!previousAllowCookiesValue){
+    try {
+      ordernow.removeEventListener('click', handleFastOrder)
+    }
+    catch (e){}
+  }
 });
 
 decline.addEventListener('click', () => {
