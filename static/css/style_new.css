@@ -4272,6 +4272,7 @@ input[type="number"]::-webkit-outer-spin-button {
     padding-left: 0.5vw;
     z-index: 1;
     position: relative;
+    align-items: center;
 }
 .round__tick {
     display: flex;
@@ -4942,7 +4943,7 @@ input[type="number"]::-webkit-outer-spin-button {
         margin-top: 3vw;
     }
     .descrip p {
-        font-size: 3vw;
+        font-size: 3.6vw;
     }
     .squareho {
         margin-top: 5vw;
@@ -4974,17 +4975,17 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .bignumb {
         font-family: 'Roboto', sans-serif;
-        font-size: 5.5vw;
+        font-size: 7vw;
         font-weight: 900;
-        line-height: 5.5vw;
+        line-height: 7vw;
         letter-spacing: -0.05em;
         text-align: left;
     }
     .smallop {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.5vw;
+        font-size: 3.8vw;
         font-weight: 400;
-        line-height: 2.5vw;
+        line-height: 3.8vw;
         letter-spacing: 0em;
         text-align: left;
     }
@@ -5013,9 +5014,9 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .articlemid p {
         font-family: 'Inter', sans-serif;
-        font-size: 4.4vw;
+        font-size: 5.8vw;
         font-weight: 700;
-        line-height: 4.4vw;
+        line-height: 5.8vw;
         letter-spacing: 0em;
         text-align: left;
     }
@@ -5027,7 +5028,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .smtext p {
         font-family: 'Roboto', sans-serif;
-        font-size: 3vw;
+        font-size: 3.8vw;
         font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0em;
@@ -5043,8 +5044,8 @@ input[type="number"]::-webkit-outer-spin-button {
         justify-content: unset;
     }
     .boxhold .infho {
-        height: 26vw;
-        width: 44%;
+        height: 36vw;
+        width: 46%;
         border-radius: 2.4vw;
     }
     .infho .svgholdera {
@@ -5065,7 +5066,7 @@ input[type="number"]::-webkit-outer-spin-button {
     .smsvgtext {
         margin-top: 1.2vw;
         font-family: 'Roboto', sans-serif;
-        font-size: 2.2vw;
+        font-size: 3.2vw;
         font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0em;
@@ -5118,7 +5119,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .oneofsix {
         width: 100%;
-        height: 72vw;
+        height: 116vw;
         border-radius: 3vw;
     }
     .paddy {
@@ -5159,7 +5160,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .namese p {
         font-family: 'Inter', sans-serif;
-        font-size: 3vw;
+        font-size: 4vw;
         font-weight: 600;
         letter-spacing: 0em;
         text-align: left;
@@ -5174,7 +5175,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .meintxt p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.76vw;
+        font-size: 3.8vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5193,7 +5194,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .undertext p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.76vw;
+        font-size: 3.6vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5209,7 +5210,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .bigboxho {
         width: 100%;
-        height: 270vw;
+        height: 352vw;
     }
     .teamho .bigboxho {
         border-radius: 3.2vw;
@@ -5233,13 +5234,13 @@ input[type="number"]::-webkit-outer-spin-button {
         border-width: 0.4vw;
     }
     .icohold {
-        width: 8vw;
-        height: 8vw;
+        width: 10vw;
+        height: 10vw;
         border-radius: 1.2vw;
     }
     .icohold svg {
-        width: 3.6vw;
-        height: 3.6vw;
+        width: 4.5vw;
+        height: 4.5vw;
     }
     .reason__name {
         margin-top: 3vw;
@@ -5254,7 +5255,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .reason__name p {
         font-family: 'Inter', sans-serif;
-        font-size: 3.8vw;
+        font-size: 4.8vw;
         font-weight: 600;
         letter-spacing: 0em;
         text-align: left;
@@ -5262,7 +5263,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .mein__txtreas p {
         font-family: 'Roboto', sans-serif;
-        font-size: 3.3vw;
+        font-size: 4vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5273,18 +5274,18 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .member__card {
         border-radius: 3.2vw;
-        height: 28vw;
+        height: 36vw;
     }
     .padder__ceo {
         padding: 2.6vw;
     }
     .memb__name p {
         font-family: 'Roboto', sans-serif;
-        font-size: 4vw;
+        font-size: 5vw;
         font-weight: 600;
         letter-spacing: 0em;
         text-align: left;
-        line-height: 4vw;
+        line-height: 5vw;
     }
     .memb__role p {
         font-family: 'Roboto', sans-serif;
@@ -5299,7 +5300,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .memb__citata p {
         font-family: 'Roboto', sans-serif;
-        font-size: 3vw;
+        font-size: 3.6vw;
         font-style: italic;
         font-weight: 400;
         letter-spacing: 0em;
@@ -5363,7 +5364,7 @@ input[type="number"]::-webkit-outer-spin-button {
         margin-right: 0;
     }
     .cont__holder p {
-        font-size: 2.9vw;
+        font-size: 3.2vw;
     }
     .text__tobox p {
         font-family: 'Roboto', sans-serif;
@@ -5381,7 +5382,7 @@ input[type="number"]::-webkit-outer-spin-button {
         margin-left: 0;
     }
     .client__tick {
-        height: 120vw;
+        height: 134vw;
     }
     .clients .padd__deve > .client__row:first-child {
         gap: 2vw;
@@ -5407,7 +5408,7 @@ input[type="number"]::-webkit-outer-spin-button {
         top: 354px;
     }
     .client__text {
-        height: 24vw;
+        height: 34vw;
         width: 100%;
         padding: 2.8vw 4.6vw;
     }
@@ -5419,7 +5420,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .cltext__padd p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.6vw;
+        font-size: 3.2vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
