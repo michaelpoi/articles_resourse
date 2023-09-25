@@ -404,7 +404,7 @@
 														{{ project.title }}
 													</h1>
 													<p>
-														{{ project.desc |safe }}
+														{{ project.desc |safe|slice:":400" }}...
 													</p>
 												</div>
 											</div>
