@@ -1426,20 +1426,6 @@ if (screenMob > 440) {
     divorder.style.left = '-100%';
   });
 } else {
-  function hideOrderForm(){
-    bgBlur.style.opacity = '0';
-    setTimeout(() => {
-      bgBlur.style.right = '-100%';
-    },300);
-      divorder.style.left = '-100%';
-  }
-  closeorder.addEventListener('click', () => {
-    bgBlur.style.opacity = '0';
-  setTimeout(() => {
-    bgBlur.style.right = '-100%';
-  }, 300);
-    divorder.style.left = '-100%';
-  });
   fastorder__onlymobile.addEventListener('click', () => {
     bgBlur.style.right = '0';
     bgBlur.style.opacity = '1';
@@ -1522,21 +1508,20 @@ function getCookie(name) {
 }
 
 const userId = encodeURIComponent(navigator.userAgent);
-function handleFastOrder(event){
-    event.preventDefault();
-    if (getCookie('allowCookies') === 'false'){
-      if (coockie.style.animation = '0.6s ease 0s 1 normal forwards running popDown') {
-      coockie.style.animation = 'popUp 0.6s forwards';
-    }
-    }
-  }
-let previousAllowCookiesValue = getCookie(`allowCookies`);
+
+const previousAllowCookiesValue = getCookie(`allowCookies`);
 if (previousAllowCookiesValue === 'true') {
   coockie.style.display = 'none';
     bgBlur.style.opacity = '0';
     bgBlur.style.zIndex = '-1';
 } else {
-  ordernow.addEventListener('click', handleFastOrder);
+  ordernow.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (coockie.style.animation = '0.6s ease 0s 1 normal forwards running popDown') {
+      coockie.style.animation = 'popUp 0.6s forwards';
+    }
+  });
+
   formOp.addEventListener('submit', (event) => {
     event.preventDefault();
     hideForm();
@@ -1555,12 +1540,6 @@ if (previousAllowCookiesValue === 'true') {
 
 allow.addEventListener('click', () => {
   setCookie(`allowCookies`, true, 365);
-  if (!previousAllowCookiesValue){
-    try {
-      ordernow.removeEventListener('click', handleFastOrder)
-    }
-    catch (e){}
-  }
 });
 
 decline.addEventListener('click', () => {
