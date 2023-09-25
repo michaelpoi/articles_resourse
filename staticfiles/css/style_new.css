@@ -845,7 +845,7 @@ h1 {
     background-size: contain;
 }
 .eximg {
-    background-image: url('../media/img/1.png');
+    background-image: url('../media/img/1.webp');
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2875,14 +2875,14 @@ input[type="number"]::-webkit-outer-spin-button {
 .homepage {
     position: relative;
     height: auto;
-    background-image: url('../media/img/bg__pc1.png');
+    background-image: url('../media/img/bg__pc1.webp');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding-bottom: 10vw;
 }
 .special {
     padding-top: 3vw;
-    background-image: url('../media/img/bg__pc2.png');
+    background-image: url('../media/img/bg__pc2.webp');
     background-repeat: no-repeat;
     background-size: 100% 106%;
     padding-bottom: 5vw;
@@ -2950,22 +2950,22 @@ input[type="number"]::-webkit-outer-spin-button {
     background-position: center;
 }
 .spec1 {
-    background-image: url('../media/img/spec1bg.png');
+    background-image: url('../media/img/spec1bg.webp');
 }
 .spec2 {
-    background-image: url('../media/img/spec2bg.png');
+    background-image: url('../media/img/spec2bg.webp');
 }
 .spec3 {
-    background-image: url('../media/img/spec4bg.png');
+    background-image: url('../media/img/spec4bg.webp');
 }
 .spec4 {
-    background-image: url('../media/img/spec5bg.png');
+    background-image: url('../media/img/spec5bg.webp');
 }
 .spec5 {
-    background-image: url('../media/img/spec6bg.png');
+    background-image: url('../media/img/spec6bg.webp');
 }
 .spec6 {
-    background-image: url('../media/img/spec3bg.png');
+    background-image: url('../media/img/spec3bg.webp');
 }
 .meinc {
     display: flex;
@@ -3073,7 +3073,7 @@ input[type="number"]::-webkit-outer-spin-button {
     height: auto;
     z-index: 1;
     position: relative;
-    background-image: url('../media/img/bg__pc3.png'), url('../media/img/bg__pc2.png');
+    background-image: url('../media/img/bg__pc3.webp'), url('../media/img/bg__pc2.webp');
     background-repeat: no-repeat;
     background-position: left, right;
     background-size: 100% 130%, 100% 120%;
@@ -3239,7 +3239,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .popular {
     height: auto;
-    background-image: url('../media/img/bg__pc5.png');
+    background-image: url('../media/img/bg__pc5.webp');
     background-repeat: no-repeat;
     background-size: 100% 120%;
     background-position: left;
@@ -3480,7 +3480,7 @@ input[type="number"]::-webkit-outer-spin-button {
     border: 0.1vw solid rgba(255, 255, 255, 0.3);
     background-color: rgba(39, 39, 39, 0.6);
     border-radius: 1.2vw;
-    background-image: url('../media/img/1.png');
+    background-image: url('../media/img/1.webp');
     background-position: center;
     background-size: cover;
 }
@@ -3515,7 +3515,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .our__works {
     height: auto;
     position: relative;
-    background-image: url('../media/img/bg__pc6.png');
+    background-image: url('../media/img/bg__pc6.webp');
     background-repeat: no-repeat;
     background-size: 120% 120%;
     background-position: right;
@@ -3743,7 +3743,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .get__passwprd {
     position: relative;
     height: auto;
-    background-image: url('../media/img/bg__pc7.png');
+    background-image: url('../media/img/bg__pc7.webp');
     background-repeat: no-repeat;
     background-size: 100% 160%;
     background-position: center;
@@ -3769,7 +3769,7 @@ input[type="number"]::-webkit-outer-spin-button {
 } */
 .proposal {
     height: auto;
-    background-image: url('../media/img/bg__pc8.png');
+    background-image: url('../media/img/bg__pc8.webp');
     background-repeat: no-repeat;
     background-size: 100% 120%;
     background-position: center;
@@ -3813,7 +3813,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .faq {
     height: auto;
-    background-image: url('../media/img/bg__pc9.png');
+    background-image: url('../media/img/bg__pc9.webp');
     background-repeat: no-repeat;
     background-size: 100% 120%;
     padding-bottom: 5vw;
@@ -4036,7 +4036,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .blog__our {
     height: 65vw;
-    background-image: url('../media/img/bg__pc4.png');
+    background-image: url('../media/img/bg__pc4.webp');
     background-size: 100% 110%;
     background-repeat: no-repeat;
 }
@@ -4063,7 +4063,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .clients__get {
     height: auto;
-    background-image: url('../media/img/bg__pc4.png');
+    background-image: url('../media/img/bg__pc4.webp');
     background-repeat: no-repeat;
     background-size: 100% 106%;
 }
@@ -4257,7 +4257,7 @@ input[type="number"]::-webkit-outer-spin-button {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('../media/img/1.png');
+    background-image: url('../media/img/1.webp');
 }
 .img__box svg {
     width: 1.5vw;
@@ -4272,6 +4272,7 @@ input[type="number"]::-webkit-outer-spin-button {
     padding-left: 0.5vw;
     z-index: 1;
     position: relative;
+    align-items: center;
 }
 .round__tick {
     display: flex;
@@ -4662,61 +4663,61 @@ input[type="number"]::-webkit-outer-spin-button {
         display: none;
     }
     .homepage {
-        background-image: url('../media/img/bg__phone1.png');
+        background-image: url('../media/img/bg__phone1.webp');
         background-repeat: no-repeat;
         background-size: 100% 105%;
     }
     .special {
-        background-image: url('../media/img/bg__phone2.png'), url('../media/img/bg__phone3.png');
+        background-image: url('../media/img/bg__phone2.webp'), url('../media/img/bg__phone3.webp');
         background-repeat: no-repeat;
         background-size: 100% 118%, 100% 120%;
         background-position: center, 0 130%;
     }
     .team__ceo {
-        background-image: url('../media/img/bg__phone3.png'), url('../media/img/bg__phone2.png');
+        background-image: url('../media/img/bg__phone3.webp'), url('../media/img/bg__phone2.webp');
         background-repeat: no-repeat;
         background-position: 100% 70%, 0% 60%;
         background-size: 100% 140%, 100% 130%;
     }
     .clients__get {
-        background-image: url('../media/img/bg__phone4.png'), url('../media/img/bg__phone4.png');
+        background-image: url('../media/img/bg__phone4.webp'), url('../media/img/bg__phone4.webp');
         background-repeat: no-repeat;
         background-size: 100% 108%, 100% 105%;
         background-position: 0% 30%, left;
     }
     .popular {
-        background-image: url('../media/img/bg__phone5.png'), url('../media/img/bg__phone5.png');
+        background-image: url('../media/img/bg__phone5.webp'), url('../media/img/bg__phone5.webp');
         background-repeat: no-repeat;
         background-size: 100% 120%, 100% 110%;
         background-position: left, right;
     }
     .our__works {
-        background-image: url('../media/img/bg__phone6.png'), url('../media/img/bg__phone3.png');
+        background-image: url('../media/img/bg__phone6.webp'), url('../media/img/bg__phone3.webp');
         background-repeat: no-repeat;
         background-size: 120% 120%, 100% 140%;
         background-position: right, center;
     }
     .get__passwprd {
-        background-image: url('../media/img/bg__phone7.png');
+        background-image: url('../media/img/bg__phone7.webp');
         background-repeat: no-repeat;
         background-size: 100% 160%;
         background-position: center;
     }
     .proposal {
         padding-top: 0 !important;
-        background-image: url('../media/img/bg__phone8.png');
+        background-image: url('../media/img/bg__phone8.webp');
         background-repeat: no-repeat;
         background-size: 100% 130%;
         background-position: 0% 60%;
     }
     .faq {
-        background-image: url('../media/img/bg__phone9.png'), url('../media/img/bg__phone8.png');
+        background-image: url('../media/img/bg__phone9.webp'), url('../media/img/bg__phone8.webp');
         background-repeat: no-repeat;
         background-size: 100% 120%, 100% 130%;
         background-position: 0% 0%, 100% 84%;
     }
     .blog__our {
-        background-image: url('../media/img/bg__phone9.png'), url('../media/img/bg__phone8.png');
+        background-image: url('../media/img/bg__phone9.webp'), url('../media/img/bg__phone8.webp');
         background-size: 100% 120%, 100% 120%;
         background-repeat: no-repeat;
         background-position: 0 20%, 0% 100%;
@@ -4942,7 +4943,7 @@ input[type="number"]::-webkit-outer-spin-button {
         margin-top: 3vw;
     }
     .descrip p {
-        font-size: 3vw;
+        font-size: 3.6vw;
     }
     .squareho {
         margin-top: 5vw;
@@ -4974,17 +4975,17 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .bignumb {
         font-family: 'Roboto', sans-serif;
-        font-size: 5.5vw;
+        font-size: 7vw;
         font-weight: 900;
-        line-height: 5.5vw;
+        line-height: 7vw;
         letter-spacing: -0.05em;
         text-align: left;
     }
     .smallop {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.5vw;
+        font-size: 3.8vw;
         font-weight: 400;
-        line-height: 2.5vw;
+        line-height: 3.8vw;
         letter-spacing: 0em;
         text-align: left;
     }
@@ -5013,9 +5014,9 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .articlemid p {
         font-family: 'Inter', sans-serif;
-        font-size: 4.4vw;
+        font-size: 5.8vw;
         font-weight: 700;
-        line-height: 4.4vw;
+        line-height: 5.8vw;
         letter-spacing: 0em;
         text-align: left;
     }
@@ -5027,7 +5028,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .smtext p {
         font-family: 'Roboto', sans-serif;
-        font-size: 3vw;
+        font-size: 3.8vw;
         font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0em;
@@ -5043,8 +5044,8 @@ input[type="number"]::-webkit-outer-spin-button {
         justify-content: unset;
     }
     .boxhold .infho {
-        height: 26vw;
-        width: 44%;
+        height: 36vw;
+        width: 46%;
         border-radius: 2.4vw;
     }
     .infho .svgholdera {
@@ -5065,7 +5066,7 @@ input[type="number"]::-webkit-outer-spin-button {
     .smsvgtext {
         margin-top: 1.2vw;
         font-family: 'Roboto', sans-serif;
-        font-size: 2.2vw;
+        font-size: 3.2vw;
         font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0em;
@@ -5118,7 +5119,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .oneofsix {
         width: 100%;
-        height: 72vw;
+        height: 116vw;
         border-radius: 3vw;
     }
     .paddy {
@@ -5159,7 +5160,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .namese p {
         font-family: 'Inter', sans-serif;
-        font-size: 3vw;
+        font-size: 4vw;
         font-weight: 600;
         letter-spacing: 0em;
         text-align: left;
@@ -5174,7 +5175,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .meintxt p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.76vw;
+        font-size: 3.8vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5193,7 +5194,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .undertext p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.76vw;
+        font-size: 3.6vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5209,7 +5210,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .bigboxho {
         width: 100%;
-        height: 270vw;
+        height: 352vw;
     }
     .teamho .bigboxho {
         border-radius: 3.2vw;
@@ -5233,13 +5234,13 @@ input[type="number"]::-webkit-outer-spin-button {
         border-width: 0.4vw;
     }
     .icohold {
-        width: 8vw;
-        height: 8vw;
+        width: 10vw;
+        height: 10vw;
         border-radius: 1.2vw;
     }
     .icohold svg {
-        width: 3.6vw;
-        height: 3.6vw;
+        width: 4.5vw;
+        height: 4.5vw;
     }
     .reason__name {
         margin-top: 3vw;
@@ -5254,7 +5255,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .reason__name p {
         font-family: 'Inter', sans-serif;
-        font-size: 3.8vw;
+        font-size: 4.8vw;
         font-weight: 600;
         letter-spacing: 0em;
         text-align: left;
@@ -5262,7 +5263,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .mein__txtreas p {
         font-family: 'Roboto', sans-serif;
-        font-size: 3.3vw;
+        font-size: 4vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5273,18 +5274,18 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .member__card {
         border-radius: 3.2vw;
-        height: 28vw;
+        height: 36vw;
     }
     .padder__ceo {
         padding: 2.6vw;
     }
     .memb__name p {
         font-family: 'Roboto', sans-serif;
-        font-size: 4vw;
+        font-size: 5vw;
         font-weight: 600;
         letter-spacing: 0em;
         text-align: left;
-        line-height: 4vw;
+        line-height: 5vw;
     }
     .memb__role p {
         font-family: 'Roboto', sans-serif;
@@ -5299,7 +5300,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .memb__citata p {
         font-family: 'Roboto', sans-serif;
-        font-size: 3vw;
+        font-size: 3.6vw;
         font-style: italic;
         font-weight: 400;
         letter-spacing: 0em;
@@ -5316,7 +5317,7 @@ input[type="number"]::-webkit-outer-spin-button {
         aspect-ratio: 1 / 1;
         height: 100%;
         border-radius: 3.2vw;
-        background-image: url('../media/img/1.png');
+        background-image: url('../media/img/1.webp');
         background-position: center;
         background-size: cover;
     }
@@ -5363,7 +5364,7 @@ input[type="number"]::-webkit-outer-spin-button {
         margin-right: 0;
     }
     .cont__holder p {
-        font-size: 2.9vw;
+        font-size: 3.2vw;
     }
     .text__tobox p {
         font-family: 'Roboto', sans-serif;
@@ -5381,7 +5382,7 @@ input[type="number"]::-webkit-outer-spin-button {
         margin-left: 0;
     }
     .client__tick {
-        height: 120vw;
+        height: 134vw;
     }
     .clients .padd__deve > .client__row:first-child {
         gap: 2vw;
@@ -5407,7 +5408,7 @@ input[type="number"]::-webkit-outer-spin-button {
         top: 354px;
     }
     .client__text {
-        height: 24vw;
+        height: 34vw;
         width: 100%;
         padding: 2.8vw 4.6vw;
     }
@@ -5419,7 +5420,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .cltext__padd p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.6vw;
+        font-size: 3.2vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5465,7 +5466,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .box__text p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.6vw;
+        font-size: 3.2vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5476,7 +5477,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .small__box__text p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.6vw;
+        font-size: 3.2vw;
         font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0em;
@@ -5549,7 +5550,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .undername p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.8vw;
+        font-size: 3.6vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5639,7 +5640,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .work__description p, .small__meintxt p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.8vw;
+        font-size: 3.2vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5832,7 +5833,7 @@ input[type="number"]::-webkit-outer-spin-button {
         justify-content: unset;
     }
     .proposal .gradient__prop:before {
-        height: 200vw;
+        height: 190vw;
         border-radius: 3vw;
         padding: 0.4vw;
     }
@@ -6209,7 +6210,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .sizeof1 p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.4vw;
+        font-size: 4vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -6237,7 +6238,7 @@ input[type="number"]::-webkit-outer-spin-button {
     .hashtag p {
         margin-top: 0;
         font-family: 'Roboto', sans-serif;
-        font-size: 3vw;
+        font-size: 4vw;
         font-weight: 500;
         letter-spacing: 0em;
         text-align: left;
