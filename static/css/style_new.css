@@ -5466,7 +5466,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .box__text p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.6vw;
+        font-size: 3.2vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5477,7 +5477,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .small__box__text p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.6vw;
+        font-size: 3.2vw;
         font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0em;
@@ -5550,7 +5550,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .undername p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.8vw;
+        font-size: 3.6vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -5640,7 +5640,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .work__description p, .small__meintxt p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.8vw;
+        font-size: 3.2vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -6210,7 +6210,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .sizeof1 p {
         font-family: 'Roboto', sans-serif;
-        font-size: 2.4vw;
+        font-size: 4vw;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
@@ -6238,7 +6238,7 @@ input[type="number"]::-webkit-outer-spin-button {
     .hashtag p {
         margin-top: 0;
         font-family: 'Roboto', sans-serif;
-        font-size: 3vw;
+        font-size: 4vw;
         font-weight: 500;
         letter-spacing: 0em;
         text-align: left;
