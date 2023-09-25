@@ -3443,11 +3443,14 @@ input[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
 .undername p {
-    font-size: 0.8vw;
+    font-size: 1vw;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
     color: rgba(255, 255, 255, 0.7);
+}
+.slidecontent .sizeof1 p {
+    font-size: 1.2vw;
 }
 .boxholder {
     width: 100%;
@@ -4196,7 +4199,7 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 100%;
 }
 .box__text p {
-    font-size: 0.84vw;
+    font-size: 1vw;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
@@ -4221,9 +4224,9 @@ input[type="number"]::-webkit-outer-spin-button {
 .big__box__text p {
     color: rgba(255, 255, 255, 1);
     font-family: 'Inter', sans-serif;
-    font-size: 1.2vw;
+    font-size: 1.6vw;
     font-weight: 600;
-    line-height: 1.4vw;
+    line-height: 1.6vw;
     letter-spacing: 0em;
     text-align: left;
 }
@@ -4234,7 +4237,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-top: 0.4vw;
 }
 .small__box__text p {
-    font-size: 0.84vw;
+    font-size: 1vw;
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
@@ -4300,6 +4303,7 @@ input[type="number"]::-webkit-outer-spin-button {
     letter-spacing: 0em;
     text-align: left;
     color: rgba(255, 255, 255, 1);
+    width: 98%;
 }
 .inside__unusual .text__tobox {
     margin-right: 0;
@@ -5566,7 +5570,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .undername {
         margin-top: 2vw;
-        width: 90%;
+        width: 96%;
     }
     .custom__wrap {
         height: 90% !important;
@@ -5833,7 +5837,7 @@ input[type="number"]::-webkit-outer-spin-button {
         justify-content: unset;
     }
     .proposal .gradient__prop:before {
-        height: 190vw;
+        height: 206vw;
         border-radius: 3vw;
         padding: 0.4vw;
     }
@@ -6210,7 +6214,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .sizeof1 p {
         font-family: 'Roboto', sans-serif;
-        font-size: 4vw;
+        font-size: 4vw !important;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;

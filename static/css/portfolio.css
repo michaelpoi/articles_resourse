@@ -345,6 +345,10 @@ p {
     transition: opacity 0.3s;
     position: absolute;
 }
+.desc__txt .desc__padd {
+    justify-content: unset;
+    gap: 0.8vw;
+}
 .desc__padd {
     width: 100%;
     display: flex;
