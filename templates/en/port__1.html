@@ -456,7 +456,7 @@
 						<div class="swiper">
 							<div class="swiper-wrapper">
                                 {% for proj in port_list %}
-							  <div class="swiper-slide">
+							  <div class="swiper-slide" onclick="window.location.href='{% url 'project_trans' project_id=proj.project_id lang_code='en' %}'">
 								<div class="slide-holder">
 									<div class="img-hold" style="background-image: url('{{ proj.image.url }}')">
 									</div>
@@ -465,7 +465,7 @@
 											{{ proj.title }}
 										</p>
                                         <div class="hold-txt">
-                                            {{ proj.desc | safe }}
+                                            {{ proj.desc | safe |slice:":300" }}
                                         </div>
 									</div>
 								</div>
