@@ -30,7 +30,8 @@ def portfolio(request):
 
 def project_page(request, project_id):
     project = get_object_or_404(ProjectPortfolio, project_id=project_id)
-    response = render(request, 'portfolio/port__1.html', {'project': project})
+    port_list = ProjectPortfolio.objects.order_by('-likes').exclude(project_id=project_id)[:3]
+    response = render(request, 'portfolio/port__1.html', {'project': project, 'port_list':port_list})
     if not is_watched(request, project_id):
         project.watch()
         exp = datetime.datetime.now() + datetime.timedelta(days=7)
@@ -116,14 +117,17 @@ def portfolio_trans(request, lang_code):
 def project_trans(request, lang_code, project_id):
     response = None
     project = get_object_or_404(ProjectPortfolio, project_id=project_id)
+    port_list = ProjectPortfolio.objects.order_by('-likes').exclude(project_id=project_id)[:3]
+    for proj in port_list:
+        proj = get_translation_project(proj,lang_code)
     if not is_watched(request,project_id):
         project.watch()
     project = get_translation_project(project, lang_code)
     if lang_code == 'en':
-        response = render(request, 'en/port__1.html', {'project': project})
+        response = render(request, 'en/port__1.html', {'project': project, 'port_list':port_list})
         response.set_cookie('user_lang', 'en')
     if lang_code == 'it':
-        response = render(request, 'it/port__1.html', {'project': project})
+        response = render(request, 'it/port__1.html', {'project': project, 'port_list':port_list})
         response.set_cookie('user_lang', 'it')
     if not is_watched(request,project_id):
         exp = datetime.datetime.now() + datetime.timedelta(days=7)

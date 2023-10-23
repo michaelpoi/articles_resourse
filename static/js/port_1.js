@@ -1,9 +1,9 @@
 //update on change size window
-let isMobile = window.innerWidth <= 440;
+let isMobile = window.innerWidth <= 428;
 
 function checkAndReload() {
   const screenWidth = window.innerWidth;
-  const isMobileNow = screenWidth <= 440;
+  const isMobileNow = screenWidth <= 428;
 
   if (isMobileNow !== isMobile) {
     location.reload();
@@ -15,6 +15,12 @@ window.addEventListener('resize', checkAndReload);
 
 // open language
 
+/// switch to language
+
+const ualang = document.getElementById('ualang');
+const uklang = document.getElementById('uklang');
+const delang = document.getElementById('delang');
+
 // Получаем элемент с id "lgcont"
 const absasElement = document.getElementById('lgcont__port');
 
@@ -22,6 +28,19 @@ const absasElement = document.getElementById('lgcont__port');
 absasElement.addEventListener('click', function() {
   // Добавляем или удаляем класс "openlg" в зависимости от его наличия
   this.classList.toggle('openlg');
+  if (absasElement.classList.contains('openlg')) {
+    ualang.addEventListener('click', () => {
+      window.location.href = 'port__1.html';
+    });
+
+    uklang.addEventListener('click', () => {
+      window.location.href = './port__1_uk.html';
+    });
+
+    delang.addEventListener('click', () => {
+      window.location.href = './port__1_de.html';
+    });
+  }
 });
 
 // counter logo
@@ -124,7 +143,6 @@ leaveout.addEventListener('click', hideForm);
 // gradient border
 
 const svgInside = document.querySelector('.svg__inside');
-svgInside.querySelector('rect').style.stroke="rgba(255,255,255,0.3)";
 
 svgInside.addEventListener('mouseenter', function() {
   svgInside.querySelector('rect').style.strokeDasharray ='350%';
@@ -160,6 +178,9 @@ navTexts.forEach((text) => {
     });
   });
 });
+
+const toback = document.getElementById('to__back');
+
 
 
 // span transform
@@ -446,7 +467,7 @@ spanElementName.addEventListener('click', () => {
 
 const screenMob = window.innerWidth;
 
-if (screenMob <= 440) {
+if (screenMob <= 428) {
 
   inputElementGmail.addEventListener('focus', () => {
     spanElementGmail.style.top = '22.5vw';
@@ -655,78 +676,78 @@ window.addEventListener('scroll', scrollHandler);
 //     window.location.href = './allportfolio/port__1.html';
 // });
 
-const play = document.getElementById('play');
-const site = document.getElementById('overview');
+// const play = document.getElementById('play');
+// const site = document.getElementById('overview');
 
-play.addEventListener('click', () => {
-    site.style.display = 'flex';
-    site.style.opacity = '1';
-    play.style.display = 'none';
-    site.style.pointerEvents = 'all';
-});
+// play.addEventListener('click', () => {
+//     site.style.display = 'flex';
+//     site.style.opacity = '1';
+//     play.style.display = 'none';
+//     site.style.pointerEvents = 'all';
+// });
 
 
-const ipadResBlock = document.getElementById('ipad__res');
-const phoneResBlock = document.getElementById('phone__res');
-const pcResBlock = document.getElementById('pc__res');
-const overviewIframe = document.getElementById('overview');
-const sitecont = document.getElementById('sitecont');
+// const ipadResBlock = document.getElementById('ipad__res');
+// const phoneResBlock = document.getElementById('phone__res');
+// const pcResBlock = document.getElementById('pc__res');
+// const overviewIframe = document.getElementById('overview');
+// const sitecont = document.getElementById('sitecont');
 
-if (screenMob > 429) {
-  pcResBlock.addEventListener('click', () => {
-    sitecont.style.width = '100%';
-    handleResBlockClick(pcResBlock);
-  });
+// if (screenMob > 429) {
+//   pcResBlock.addEventListener('click', () => {
+//     sitecont.style.width = '100%';
+//     handleResBlockClick(pcResBlock);
+//   });
 
-  ipadResBlock.addEventListener('click', () => {
-    sitecont.style.width = '820px';
-    sitecont.style.zoom = '1';
-    handleResBlockClick(ipadResBlock);
-  });
+//   ipadResBlock.addEventListener('click', () => {
+//     sitecont.style.width = '820px';
+//     sitecont.style.zoom = '1';
+//     handleResBlockClick(ipadResBlock);
+//   });
 
-  phoneResBlock.addEventListener('click', () => {
-    sitecont.style.width = '400px';
-    sitecont.style.zoom = '1';
-    handleResBlockClick(phoneResBlock);
-  });
-} else {
-  pcResBlock.addEventListener('click', () => {
-    overviewIframe.style.width = '1920px';
-    overviewIframe.style.zoom = '2';
-    overviewIframe.style.scale = '0.64';
-    overviewIframe.style.height = '164%';
-    handleResBlockClick(pcResBlock);
-  });
+//   phoneResBlock.addEventListener('click', () => {
+//     sitecont.style.width = '400px';
+//     sitecont.style.zoom = '1';
+//     handleResBlockClick(phoneResBlock);
+//   });
+// } else {
+//   pcResBlock.addEventListener('click', () => {
+//     overviewIframe.style.width = '1920px';
+//     overviewIframe.style.zoom = '2';
+//     overviewIframe.style.scale = '0.64';
+//     overviewIframe.style.height = '164%';
+//     handleResBlockClick(pcResBlock);
+//   });
 
-  ipadResBlock.addEventListener('click', () => {
-    overviewIframe.style.width = '820px';
-    overviewIframe.style.zoom = '2.8';
-    overviewIframe.style.scale = '0.5';
-    overviewIframe.style.height = '210%';
-    handleResBlockClick(ipadResBlock);
-  });
+//   ipadResBlock.addEventListener('click', () => {
+//     overviewIframe.style.width = '820px';
+//     overviewIframe.style.zoom = '2.8';
+//     overviewIframe.style.scale = '0.5';
+//     overviewIframe.style.height = '210%';
+//     handleResBlockClick(ipadResBlock);
+//   });
 
-  phoneResBlock.addEventListener('click', () => {
-    overviewIframe.style.width = '420px';
-    overviewIframe.style.zoom = '1';
-    overviewIframe.style.scale = '1';
-    overviewIframe.style.height = '100%';
-    handleResBlockClick(phoneResBlock);
-  });
-}
+//   phoneResBlock.addEventListener('click', () => {
+//     overviewIframe.style.width = '420px';
+//     overviewIframe.style.zoom = '1';
+//     overviewIframe.style.scale = '1';
+//     overviewIframe.style.height = '100%';
+//     handleResBlockClick(phoneResBlock);
+//   });
+// }
 
-// Общий обработчик события для изменения фонового цвета элементов
-function handleResBlockClick(element) {
-  const blocks = [ipadResBlock, phoneResBlock, pcResBlock];
+// // Общий обработчик события для изменения фонового цвета элементов
+// function handleResBlockClick(element) {
+//   const blocks = [ipadResBlock, phoneResBlock, pcResBlock];
 
-  blocks.forEach(block => {
-    if (block === element) {
-      block.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
-    } else {
-      block.style.backgroundColor = 'rgba(38, 38, 38, 0.6)';
-    }
-  });
-}
+//   blocks.forEach(block => {
+//     if (block === element) {
+//       block.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+//     } else {
+//       block.style.backgroundColor = 'rgba(38, 38, 38, 0.6)';
+//     }
+//   });
+// }
 
 
 // const ipadResBlock = document.getElementById('ipad__res');
@@ -775,19 +796,19 @@ function handleResBlockClick(element) {
 // }
 
 // Проверяем, что iframe успешно загружен
-overviewIframe.addEventListener('load', () => {
-  // Получаем доступ к содержимому iframe через его contentWindow
-  const iframeDocument = overviewIframe.contentDocument || overviewIframe.contentWindow.document;
+// overviewIframe.addEventListener('load', () => {
+//   // Получаем доступ к содержимому iframe через его contentWindow
+//   const iframeDocument = overviewIframe.contentDocument || overviewIframe.contentWindow.document;
 
-  // Modify the styles of the iframe's body or any other element inside the iframe
-  if (iframeDocument.body) {
-    iframeDocument.body.style.overflowY = 'scroll';
+//   // Modify the styles of the iframe's body or any other element inside the iframe
+//   if (iframeDocument.body) {
+//     iframeDocument.body.style.overflowY = 'scroll';
 
-    const style = iframeDocument.createElement('style');
-    style.innerHTML = 'body::-webkit-scrollbar { display: none; }';
-    iframeDocument.head.appendChild(style);
-  }
-});
+//     const style = iframeDocument.createElement('style');
+//     style.innerHTML = 'body::-webkit-scrollbar { display: none; }';
+//     iframeDocument.head.appendChild(style);
+//   }
+// });
 
 // nav mobile version
 
@@ -835,32 +856,31 @@ function scrollToElementAndCloseMenu(elementId) {
 }
 
 
-
 document.getElementById('openButtonMobile__port').addEventListener('click', () => {
   scrollToElementAndCloseMenu('form__user__bot');
 });
 
 
-const showhide = document.getElementById('showhide');
-const closesvg = document.getElementById('closeres');
-const showsvg = document.getElementById('linklink');
-const resthing = document.getElementById('changeres');
+// const showhide = document.getElementById('showhide');
+// const closesvg = document.getElementById('closeres');
+// const showsvg = document.getElementById('linklink');
+// const resthing = document.getElementById('changeres');
 
-let isOpen = false;
+// let isOpen = false;
 
-showhide.addEventListener('click', () => {
-  if (!isOpen) {
-    showsvg.style.display = 'none';
-    closesvg.style.display = 'flex';
-    resthing.style.animation = 'resopen 0.6s forwards';
-  } else {
-    showsvg.style.display = 'flex';
-    closesvg.style.display = 'none';
-    resthing.style.animation = 'reshide 0.6s forwards';
-  }
+// showhide.addEventListener('click', () => {
+//   if (!isOpen) {
+//     showsvg.style.display = 'none';
+//     closesvg.style.display = 'flex';
+//     resthing.style.animation = 'resopen 0.6s forwards';
+//   } else {
+//     showsvg.style.display = 'flex';
+//     closesvg.style.display = 'none';
+//     resthing.style.animation = 'reshide 0.6s forwards';
+//   }
 
-  isOpen = !isOpen;
-});
+//   isOpen = !isOpen;
+// });
 
 choose__bot.addEventListener('click', () => {
   behind1.classList.toggle('longchoose');
@@ -892,7 +912,17 @@ choose__top.addEventListener('click', () => {
   }
 });
 
-// tel click
+window.addEventListener('scroll', () => {
+  const img1 = document.getElementById('img1');
+    const scrollTop = window.scrollY;
+    const maxScale = 1.28;
+    const scale = Math.min(1 + scrollTop / window.innerHeight, maxScale);
+    img1.style.transform = `scale(${scale})`;
+});
+
+// Получаем элемент, который будем изменять
+
+
 
 // tel click
 
@@ -901,11 +931,10 @@ const bgfoot = document.getElementById('blurfoot');
 const ch__tel = document.getElementById('ch__tel');
 const close__phone = document.getElementById('close__phone');
 
-if (screenMob > 440) {
+if (screenMob > 428) {
   telus.addEventListener('click', () => {
     bgfoot.style.left = '0%';
     bgfoot.style.opacity = '1';
-    ch__tel.style.top = '9.4vw';
     ch__tel.style.left = '17vw';
   
     if (bgfoot.style.left === '0%') {
@@ -929,7 +958,6 @@ if (screenMob > 440) {
   telus.addEventListener('click', () => {
     bgfoot.style.left = '0%';
     bgfoot.style.opacity = '1';
-    ch__tel.style.top = '42vw';
     ch__tel.style.left = '44vw';
   
     if (bgfoot.style.left === '0%') {
@@ -951,111 +979,28 @@ if (screenMob > 440) {
   });
 }
 
-// input preopened
+// Настройка observer
+let options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
+};
 
-const ph__bot = document.getElementById('ph__bot');
-const inst__bot = document.getElementById('inst__bot');
-const what__bot = document.getElementById('what__bot');
+let observer = new IntersectionObserver(onChange, options);
 
-inst__bot.addEventListener('click', () => {
-  window.open('https://instagram.com/crownsofts?igshid=MmIzYWVlNDQ5Yg==', '_blank');
-});
-
-what__bot.addEventListener('click', () => {
-  window.open('https://wa.me/380992109290', '_blank');
-});
-
-if (screenMob > 440) {
-  ph__bot.addEventListener('click', () => {
-    bgfoot.style.left = '0%';
-    bgfoot.style.opacity = '1';
-    ch__tel.style.top = '4vw';
-    ch__tel.style.left = '75vw';
-  
-    if (bgfoot.style.left === '0%') {
-      bgfoot.addEventListener('click', () => {
-        bgfoot.style.opacity = '0';
-        setTimeout(function() {
-          bgfoot.style.left = '-100%';
-        }, 300);
-        ch__tel.style.left = '-17vw';
-      });
-      close__phone.addEventListener('click', () => {
-        bgfoot.style.opacity = '0';
-        setTimeout(function() {
-          bgfoot.style.left = '-100%';
-        }, 300);
-        ch__tel.style.left = '-17vw';
-      });
-    };
-  });
-} else {
-  ph__bot.addEventListener('click', () => {
-    bgfoot.style.left = '0%';
-    bgfoot.style.opacity = '1';
-    ch__tel.style.top = '200vw';
-    ch__tel.style.left = '44vw';
-  
-    if (bgfoot.style.left === '0%') {
-      bgfoot.addEventListener('click', () => {
-        bgfoot.style.opacity = '0';
-        setTimeout(function() {
-          bgfoot.style.left = '-100%';
-        }, 300);
-        ch__tel.style.left = '-44vw';
-      });
-      close__phone.addEventListener('click', () => {
-        bgfoot.style.opacity = '0';
-        setTimeout(function() {
-          bgfoot.style.left = '-100%';
-        }, 300);
-        ch__tel.style.left = '-44vw';
-      });
-    };
+// Функция, которая вызывается каждый раз, когда целевой элемент пересекает границу root
+function onChange(changes, observer) {
+  changes.forEach(change => {
+    if (change.intersectionRatio > 0) {
+      change.target.classList.add('animated');
+    }
   });
 }
 
-// form telephone choose + links
-
-const ph__top = document.getElementById('ph__top');
-const inst__top = document.getElementById('inst__top');
-const what__top = document.getElementById('what__top');
-
-const blurfoot__form = document.getElementById('blurfoot__form');
-const ch__tel__top = document.getElementById('ch__tel__top');
-const close__phone__top = document.getElementById('close__phone__top');
-
-inst__top.addEventListener('click', () => {
-  window.open('https://instagram.com/crownsofts?igshid=MmIzYWVlNDQ5Yg==', '_blank');
-});
-
-what__top.addEventListener('click', () => {
-  window.open('https://wa.me/380992109290', '_blank');
+// Наблюдение за каждым параграфом
+document.querySelectorAll('.name-sect, .title-key').forEach(p => {
+  observer.observe(p);
 });
 
 
-ph__top.addEventListener('click', () => {
-  blurfoot__form.style.left = '0%';
-  blurfoot__form.style.opacity = '1';
 
-  ch__tel__top.style.right = '6vw';
-
-  if (blurfoot__form.style.left === '0%') {
-    blurfoot__form.addEventListener('click', () => {
-      blurfoot__form.style.opacity = '0';
-      setTimeout(function() {
-        blurfoot__form.style.left = 'unset';
-        blurfoot__form.style.right = '-100%';
-      }, 300);
-      ch__tel__top.style.right = '-17vw';
-    });
-    close__phone__top.addEventListener('click', () => {
-      blurfoot__form.style.opacity = '0';
-      setTimeout(function() {
-        blurfoot__form.style.left = 'unset';
-        blurfoot__form.style.right = '-100%';
-      }, 300);
-      ch__tel__top.style.right = '-17vw';
-    });
-  };
-})

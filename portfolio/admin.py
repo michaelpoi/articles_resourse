@@ -1,5 +1,5 @@
 from django.contrib import admin
-from portfolio.models import ProjectPortfolio, Hashtag, ProjectTransEn, ProjectTransIt
+from portfolio.models import ProjectPortfolio, Hashtag, ProjectTransEn, ProjectTransIt, TechBlog
 
 
 @admin.register(Hashtag)
@@ -9,7 +9,11 @@ class HashtagAdmin(admin.ModelAdmin):
 
 @admin.register(ProjectPortfolio)
 class AdminPortfolio(admin.ModelAdmin):
-    filter_horizontal = ['hashtags']
+    filter_horizontal = ['hashtags', 'blocks']
+
+@admin.register(TechBlog)
+class AdminTech(admin.ModelAdmin):
+    pass
 
 @admin.register(ProjectTransEn)
 class AdminEn(admin.ModelAdmin):

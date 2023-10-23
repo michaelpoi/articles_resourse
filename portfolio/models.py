@@ -18,6 +18,15 @@ class Hashtag(models.Model):
         db_table = 'hashtags'
 
 
+class TechBlog(models.Model):
+    id = models.AutoField(primary_key = True)
+    title = models.CharField(max_length=63)
+    tech1 = models.CharField(max_length=63)
+    tech2 = models.CharField(max_length=63)
+    tech3 = models.CharField(max_length=63, null=True)
+    tech4 = models.CharField(max_length=63, null=True)
+
+
 class ProjectPortfolio(models.Model):
     project_id = models.UUIDField(default=uuid.uuid4, editable=False, null=False, primary_key=True)
     title = models.CharField(max_length=255)
@@ -26,12 +35,31 @@ class ProjectPortfolio(models.Model):
     likes = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
     reposts = models.IntegerField(default=0)
-    link = models.URLField(blank=True)
-    style = models.CharField(max_length=255)
-    type = models.CharField(max_length=255)
-    duration = models.CharField(max_length=63)
     hashtags = models.ManyToManyField(Hashtag, blank=True)
+    blocks = models.ManyToManyField(TechBlog)
     image = models.ImageField(upload_to='images/')
+    story_image_1 = models.ImageField(upload_to='images/', default='images/horizontal.jpg')
+    story_image_2 = models.ImageField(upload_to='images/', default='images/1.png')
+    value_image = models.ImageField(upload_to='images/', default='images/1.png')
+    key_image_1 = models.ImageField(upload_to='images/', default='images/1.png')
+    key_image_2 = models.ImageField(upload_to='images/', default='images/1.png')
+    challenge_image = models.ImageField(upload_to='images/', default='images/1.png')
+    our_work_1 = models.ImageField(upload_to='images/', default='images/1.png')
+    our_work_2 = models.ImageField(upload_to='images/', default='images/1.png')
+    story = RichTextField(
+        default='<p>Default story. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    challenge = RichTextField(
+        default='<p>Default challenge. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    our_work = RichTextField(
+        default='<p>What we have done. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    value = RichTextField(
+        default='<p>Default value. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    result = RichTextField(
+        default='<p>Default result. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    scope_list = RichTextField(default='<ul><li>List example, add bullets bellow</li></ul>')
+    timeframe_list = RichTextField(default='<ul><li>List example, add bullets bellow</li></ul>')
+    involvement_list = RichTextField(default='<ul><li>List example, add bullets bellow</li></ul>')
+    result_short = RichTextField(default='<p>This is the default short result</p>')
 
     def get_absolute_url(self):
         return reverse('project', args=[str(self.project_id)])
@@ -51,6 +79,7 @@ class ProjectPortfolio(models.Model):
     def repost(self):
         self.reposts += 1
         self.save()
+
     def __str__(self):
         return self.title
 
@@ -66,7 +95,20 @@ class ProjectTransEn(models.Model):
     style = models.CharField(max_length=255)
     type = models.CharField(max_length=255)
     duration = models.CharField(max_length=63)
-
+    story = RichTextField(
+        default='<p>Default story ENG. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    challenge = RichTextField(
+        default='<p>Default challenge ENG. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    our_work = RichTextField(
+        default='<p>What we have done ENG. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    value = RichTextField(
+        default='<p>Default value ENG. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    result = RichTextField(
+        default='<p>Default result ENG. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    scope_list = RichTextField(default='<ul><li>List example, add bullets bellow</li></ul>')
+    timeframe_list = RichTextField(default='<ul><li>List example, add bullets bellow</li></ul>')
+    involvement_list = RichTextField(default='<ul><li>List example, add bullets bellow</li></ul>')
+    result_short = RichTextField(default='<p>This is the default short result</p>')
     def __str__(self):
         return self.title
 
@@ -81,11 +123,22 @@ class ProjectTransIt(models.Model):
     style = models.CharField(max_length=255)
     type = models.CharField(max_length=255)
     duration = models.CharField(max_length=63)
+    story = RichTextField(
+        default='<p>Default story IT. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    challenge = RichTextField(
+        default='<p>Default challenge IT. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    our_work = RichTextField(
+        default='<p>What we have done IT. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    value = RichTextField(
+        default='<p>Default value IT. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    result = RichTextField(
+        default='<p>Default result IT. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, temporibus possimus! In quos, architecto sed illum quo ipsa sit harum sunt animi. Rem molestiae esse ut nostrum! Aspernatur, iste enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae mollitia sint iste odit, corrupti cumque illum sunt minus repudiandae alias, eum quas. Ipsa pariatur animi consequatur! Minus molestias corporis natus.</p>')
+    scope_list = RichTextField(default='<ul><li>List example, add bullets bellow</li></ul>')
+    timeframe_list = RichTextField(default='<ul><li>List example, add bullets bellow</li></ul>')
+    involvement_list = RichTextField(default='<ul><li>List example, add bullets bellow</li></ul>')
+    result_short = RichTextField(default='<p>This is the default short result</p>')
     def __str__(self):
         return self.title
 
     class Meta:
         db_table = 'portfolio_it'
-
-
-

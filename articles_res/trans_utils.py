@@ -113,6 +113,15 @@ def get_translation_project(project, lang_code):
         project.style = trans.style
         project.type = trans.type
         project.duration = trans.duration
+        project.story = trans.story
+        project.challenge = trans.challenge
+        project.our_work = trans.our_work
+        project.value = trans.value
+        project.result = trans.result
+        project.scope_list = trans.scope_list
+        project.timeframe_list = trans.timeframe_list
+        project.involvement_list = trans.involvement_list
+        project.result_short = trans.result_short
     except:
         return project
     return project
